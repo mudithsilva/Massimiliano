@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8334E9A5B4750A4FA7E64502 /* Pods_Massimiliano.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2DD5AC52C7B5963CD02109 /* Pods_Massimiliano.framework */; };
 		BA5B51052365870600BC128E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B51042365870600BC128E /* AppDelegate.swift */; };
 		BA5B51072365870600BC128E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B51062365870600BC128E /* ViewController.swift */; };
 		BA5B510A2365870600BC128E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA5B51082365870600BC128E /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A678527D7D9199B46D2D681 /* Pods-Massimiliano.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Massimiliano.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Massimiliano/Pods-Massimiliano.debug.xcconfig"; sourceTree = "<group>"; };
 		BA5B51012365870600BC128E /* Massimiliano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Massimiliano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5B51042365870600BC128E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA5B51062365870600BC128E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		BA5B51202365870800BC128E /* MassimilianoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MassimilianoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5B51242365870800BC128E /* MassimilianoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassimilianoUITests.swift; sourceTree = "<group>"; };
 		BA5B51262365870800BC128E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF2DD5AC52C7B5963CD02109 /* Pods_Massimiliano.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Massimiliano.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6422E066E38D9F930A231A1 /* Pods-Massimiliano.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Massimiliano.release.xcconfig"; path = "Pods/Target Support Files/Pods-Massimiliano/Pods-Massimiliano.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8334E9A5B4750A4FA7E64502 /* Pods_Massimiliano.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1135CEED68791EC6CA58B092 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3A678527D7D9199B46D2D681 /* Pods-Massimiliano.debug.xcconfig */,
+				F6422E066E38D9F930A231A1 /* Pods-Massimiliano.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3A85E999425B3ECC59595C90 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF2DD5AC52C7B5963CD02109 /* Pods_Massimiliano.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BA5B50F82365870600BC128E = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +103,8 @@
 				BA5B51182365870800BC128E /* MassimilianoTests */,
 				BA5B51232365870800BC128E /* MassimilianoUITests */,
 				BA5B51022365870600BC128E /* Products */,
+				1135CEED68791EC6CA58B092 /* Pods */,
+				3A85E999425B3ECC59595C90 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA5B51292365870800BC128E /* Build configuration list for PBXNativeTarget "Massimiliano" */;
 			buildPhases = (
+				5148D7E26B3665AF0B9C7FF8 /* [CP] Check Pods Manifest.lock */,
 				BA5B50FD2365870600BC128E /* Sources */,
 				BA5B50FE2365870600BC128E /* Frameworks */,
 				BA5B50FF2365870600BC128E /* Resources */,
+				040EE165B87351E82E717E29 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,6 +276,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		040EE165B87351E82E717E29 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Massimiliano/Pods-Massimiliano-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Massimiliano/Pods-Massimiliano-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5148D7E26B3665AF0B9C7FF8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Massimiliano-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BA5B50FD2365870600BC128E /* Sources */ = {
@@ -430,6 +507,7 @@
 		};
 		BA5B512A2365870800BC128E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A678527D7D9199B46D2D681 /* Pods-Massimiliano.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +526,7 @@
 		};
 		BA5B512B2365870800BC128E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6422E066E38D9F930A231A1 /* Pods-Massimiliano.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
