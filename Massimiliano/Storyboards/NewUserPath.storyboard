@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WqJ-ZP-WFI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Semibold.ttf">
+            <string>SFProDisplay-Semibold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Walk Me View Controller-->
+        <scene sceneID="KSL-Ea-AE6">
+            <objects>
+                <viewController id="WqJ-ZP-WFI" customClass="WalkMeViewController" customModule="Massimiliano" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eXR-By-Odh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QU7-pH-6qn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="uQC-Gf-HR1">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="uQC-Gf-HR1" firstAttribute="top" secondItem="QU7-pH-6qn" secondAttribute="top" id="1hM-DI-liu"/>
+                                    <constraint firstAttribute="trailing" secondItem="uQC-Gf-HR1" secondAttribute="trailing" id="2nK-e4-1Qu"/>
+                                    <constraint firstItem="uQC-Gf-HR1" firstAttribute="leading" secondItem="QU7-pH-6qn" secondAttribute="leading" id="OKK-Sf-SIG"/>
+                                    <constraint firstAttribute="bottom" secondItem="uQC-Gf-HR1" secondAttribute="bottom" id="ZF1-TQ-ai8"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9l3-Bs-C1e">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zEr-OD-odc">
+                                    <size key="itemSize" width="415" height="896"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="WqJ-ZP-WFI" id="wj7-UO-OE1"/>
+                                    <outlet property="delegate" destination="WqJ-ZP-WFI" id="KL4-Gm-lLi"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WD3-ng-EnN" customClass="MyAwsomeButton" customModule="Massimiliano" customModuleProvider="target">
+                                <rect key="frame" x="147" y="760" width="120" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="dyb-wI-ZdF"/>
+                                    <constraint firstAttribute="height" constant="32" id="tjw-lG-MND"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="12"/>
+                                <state key="normal" title="Get started">
+                                    <color key="titleColor" red="0.066666666666666666" green="0.36078431372549019" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addShaddow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="offSetWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="offSetHeight">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clickedGetStarted:" destination="WqJ-ZP-WFI" eventType="touchUpInside" id="dAR-TG-j7G"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="QU7-pH-6qn" secondAttribute="bottom" id="C6A-He-qyV"/>
+                            <constraint firstItem="QU7-pH-6qn" firstAttribute="top" secondItem="eXR-By-Odh" secondAttribute="top" id="Eoc-oh-NvM"/>
+                            <constraint firstItem="WD3-ng-EnN" firstAttribute="centerX" secondItem="eXR-By-Odh" secondAttribute="centerX" id="RdA-QO-gXT"/>
+                            <constraint firstItem="QU7-pH-6qn" firstAttribute="leading" secondItem="JkC-Cu-GGb" secondAttribute="leading" id="i8T-nG-786"/>
+                            <constraint firstItem="JkC-Cu-GGb" firstAttribute="bottom" secondItem="WD3-ng-EnN" secondAttribute="bottom" constant="70" id="rSO-2w-Yyo"/>
+                            <constraint firstItem="QU7-pH-6qn" firstAttribute="trailing" secondItem="JkC-Cu-GGb" secondAttribute="trailing" id="tHC-lA-fJu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JkC-Cu-GGb"/>
+                    </view>
+                    <connections>
+                        <outlet property="walkmeCollectionView" destination="9l3-Bs-C1e" id="Gvc-kx-ked"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zUz-l8-EdN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="121.73913043478262" y="108.48214285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="mainBackground" width="187.5" height="406"/>
+    </resources>
+</document>

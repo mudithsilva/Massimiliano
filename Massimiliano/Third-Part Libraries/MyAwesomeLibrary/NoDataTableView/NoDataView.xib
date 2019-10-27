@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="NoDataView" id="iN0-l3-epB" customClass="NoDataView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noCustomersIcon" translatesAutoresizingMaskIntoConstraints="NO" id="H9E-EM-Lye">
+                    <rect key="frame" x="167" y="266" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="A4h-Oa-aiD"/>
+                        <constraint firstAttribute="width" constant="40" id="v5d-15-S5V"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Customers Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xk9-nI-FUc">
+                    <rect key="frame" x="16" y="314" width="343" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="YcV-9c-bnj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                    <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xk9-nI-FUc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6oP-51-Lck"/>
+                <constraint firstItem="xk9-nI-FUc" firstAttribute="top" secondItem="H9E-EM-Lye" secondAttribute="bottom" constant="8" id="93c-w8-zuI"/>
+                <constraint firstItem="xk9-nI-FUc" firstAttribute="top" secondItem="H9E-EM-Lye" secondAttribute="bottom" constant="8" id="9P5-aF-NFd"/>
+                <constraint firstItem="xk9-nI-FUc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Eg9-Od-ZvN"/>
+                <constraint firstItem="H9E-EM-Lye" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="JlS-JL-RfJ"/>
+                <constraint firstItem="xk9-nI-FUc" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="d7n-wV-YRs"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xk9-nI-FUc" secondAttribute="trailing" constant="16" id="rKu-ld-c77"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="noDataIcons" destination="H9E-EM-Lye" id="9pW-SF-B7m"/>
+                <outlet property="noDataLabel" destination="xk9-nI-FUc" id="Vr1-YL-VI4"/>
+            </connections>
+            <point key="canvasLocation" x="26.5" y="51.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="noCustomersIcon" width="64" height="64"/>
+    </resources>
+</document>
