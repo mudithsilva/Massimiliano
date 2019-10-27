@@ -10,7 +10,16 @@ import UIKit
 
 class LaunchViewController: UIViewController {
     
-    var isFirstTimeUser: Bool = true
+    private var didShowWalkMe: Bool {
+        get {
+            let userInfo = AppData.getData(key: UserData.didShowWalkMe)
+            if userInfo == "true" {
+                return true
+            } else {
+                return false
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +28,10 @@ class LaunchViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if (isFirstTimeUser) {
-            self.performSegue(withIdentifier: "showNewUserPath", sender: nil)
-        } else {
+        if (self.didShowWalkMe) {
             self.performSegue(withIdentifier: "showHomePath", sender: nil)
+        } else {
+            self.performSegue(withIdentifier: "showNewUserPath", sender: nil)
         }
     }
     

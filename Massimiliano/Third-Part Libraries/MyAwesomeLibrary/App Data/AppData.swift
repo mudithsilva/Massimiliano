@@ -77,6 +77,7 @@ enum UserData: String {
     case userID = "USERID"
     case userInfo = "USERINFO"
     case userToken = "USERTOKEN"
+    case didShowWalkMe = "DIDSHOWWALKME"
     
     /////// Remove enum type also from self.removeAll() //////////
 }

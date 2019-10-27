@@ -46,6 +46,7 @@ class WalkMeViewController: UIViewController {
     }
     
     @IBAction func clickedGetStarted(_ sender: Any) {
+        AppData.storeData(data: "true", key: UserData.didShowWalkMe)
         self.dismiss(animated: true, completion: nil)
     }
     
