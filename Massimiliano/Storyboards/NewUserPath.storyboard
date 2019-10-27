@@ -27,16 +27,24 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="uQC-Gf-HR1">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhoneImage1" translatesAutoresizingMaskIntoConstraints="NO" id="35H-wf-NoX">
+                                        <rect key="frame" x="40" y="100" width="334" height="666"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="uQC-Gf-HR1" firstAttribute="top" secondItem="QU7-pH-6qn" secondAttribute="top" id="1hM-DI-liu"/>
                                     <constraint firstAttribute="trailing" secondItem="uQC-Gf-HR1" secondAttribute="trailing" id="2nK-e4-1Qu"/>
+                                    <constraint firstAttribute="bottom" secondItem="35H-wf-NoX" secondAttribute="bottom" constant="130" id="GVq-eV-Hx5"/>
                                     <constraint firstItem="uQC-Gf-HR1" firstAttribute="leading" secondItem="QU7-pH-6qn" secondAttribute="leading" id="OKK-Sf-SIG"/>
                                     <constraint firstAttribute="bottom" secondItem="uQC-Gf-HR1" secondAttribute="bottom" id="ZF1-TQ-ai8"/>
+                                    <constraint firstItem="35H-wf-NoX" firstAttribute="leading" secondItem="QU7-pH-6qn" secondAttribute="leading" constant="40" id="b7c-Xo-kZQ"/>
+                                    <constraint firstItem="35H-wf-NoX" firstAttribute="top" secondItem="QU7-pH-6qn" secondAttribute="top" constant="100" id="cKg-vu-jqG"/>
+                                    <constraint firstAttribute="trailing" secondItem="35H-wf-NoX" secondAttribute="trailing" constant="40" id="nDU-Am-hXt"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9l3-Bs-C1e">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9l3-Bs-C1e">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -53,7 +61,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WD3-ng-EnN" customClass="MyAwsomeButton" customModule="Massimiliano" customModuleProvider="target">
-                                <rect key="frame" x="147" y="760" width="120" height="32"/>
+                                <rect key="frame" x="147" y="790" width="120" height="32"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="dyb-wI-ZdF"/>
@@ -91,19 +99,80 @@
                                     <action selector="clickedGetStarted:" destination="WqJ-ZP-WFI" eventType="touchUpInside" id="dAR-TG-j7G"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4uL-eS-fJ7">
+                                <rect key="frame" x="147" y="830" width="120" height="20"/>
+                                <subviews>
+                                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7g1-2E-Bv1" customClass="MyAwesomeView" customModule="Massimiliano" customModuleProvider="target">
+                                        <rect key="frame" x="56" y="6" width="8" height="8"/>
+                                        <color key="backgroundColor" red="0.047058823530000002" green="0.44705882349999998" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="8" id="URJ-1W-KHv"/>
+                                            <constraint firstAttribute="width" constant="8" id="ozh-Bm-VrG"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CrD-gB-KzE" customClass="MyAwesomeView" customModule="Massimiliano" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="6" width="8" height="8"/>
+                                        <color key="backgroundColor" red="0.047058823530000002" green="0.44705882349999998" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="8" id="JfE-4M-TAe"/>
+                                            <constraint firstAttribute="height" constant="8" id="XnQ-bK-cyr"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iXj-5j-Hot" customClass="MyAwesomeView" customModule="Massimiliano" customModuleProvider="target">
+                                        <rect key="frame" x="72" y="6" width="8" height="8"/>
+                                        <color key="backgroundColor" red="0.047058823530000002" green="0.44705882349999998" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="8" id="39y-7J-nrW"/>
+                                            <constraint firstAttribute="height" constant="8" id="5gc-0Y-JPY"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="iXj-5j-Hot" firstAttribute="centerY" secondItem="4uL-eS-fJ7" secondAttribute="centerY" id="8je-51-nC7"/>
+                                    <constraint firstAttribute="height" constant="20" id="Cj2-3P-6g7"/>
+                                    <constraint firstItem="7g1-2E-Bv1" firstAttribute="centerY" secondItem="4uL-eS-fJ7" secondAttribute="centerY" id="FSf-iZ-Xjd"/>
+                                    <constraint firstItem="7g1-2E-Bv1" firstAttribute="centerX" secondItem="4uL-eS-fJ7" secondAttribute="centerX" id="Ovt-BD-GTT"/>
+                                    <constraint firstItem="7g1-2E-Bv1" firstAttribute="leading" secondItem="CrD-gB-KzE" secondAttribute="trailing" constant="8" id="fH4-23-Fay"/>
+                                    <constraint firstItem="CrD-gB-KzE" firstAttribute="centerY" secondItem="4uL-eS-fJ7" secondAttribute="centerY" id="izd-wx-0PW"/>
+                                    <constraint firstAttribute="width" constant="120" id="llr-41-SH7"/>
+                                    <constraint firstItem="iXj-5j-Hot" firstAttribute="leading" secondItem="7g1-2E-Bv1" secondAttribute="trailing" constant="8" id="nTu-zi-VWh"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="QU7-pH-6qn" secondAttribute="bottom" id="C6A-He-qyV"/>
                             <constraint firstItem="QU7-pH-6qn" firstAttribute="top" secondItem="eXR-By-Odh" secondAttribute="top" id="Eoc-oh-NvM"/>
+                            <constraint firstItem="4uL-eS-fJ7" firstAttribute="top" secondItem="WD3-ng-EnN" secondAttribute="bottom" constant="8" id="OA8-Gu-hdm"/>
                             <constraint firstItem="WD3-ng-EnN" firstAttribute="centerX" secondItem="eXR-By-Odh" secondAttribute="centerX" id="RdA-QO-gXT"/>
+                            <constraint firstItem="4uL-eS-fJ7" firstAttribute="centerX" secondItem="eXR-By-Odh" secondAttribute="centerX" id="XqL-Qu-gO4"/>
                             <constraint firstItem="QU7-pH-6qn" firstAttribute="leading" secondItem="JkC-Cu-GGb" secondAttribute="leading" id="i8T-nG-786"/>
-                            <constraint firstItem="JkC-Cu-GGb" firstAttribute="bottom" secondItem="WD3-ng-EnN" secondAttribute="bottom" constant="70" id="rSO-2w-Yyo"/>
+                            <constraint firstItem="JkC-Cu-GGb" firstAttribute="bottom" secondItem="WD3-ng-EnN" secondAttribute="bottom" constant="40" id="rSO-2w-Yyo"/>
                             <constraint firstItem="QU7-pH-6qn" firstAttribute="trailing" secondItem="JkC-Cu-GGb" secondAttribute="trailing" id="tHC-lA-fJu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JkC-Cu-GGb"/>
                     </view>
                     <connections>
+                        <outlet property="iPhoneImage" destination="35H-wf-NoX" id="9aQ-fe-yaz"/>
+                        <outlet property="selection1" destination="CrD-gB-KzE" id="QZ6-S5-O3b"/>
+                        <outlet property="selection2" destination="7g1-2E-Bv1" id="HLm-SZ-SDt"/>
+                        <outlet property="selection3" destination="iXj-5j-Hot" id="Geu-qM-heH"/>
                         <outlet property="walkmeCollectionView" destination="9l3-Bs-C1e" id="Gvc-kx-ked"/>
                     </connections>
                 </viewController>
@@ -113,6 +182,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="iPhoneImage1" width="330" height="557"/>
         <image name="mainBackground" width="187.5" height="406"/>
     </resources>
 </document>
