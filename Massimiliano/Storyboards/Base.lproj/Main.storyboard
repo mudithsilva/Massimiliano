@@ -96,7 +96,7 @@
                     </view>
                     <connections>
                         <segue destination="FdW-gs-Ysb" kind="presentation" identifier="showNewUserPath" modalPresentationStyle="fullScreen" id="ac3-dX-IFH"/>
-                        <segue destination="IUX-GH-ApJ" kind="presentation" identifier="showHomePath" id="CST-oX-SPG"/>
+                        <segue destination="IUX-GH-ApJ" kind="presentation" identifier="showHomePath" modalPresentationStyle="fullScreen" id="CST-oX-SPG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

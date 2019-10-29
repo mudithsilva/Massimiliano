@@ -73,6 +73,7 @@
 		BA8B95D02365E9950043A79A /* WalkMeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B95CE2365E9950043A79A /* WalkMeCollectionViewCell.swift */; };
 		BA8B95D12365E9960043A79A /* WalkMeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8B95CF2365E9950043A79A /* WalkMeCollectionViewCell.xib */; };
 		BA8B95D42365EADC0043A79A /* WalkMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B95D32365EADC0043A79A /* WalkMeViewController.swift */; };
+		BA8B95D72366EE890043A79A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B95D62366EE890043A79A /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,7 @@
 		BA8B95CE2365E9950043A79A /* WalkMeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkMeCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA8B95CF2365E9950043A79A /* WalkMeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalkMeCollectionViewCell.xib; sourceTree = "<group>"; };
 		BA8B95D32365EADC0043A79A /* WalkMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkMeViewController.swift; sourceTree = "<group>"; };
+		BA8B95D62366EE890043A79A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CF2DD5AC52C7B5963CD02109 /* Pods_Massimiliano.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Massimiliano.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6422E066E38D9F930A231A1 /* Pods-Massimiliano.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Massimiliano.release.xcconfig"; path = "Pods/Target Support Files/Pods-Massimiliano/Pods-Massimiliano.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -299,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				BA8B95C72365E0D70043A79A /* LaunchViewController.swift */,
+				BA8B95D52366EE540043A79A /* Home View Controllers */,
 				BA8B95D22365EAC10043A79A /* NewUserPath */,
 			);
 			path = Controllers;
@@ -551,6 +554,14 @@
 			path = NewUserPath;
 			sourceTree = "<group>";
 		};
+		BA8B95D52366EE540043A79A /* Home View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA8B95D62366EE890043A79A /* HomeViewController.swift */,
+			);
+			path = "Home View Controllers";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -765,6 +776,7 @@
 				BA8B95B12365E04C0043A79A /* FormValidator.swift in Sources */,
 				BA8B95D02365E9950043A79A /* WalkMeCollectionViewCell.swift in Sources */,
 				BA8B95C52365E04C0043A79A /* SimpleLoadingView.swift in Sources */,
+				BA8B95D72366EE890043A79A /* HomeViewController.swift in Sources */,
 				BA8B95BC2365E04C0043A79A /* MyAwesomeTextView.swift in Sources */,
 				BA8B95AF2365E04C0043A79A /* DoubleExtension.swift in Sources */,
 				BA5B51052365870600BC128E /* AppDelegate.swift in Sources */,
