@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Regular.ttf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="q4n-4t-w7k">
@@ -15,7 +20,96 @@
                     <view key="view" contentMode="scaleToFill" id="XRn-Ql-0EA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjP-os-aUg" userLabel="Main View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQ6-KN-frL" userLabel="Search View" customClass="MyAwesomeView" customModule="Massimiliano" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="70" width="354" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="FmW-Ts-TwG">
+                                                <rect key="frame" x="20" y="17.5" width="15" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="XyL-Zc-aYp"/>
+                                                    <constraint firstAttribute="width" constant="15" id="ike-PS-1hk"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchRightIcon" translatesAutoresizingMaskIntoConstraints="NO" id="kc6-Ho-YmO">
+                                                <rect key="frame" x="329" y="17.5" width="15" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="9CQ-CK-vFM"/>
+                                                    <constraint firstAttribute="width" constant="15" id="Mbw-OZ-qiC"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search &quot; Happy &quot;" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w6z-7d-mLu" customClass="MyAwesomeTextField" customModule="Massimiliano" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
+                                                <color key="textColor" red="0.066666666669999999" green="0.36078431370000003" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftViewWidth">
+                                                        <real key="value" value="45"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                        <color key="value" red="0.066666666669999999" green="0.36078431370000003" blue="0.50588235290000005" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rightViewWidth">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="w6z-7d-mLu" firstAttribute="leading" secondItem="VQ6-KN-frL" secondAttribute="leading" id="1rl-EK-sXm"/>
+                                            <constraint firstAttribute="trailing" secondItem="w6z-7d-mLu" secondAttribute="trailing" id="31n-wj-g14"/>
+                                            <constraint firstAttribute="bottom" secondItem="w6z-7d-mLu" secondAttribute="bottom" id="3yp-fw-IxN"/>
+                                            <constraint firstItem="FmW-Ts-TwG" firstAttribute="leading" secondItem="VQ6-KN-frL" secondAttribute="leading" constant="20" id="IrE-u4-RXQ"/>
+                                            <constraint firstItem="FmW-Ts-TwG" firstAttribute="centerY" secondItem="VQ6-KN-frL" secondAttribute="centerY" id="JP0-tm-sAG"/>
+                                            <constraint firstAttribute="height" constant="50" id="Ou1-CI-EWE"/>
+                                            <constraint firstAttribute="trailing" secondItem="kc6-Ho-YmO" secondAttribute="trailing" constant="10" id="Pga-hb-DSL"/>
+                                            <constraint firstItem="kc6-Ho-YmO" firstAttribute="centerY" secondItem="VQ6-KN-frL" secondAttribute="centerY" id="eqY-gs-9tl"/>
+                                            <constraint firstItem="w6z-7d-mLu" firstAttribute="top" secondItem="VQ6-KN-frL" secondAttribute="top" id="p93-rT-nPg"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="0.066666666669999999" green="0.36078431370000003" blue="0.50588235290000005" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="addShaddow" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="offSetWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="offSetHeight">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="VQ6-KN-frL" firstAttribute="leading" secondItem="fjP-os-aUg" secondAttribute="leading" constant="30" id="CA6-hM-uMp"/>
+                                    <constraint firstItem="VQ6-KN-frL" firstAttribute="centerX" secondItem="fjP-os-aUg" secondAttribute="centerX" id="Wvv-Du-TB7"/>
+                                    <constraint firstItem="VQ6-KN-frL" firstAttribute="top" secondItem="fjP-os-aUg" secondAttribute="top" constant="70" id="lBT-4Q-xCh"/>
+                                    <constraint firstAttribute="trailing" secondItem="VQ6-KN-frL" secondAttribute="trailing" constant="30" id="ssi-2z-PwW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fjP-os-aUg" firstAttribute="trailing" secondItem="7MX-2P-ltv" secondAttribute="trailing" id="JQH-Kq-cK6"/>
+                            <constraint firstAttribute="bottom" secondItem="fjP-os-aUg" secondAttribute="bottom" id="QHt-yg-0Cg"/>
+                            <constraint firstItem="fjP-os-aUg" firstAttribute="leading" secondItem="7MX-2P-ltv" secondAttribute="leading" id="Zv6-qb-Adf"/>
+                            <constraint firstItem="fjP-os-aUg" firstAttribute="top" secondItem="XRn-Ql-0EA" secondAttribute="top" id="j05-Cp-L8Q"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7MX-2P-ltv"/>
                     </view>
                 </viewController>
@@ -24,4 +118,8 @@
             <point key="canvasLocation" x="132" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="searchIcon" width="14" height="14"/>
+        <image name="searchRightIcon" width="4" height="17"/>
+    </resources>
 </document>
