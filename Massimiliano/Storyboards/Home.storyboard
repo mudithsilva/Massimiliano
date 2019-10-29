@@ -21,10 +21,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Km8-46-ZPP">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Km8-46-ZPP" userLabel="Main View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yNq-4j-eMC" customClass="MyAwesomeView" customModule="Massimiliano" customModuleProvider="target">
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gF8-Cg-D8g" userLabel="Photos Tab">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="816"/>
+                                        <connections>
+                                            <segue destination="dIz-ep-qHL" kind="embed" id="Lvf-xB-3fC"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oar-9U-B7X" userLabel="Moods Tab">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="816"/>
+                                        <connections>
+                                            <segue destination="x4J-5c-Wfp" kind="embed" id="poZ-m8-WED"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XSe-4e-v3h" userLabel="Settings Tab">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="816"/>
+                                        <connections>
+                                            <segue destination="sWF-uB-L30" kind="embed" id="EHb-mR-ryi"/>
+                                        </connections>
+                                    </containerView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yNq-4j-eMC" userLabel="Bottom Tab View" customClass="MyAwesomeView" customModule="Massimiliano" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="816" width="414" height="80"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rUY-9K-I5k">
@@ -159,8 +177,20 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="oar-9U-B7X" firstAttribute="leading" secondItem="Km8-46-ZPP" secondAttribute="leading" id="2O3-AO-Jil"/>
                                     <constraint firstAttribute="trailing" secondItem="yNq-4j-eMC" secondAttribute="trailing" id="4mA-xz-gPC"/>
+                                    <constraint firstAttribute="trailing" secondItem="oar-9U-B7X" secondAttribute="trailing" id="5ry-yu-FVF"/>
+                                    <constraint firstItem="XSe-4e-v3h" firstAttribute="top" secondItem="Km8-46-ZPP" secondAttribute="top" id="9Nl-st-fsM"/>
+                                    <constraint firstItem="gF8-Cg-D8g" firstAttribute="leading" secondItem="Km8-46-ZPP" secondAttribute="leading" id="BM7-K4-LOy"/>
+                                    <constraint firstAttribute="trailing" secondItem="gF8-Cg-D8g" secondAttribute="trailing" id="E5h-HY-K76"/>
                                     <constraint firstItem="yNq-4j-eMC" firstAttribute="leading" secondItem="Km8-46-ZPP" secondAttribute="leading" id="FGO-a7-Wz9"/>
+                                    <constraint firstItem="yNq-4j-eMC" firstAttribute="top" secondItem="oar-9U-B7X" secondAttribute="bottom" id="FXd-OG-tQH"/>
+                                    <constraint firstItem="oar-9U-B7X" firstAttribute="top" secondItem="Km8-46-ZPP" secondAttribute="top" id="HsR-UZ-vUH"/>
+                                    <constraint firstAttribute="trailing" secondItem="XSe-4e-v3h" secondAttribute="trailing" id="L3Q-qB-TwG"/>
+                                    <constraint firstItem="XSe-4e-v3h" firstAttribute="leading" secondItem="Km8-46-ZPP" secondAttribute="leading" id="Xvl-7D-AjS"/>
+                                    <constraint firstItem="gF8-Cg-D8g" firstAttribute="top" secondItem="Km8-46-ZPP" secondAttribute="top" id="grM-dA-Dnf"/>
+                                    <constraint firstItem="yNq-4j-eMC" firstAttribute="top" secondItem="XSe-4e-v3h" secondAttribute="bottom" id="kFy-LR-Abu"/>
+                                    <constraint firstItem="yNq-4j-eMC" firstAttribute="top" secondItem="gF8-Cg-D8g" secondAttribute="bottom" id="mHQ-jh-npL"/>
                                     <constraint firstAttribute="bottom" secondItem="yNq-4j-eMC" secondAttribute="bottom" id="zKr-c3-AKq"/>
                                 </constraints>
                             </view>
@@ -175,10 +205,13 @@
                         <viewLayoutGuide key="safeArea" id="xeb-ce-dyp"/>
                     </view>
                     <connections>
+                        <outlet property="moodsTab" destination="oar-9U-B7X" id="V4U-KP-sxK"/>
                         <outlet property="moodsTabImg" destination="pON-bp-CMm" id="yhg-pX-h4m"/>
                         <outlet property="moodsTabLabel" destination="gaO-U9-dJp" id="Om8-zr-NvO"/>
                         <outlet property="photoTabImg" destination="NaY-hI-9v9" id="Xbt-xZ-Z6R"/>
                         <outlet property="photoTabLabel" destination="9Bj-yK-fHh" id="e0g-PY-r7w"/>
+                        <outlet property="photosTab" destination="gF8-Cg-D8g" id="qjh-lJ-YEF"/>
+                        <outlet property="settingsTab" destination="XSe-4e-v3h" id="lyM-cs-QDR"/>
                         <outlet property="settingsTabImg" destination="x7I-bt-k2g" id="Pu3-JO-F7x"/>
                         <outlet property="settingsTabLabel" destination="4GN-fc-wIa" id="Qga-oO-nNz"/>
                     </connections>
@@ -186,6 +219,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ml-vV-qsD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="105.79710144927537" y="95.758928571428569"/>
+        </scene>
+        <!--PhotosTab-->
+        <scene sceneID="g84-PR-gqK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PhotosTab" id="dIz-ep-qHL" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PcV-mU-uUt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="755" y="-196"/>
+        </scene>
+        <!--MoodsTab-->
+        <scene sceneID="pfD-ma-bdf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MoodsTab" id="x4J-5c-Wfp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n7I-as-cz4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="752" y="60"/>
+        </scene>
+        <!--SettingsTab-->
+        <scene sceneID="pqK-pt-z87">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SettingsTab" id="sWF-uB-L30" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uh8-9p-iV5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="759" y="387"/>
         </scene>
     </scenes>
     <resources>

@@ -10,6 +10,10 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var photosTab: UIView!
+    @IBOutlet weak var moodsTab: UIView!
+    @IBOutlet weak var settingsTab: UIView!
+    
     @IBOutlet weak var photoTabLabel: UILabel!
     @IBOutlet weak var moodsTabLabel: UILabel!
     @IBOutlet weak var settingsTabLabel: UILabel!
@@ -18,22 +22,30 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var moodsTabImg: UIImageView!
     @IBOutlet weak var settingsTabImg: UIImageView!
     
-    var selectedTabColor: UIColor = #colorLiteral(red: 0, green: 0.5355854034, blue: 0.9033754468, alpha: 1)
-    var deselectedTabColor: UIColor = #colorLiteral(red: 0.05042139441, green: 0.4379299283, blue: 0.5784627795, alpha: 1)
+    private let selectedTabColor: UIColor = #colorLiteral(red: 0, green: 0.5355854034, blue: 0.9033754468, alpha: 1)
+    private let deselectedTabColor: UIColor = #colorLiteral(red: 0.05042139441, green: 0.4379299283, blue: 0.5784627795, alpha: 1)
     
-    var photoTabSelectedImg: UIImage = #imageLiteral(resourceName: "photoTabSelected")
-    var photoTabDeselectImg: UIImage = #imageLiteral(resourceName: "photoTabDeselect")
+    private let photoTabSelectedImg: UIImage = #imageLiteral(resourceName: "photoTabSelected")
+    private let photoTabDeselectImg: UIImage = #imageLiteral(resourceName: "photoTabDeselect")
     
-    var moodsTabSelectedImg: UIImage = #imageLiteral(resourceName: "moodTabSelect")
-    var moodsTabDeselectedImg: UIImage = #imageLiteral(resourceName: "moodTabDeselect")
+    private let moodsTabSelectedImg: UIImage = #imageLiteral(resourceName: "moodTabSelect")
+    private let moodsTabDeselectedImg: UIImage = #imageLiteral(resourceName: "moodTabDeselect")
     
-    var settingsTabSelectedImg: UIImage = #imageLiteral(resourceName: "settingTabSelect")
-    var settingsTabDeselectedImg: UIImage = #imageLiteral(resourceName: "settingsTabDeselect")
+    private let settingsTabSelectedImg: UIImage = #imageLiteral(resourceName: "settingTabSelect")
+    private let settingsTabDeselectedImg: UIImage = #imageLiteral(resourceName: "settingsTabDeselect")
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.configTabView()
         // Do any additional setup after loading the view.
+    }
+    
+    func configTabView() {
+        self.photosTab.alpha = 0
+        self.moodsTab.alpha = 0
+        self.settingsTab.alpha = 0
+        
+        self.clickedPhotoTab(UIButton())
     }
     
     @IBAction func clickedPhotoTab(_ sender: Any) {
@@ -45,6 +57,10 @@ class HomeViewController: UIViewController {
         
         self.settingsTabLabel.textColor = self.deselectedTabColor
         self.settingsTabImg.image = self.settingsTabDeselectedImg
+        
+        self.photosTab.alpha = 1
+        self.moodsTab.alpha = 0
+        self.settingsTab.alpha = 0
     }
     
     @IBAction func clickedMoodsTab(_ sender: Any) {
@@ -56,6 +72,10 @@ class HomeViewController: UIViewController {
         
         self.settingsTabLabel.textColor = self.deselectedTabColor
         self.settingsTabImg.image = self.settingsTabDeselectedImg
+        
+        self.photosTab.alpha = 0
+        self.moodsTab.alpha = 1
+        self.settingsTab.alpha = 0
     }
     
     @IBAction func clickedSettingsTab(_ sender: Any) {
@@ -67,6 +87,10 @@ class HomeViewController: UIViewController {
         
         self.settingsTabLabel.textColor = self.selectedTabColor
         self.settingsTabImg.image = self.settingsTabSelectedImg
+        
+        self.photosTab.alpha = 0
+        self.moodsTab.alpha = 0
+        self.settingsTab.alpha = 1
     }
     
     

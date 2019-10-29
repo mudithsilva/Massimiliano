@@ -74,6 +74,9 @@
 		BA8B95D12365E9960043A79A /* WalkMeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8B95CF2365E9950043A79A /* WalkMeCollectionViewCell.xib */; };
 		BA8B95D42365EADC0043A79A /* WalkMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B95D32365EADC0043A79A /* WalkMeViewController.swift */; };
 		BA8B95D72366EE890043A79A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B95D62366EE890043A79A /* HomeViewController.swift */; };
+		BA8B95D9236845330043A79A /* PhotosTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8B95D8236845330043A79A /* PhotosTab.storyboard */; };
+		BA8B95DB236846120043A79A /* MoodsTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8B95DA236846120043A79A /* MoodsTab.storyboard */; };
+		BA8B95DD236846A30043A79A /* SettingsTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8B95DC236846A30043A79A /* SettingsTab.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +172,9 @@
 		BA8B95CF2365E9950043A79A /* WalkMeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalkMeCollectionViewCell.xib; sourceTree = "<group>"; };
 		BA8B95D32365EADC0043A79A /* WalkMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkMeViewController.swift; sourceTree = "<group>"; };
 		BA8B95D62366EE890043A79A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BA8B95D8236845330043A79A /* PhotosTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotosTab.storyboard; sourceTree = "<group>"; };
+		BA8B95DA236846120043A79A /* MoodsTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoodsTab.storyboard; sourceTree = "<group>"; };
+		BA8B95DC236846A30043A79A /* SettingsTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsTab.storyboard; sourceTree = "<group>"; };
 		CF2DD5AC52C7B5963CD02109 /* Pods_Massimiliano.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Massimiliano.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6422E066E38D9F930A231A1 /* Pods-Massimiliano.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Massimiliano.release.xcconfig"; path = "Pods/Target Support Files/Pods-Massimiliano/Pods-Massimiliano.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -329,6 +335,9 @@
 				BA5B510D2365870800BC128E /* LaunchScreen.storyboard */,
 				BA8B95C92365E1700043A79A /* NewUserPath.storyboard */,
 				BA8B95CB2365E19C0043A79A /* Home.storyboard */,
+				BA8B95D8236845330043A79A /* PhotosTab.storyboard */,
+				BA8B95DA236846120043A79A /* MoodsTab.storyboard */,
+				BA8B95DC236846A30043A79A /* SettingsTab.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -670,6 +679,8 @@
 			files = (
 				BA8B95412365DBF50043A79A /* SFProDisplay-BlackItalic.ttf in Resources */,
 				BA8B953C2365DBF50043A79A /* SFProDisplay-ThinItalic.ttf in Resources */,
+				BA8B95D9236845330043A79A /* PhotosTab.storyboard in Resources */,
+				BA8B95DB236846120043A79A /* MoodsTab.storyboard in Resources */,
 				BA8B95AB2365E04C0043A79A /* dismissViewOverlay.png in Resources */,
 				BA8B95632365DBF50043A79A /* SFProDisplay-UltralightItalic.ttf in Resources */,
 				BA8B953F2365DBF50043A79A /* SFProDisplay-Light.ttf in Resources */,
@@ -694,6 +705,7 @@
 				BA8B95352365DBF50043A79A /* SFProDisplay-BoldItalic.ttf in Resources */,
 				BA8B95C62365E04C0043A79A /* SimpleLoadingView.xib in Resources */,
 				BA8B95402365DBF50043A79A /* SFProDisplay-Regular.ttf in Resources */,
+				BA8B95DD236846A30043A79A /* SettingsTab.storyboard in Resources */,
 				BA8B95312365DBF50043A79A /* SFProDisplay-SemiboldItalic.ttf in Resources */,
 				BA8B955C2365DBF50043A79A /* SFProDisplay-Heavy.ttf in Resources */,
 				BA8B95372365DBF50043A79A /* SFProDisplay-Black.ttf in Resources */,
