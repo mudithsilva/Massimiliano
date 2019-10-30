@@ -65,6 +65,12 @@ import UIKit
         }
     }
     
+    @IBInspectable public var addBlurView: Bool = false {
+        didSet {
+            self.addBlurEffect()
+        }
+    }
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -85,6 +91,14 @@ import UIKit
         }
     }
     
+    public func addBlurEffect() {
+        if addBlurView {
+            let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+            visualEffectView.frame = self.bounds
+            self.addSubview(visualEffectView)
+        }
+    }
+    
 //     func roundCorners(_ corners: CACornerMask, radius: CGFloat, borderColor: UIColor, borderWidth: CGFloat) {
 //         self.layer.maskedCorners = corners
 //         self.layer.cornerRadius = radius
@@ -102,6 +116,7 @@ import UIKit
     //    CGRect
     //    UIColor
     //    UIImage
+
 }
 
 

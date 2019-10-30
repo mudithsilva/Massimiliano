@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -16,10 +17,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--PhotosTabViewController-->
         <scene sceneID="qYU-VH-yy1">
             <objects>
-                <viewController id="rEU-au-GrM" sceneMemberID="viewController">
+                <viewController restorationIdentifier="PhotosTabViewController" storyboardIdentifier="PhotosTabViewController" title="PhotosTabViewController" id="rEU-au-GrM" customClass="PhotosTabViewController" customModule="Massimiliano" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tib-Vc-LJp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,11 +141,11 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#happytimes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjY-jn-WSE">
-                                                                <rect key="frame" x="19" y="64" width="62" height="12"/>
+                                                                <rect key="frame" x="17" y="64" width="66" height="12"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="12" id="yLz-fq-8gB"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="11"/>
+                                                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
                                                                 <color key="textColor" red="0.066666666669999999" green="0.36078431370000003" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -189,11 +190,11 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#excitements" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drb-tL-5da">
-                                                                <rect key="frame" x="17.5" y="64" width="64.5" height="12"/>
+                                                                <rect key="frame" x="15.5" y="64" width="68.5" height="12"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="12" id="svZ-oY-zTe"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="11"/>
+                                                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
                                                                 <color key="textColor" red="0.066666666669999999" green="0.36078431370000003" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -238,11 +239,11 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#sadtimes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNW-yM-Q7d">
-                                                                <rect key="frame" x="25" y="64" width="50" height="12"/>
+                                                                <rect key="frame" x="23.5" y="64" width="53" height="12"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="12" id="dzs-OL-wYh"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="11"/>
+                                                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
                                                                 <color key="textColor" red="0.066666666669999999" green="0.36078431370000003" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -287,11 +288,11 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#surprices" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0j-EY-37P">
-                                                                <rect key="frame" x="24.5" y="64" width="50.5" height="12"/>
+                                                                <rect key="frame" x="23" y="64" width="53.5" height="12"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="12" id="bF5-J6-R1S"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="11"/>
+                                                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
                                                                 <color key="textColor" red="0.066666666669999999" green="0.36078431370000003" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -325,6 +326,30 @@
                                             <constraint firstAttribute="height" constant="1" id="PeP-qL-4y4"/>
                                         </constraints>
                                     </view>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0oP-tc-c2z">
+                                        <rect key="frame" x="0.0" y="275" width="414" height="621"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="tD1-4y-6fV">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="QBF-He-d8V">
+                                                <rect key="frame" x="0.0" y="5" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nV0-Pt-K36">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionViewCellContentView>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="rEU-au-GrM" id="sUb-wB-xnO"/>
+                                            <outlet property="delegate" destination="rEU-au-GrM" id="gyp-ha-qIp"/>
+                                        </connections>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -333,10 +358,14 @@
                                     <constraint firstItem="fsm-kU-9kE" firstAttribute="top" secondItem="lQE-aX-rZV" secondAttribute="top" constant="70" id="LJC-ns-Kad"/>
                                     <constraint firstAttribute="trailing" secondItem="fsm-kU-9kE" secondAttribute="trailing" constant="30" id="QI7-oc-eFb"/>
                                     <constraint firstAttribute="trailing" secondItem="sjg-rV-Om1" secondAttribute="trailing" id="VoE-6y-zmh"/>
+                                    <constraint firstItem="0oP-tc-c2z" firstAttribute="top" secondItem="sjg-rV-Om1" secondAttribute="bottom" constant="4" id="dTe-4u-Xcf"/>
                                     <constraint firstAttribute="trailing" secondItem="zxY-pX-go6" secondAttribute="trailing" id="k4c-sW-Tfd"/>
+                                    <constraint firstAttribute="bottom" secondItem="0oP-tc-c2z" secondAttribute="bottom" id="lOn-6X-HY0"/>
                                     <constraint firstItem="fsm-kU-9kE" firstAttribute="centerX" secondItem="lQE-aX-rZV" secondAttribute="centerX" id="lPC-c4-64B"/>
+                                    <constraint firstItem="0oP-tc-c2z" firstAttribute="leading" secondItem="lQE-aX-rZV" secondAttribute="leading" id="lcE-pk-I95"/>
                                     <constraint firstItem="zxY-pX-go6" firstAttribute="top" secondItem="fsm-kU-9kE" secondAttribute="bottom" constant="20" id="tLY-AO-PXF"/>
                                     <constraint firstItem="zxY-pX-go6" firstAttribute="leading" secondItem="lQE-aX-rZV" secondAttribute="leading" id="x81-D3-56j"/>
+                                    <constraint firstAttribute="trailing" secondItem="0oP-tc-c2z" secondAttribute="trailing" id="yQK-kS-uMe"/>
                                     <constraint firstItem="sjg-rV-Om1" firstAttribute="leading" secondItem="lQE-aX-rZV" secondAttribute="leading" id="zqe-dg-8Kt"/>
                                 </constraints>
                             </view>
@@ -350,6 +379,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1qu-Yj-Z6B"/>
                     </view>
+                    <connections>
+                        <outlet property="galleryImageCollectionView" destination="0oP-tc-c2z" id="ZDP-e4-A96"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jcS-GL-Hu9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

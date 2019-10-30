@@ -77,6 +77,12 @@
 		BA8B95D9236845330043A79A /* PhotosTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8B95D8236845330043A79A /* PhotosTab.storyboard */; };
 		BA8B95DB236846120043A79A /* MoodsTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8B95DA236846120043A79A /* MoodsTab.storyboard */; };
 		BA8B95DD236846A30043A79A /* SettingsTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8B95DC236846A30043A79A /* SettingsTab.storyboard */; };
+		BA8B95E22369B7AA0043A79A /* PhotoGalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B95E02369B7AA0043A79A /* PhotoGalleryCollectionViewCell.swift */; };
+		BA8B95E32369B7AA0043A79A /* PhotoGalleryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8B95E12369B7AA0043A79A /* PhotoGalleryCollectionViewCell.xib */; };
+		BA8B95E62369B8940043A79A /* PhotosTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B95E52369B8940043A79A /* PhotosTabViewController.swift */; };
+		BA8B95EA2369BE710043A79A /* MoodsSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B95E82369BE710043A79A /* MoodsSectionCollectionViewCell.swift */; };
+		BA8B95EB2369BE710043A79A /* MoodsSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8B95E92369BE710043A79A /* MoodsSectionCollectionViewCell.xib */; };
+		BA8B95EE2369C0290043A79A /* MoodsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B95ED2369C0290043A79A /* MoodsTabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +181,12 @@
 		BA8B95D8236845330043A79A /* PhotosTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotosTab.storyboard; sourceTree = "<group>"; };
 		BA8B95DA236846120043A79A /* MoodsTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoodsTab.storyboard; sourceTree = "<group>"; };
 		BA8B95DC236846A30043A79A /* SettingsTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsTab.storyboard; sourceTree = "<group>"; };
+		BA8B95E02369B7AA0043A79A /* PhotoGalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		BA8B95E12369B7AA0043A79A /* PhotoGalleryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoGalleryCollectionViewCell.xib; sourceTree = "<group>"; };
+		BA8B95E52369B8940043A79A /* PhotosTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTabViewController.swift; sourceTree = "<group>"; };
+		BA8B95E82369BE710043A79A /* MoodsSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodsSectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		BA8B95E92369BE710043A79A /* MoodsSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoodsSectionCollectionViewCell.xib; sourceTree = "<group>"; };
+		BA8B95ED2369C0290043A79A /* MoodsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodsTabViewController.swift; sourceTree = "<group>"; };
 		CF2DD5AC52C7B5963CD02109 /* Pods_Massimiliano.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Massimiliano.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6422E066E38D9F930A231A1 /* Pods-Massimiliano.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Massimiliano.release.xcconfig"; path = "Pods/Target Support Files/Pods-Massimiliano/Pods-Massimiliano.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -307,6 +319,8 @@
 			isa = PBXGroup;
 			children = (
 				BA8B95C72365E0D70043A79A /* LaunchViewController.swift */,
+				BA8B95EC2369C00B0043A79A /* Moods Tab */,
+				BA8B95E42369B8670043A79A /* Photos Tab */,
 				BA8B95D52366EE540043A79A /* Home View Controllers */,
 				BA8B95D22365EAC10043A79A /* NewUserPath */,
 			);
@@ -316,6 +330,7 @@
 		BA8B95662365DFBF0043A79A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BA8B95DE2369B7820043A79A /* Tabs */,
 				BA8B95CD2365E96E0043A79A /* WalkMe */,
 			);
 			path = Views;
@@ -571,6 +586,49 @@
 			path = "Home View Controllers";
 			sourceTree = "<group>";
 		};
+		BA8B95DE2369B7820043A79A /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				BA8B95DF2369B78D0043A79A /* Photos Tab */,
+				BA8B95E72369BDEA0043A79A /* Moods Tab */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		BA8B95DF2369B78D0043A79A /* Photos Tab */ = {
+			isa = PBXGroup;
+			children = (
+				BA8B95E02369B7AA0043A79A /* PhotoGalleryCollectionViewCell.swift */,
+				BA8B95E12369B7AA0043A79A /* PhotoGalleryCollectionViewCell.xib */,
+			);
+			path = "Photos Tab";
+			sourceTree = "<group>";
+		};
+		BA8B95E42369B8670043A79A /* Photos Tab */ = {
+			isa = PBXGroup;
+			children = (
+				BA8B95E52369B8940043A79A /* PhotosTabViewController.swift */,
+			);
+			path = "Photos Tab";
+			sourceTree = "<group>";
+		};
+		BA8B95E72369BDEA0043A79A /* Moods Tab */ = {
+			isa = PBXGroup;
+			children = (
+				BA8B95E82369BE710043A79A /* MoodsSectionCollectionViewCell.swift */,
+				BA8B95E92369BE710043A79A /* MoodsSectionCollectionViewCell.xib */,
+			);
+			path = "Moods Tab";
+			sourceTree = "<group>";
+		};
+		BA8B95EC2369C00B0043A79A /* Moods Tab */ = {
+			isa = PBXGroup;
+			children = (
+				BA8B95ED2369C0290043A79A /* MoodsTabViewController.swift */,
+			);
+			path = "Moods Tab";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -701,9 +759,11 @@
 				BA8B95362365DBF50043A79A /* SFProDisplay-Medium.ttf in Resources */,
 				BA8B95A42365E04C0043A79A /* menuButton.png in Resources */,
 				BA8B955E2365DBF50043A79A /* SFProDisplay-LightItalic.ttf in Resources */,
+				BA8B95E32369B7AA0043A79A /* PhotoGalleryCollectionViewCell.xib in Resources */,
 				BA8B95CC2365E19C0043A79A /* Home.storyboard in Resources */,
 				BA8B95352365DBF50043A79A /* SFProDisplay-BoldItalic.ttf in Resources */,
 				BA8B95C62365E04C0043A79A /* SimpleLoadingView.xib in Resources */,
+				BA8B95EB2369BE710043A79A /* MoodsSectionCollectionViewCell.xib in Resources */,
 				BA8B95402365DBF50043A79A /* SFProDisplay-Regular.ttf in Resources */,
 				BA8B95DD236846A30043A79A /* SettingsTab.storyboard in Resources */,
 				BA8B95312365DBF50043A79A /* SFProDisplay-SemiboldItalic.ttf in Resources */,
@@ -797,6 +857,7 @@
 				BA8B95B72365E04C0043A79A /* TagFlowLayout.swift in Sources */,
 				BA8B95AD2365E04C0043A79A /* DateExtension.swift in Sources */,
 				BA8B95C02365E04C0043A79A /* NoDataView.swift in Sources */,
+				BA8B95E22369B7AA0043A79A /* PhotoGalleryCollectionViewCell.swift in Sources */,
 				BA8B95A82365E04C0043A79A /* SwiftySideMenuInfo.swift in Sources */,
 				BA8B95B02365E04C0043A79A /* UIImageExtension.swift in Sources */,
 				BA8B95AA2365E04C0043A79A /* SwiftySideMenuDataSource.swift in Sources */,
@@ -805,11 +866,14 @@
 				BA8B95A62365E04C0043A79A /* SwiftySideMenuChildViewControllers.swift in Sources */,
 				BA8B95B62365E04C0043A79A /* AppStoryboard.swift in Sources */,
 				BA8B95D42365EADC0043A79A /* WalkMeViewController.swift in Sources */,
+				BA8B95EE2369C0290043A79A /* MoodsTabViewController.swift in Sources */,
 				BA8B95AE2365E04C0043A79A /* NotificationTypes.swift in Sources */,
 				BA8B95A52365E04C0043A79A /* SwiftySideMenuImageView.swift in Sources */,
+				BA8B95E62369B8940043A79A /* PhotosTabViewController.swift in Sources */,
 				BA8B95B32365E04C0043A79A /* EasySwitchDelegate.swift in Sources */,
 				BA8B95A72365E04C0043A79A /* SwiftySideMenuViewController.swift in Sources */,
 				BA8B95A32365E04C0043A79A /* SwiftySideMenuHelper.swift in Sources */,
+				BA8B95EA2369BE710043A79A /* MoodsSectionCollectionViewCell.swift in Sources */,
 				BA8B95B52365E04C0043A79A /* EasySwitch.swift in Sources */,
 				BA8B95C82365E0D70043A79A /* LaunchViewController.swift in Sources */,
 				BA8B95BB2365E04C0043A79A /* MyAwsomeButton.swift in Sources */,

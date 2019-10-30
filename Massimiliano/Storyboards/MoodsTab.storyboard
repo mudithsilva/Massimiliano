@@ -5,18 +5,22 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="SFProDisplay-Regular.ttf">
             <string>SFProDisplay-Regular</string>
         </array>
+        <array key="SFProDisplay-Semibold.ttf">
+            <string>SFProDisplay-Semibold</string>
+        </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--MoodsTabViewController-->
         <scene sceneID="q4n-4t-w7k">
             <objects>
-                <viewController id="SDZ-ne-JHM" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MoodsTabViewController" storyboardIdentifier="MoodsTabViewController" title="MoodsTabViewController" id="SDZ-ne-JHM" customClass="MoodsTabViewController" customModule="Massimiliano" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XRn-Ql-0EA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,13 +97,51 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR MOODS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h63-Hv-xGd">
+                                        <rect key="frame" x="30" y="150" width="82.5" height="14"/>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="12"/>
+                                        <color key="textColor" red="0.066666666669999999" green="0.36078431370000003" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="D08-kf-VqH">
+                                        <rect key="frame" x="0.0" y="184" width="414" height="300"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="vdF-gi-HJ4"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CHq-45-w3V">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dB7-E9-N5g">
+                                                <rect key="frame" x="30" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QQA-e5-MIm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionViewCellContentView>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="SDZ-ne-JHM" id="B4y-Ly-gYr"/>
+                                            <outlet property="delegate" destination="SDZ-ne-JHM" id="Cjr-ZF-Io2"/>
+                                        </connections>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="VQ6-KN-frL" firstAttribute="leading" secondItem="fjP-os-aUg" secondAttribute="leading" constant="30" id="CA6-hM-uMp"/>
+                                    <constraint firstItem="h63-Hv-xGd" firstAttribute="leading" secondItem="fjP-os-aUg" secondAttribute="leading" constant="30" id="J8O-ke-6xr"/>
+                                    <constraint firstItem="D08-kf-VqH" firstAttribute="top" secondItem="h63-Hv-xGd" secondAttribute="bottom" constant="20" id="UZo-IH-bBM"/>
                                     <constraint firstItem="VQ6-KN-frL" firstAttribute="centerX" secondItem="fjP-os-aUg" secondAttribute="centerX" id="Wvv-Du-TB7"/>
+                                    <constraint firstItem="h63-Hv-xGd" firstAttribute="top" secondItem="VQ6-KN-frL" secondAttribute="bottom" constant="30" id="ix4-Ze-xAY"/>
                                     <constraint firstItem="VQ6-KN-frL" firstAttribute="top" secondItem="fjP-os-aUg" secondAttribute="top" constant="70" id="lBT-4Q-xCh"/>
                                     <constraint firstAttribute="trailing" secondItem="VQ6-KN-frL" secondAttribute="trailing" constant="30" id="ssi-2z-PwW"/>
+                                    <constraint firstItem="D08-kf-VqH" firstAttribute="leading" secondItem="fjP-os-aUg" secondAttribute="leading" id="tMc-aP-0ek"/>
+                                    <constraint firstAttribute="trailing" secondItem="D08-kf-VqH" secondAttribute="trailing" id="vCE-uF-Qbn"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -112,10 +154,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7MX-2P-ltv"/>
                     </view>
+                    <connections>
+                        <outlet property="moodsCollectionView" destination="D08-kf-VqH" id="Od2-Nh-C0C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LqZ-3T-ScV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="139"/>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
     </scenes>
     <resources>
