@@ -26,7 +26,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="331" height="491"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1f-wj-vz0">
-                                <rect key="frame" x="20" y="50" width="291" height="29"/>
+                                <rect key="frame" x="20" y="30" width="291" height="29"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="24"/>
                                 <color key="textColor" red="0.44705882349999998" green="0.50196078430000002" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -36,7 +37,7 @@
                         <constraints>
                             <constraint firstItem="c1f-wj-vz0" firstAttribute="leading" secondItem="2lz-JO-WeM" secondAttribute="leading" constant="20" id="1wO-tZ-Fny"/>
                             <constraint firstAttribute="trailing" secondItem="c1f-wj-vz0" secondAttribute="trailing" constant="20" id="h5D-kv-DV2"/>
-                            <constraint firstItem="c1f-wj-vz0" firstAttribute="top" secondItem="2lz-JO-WeM" secondAttribute="top" constant="50" id="zv1-eo-yo1"/>
+                            <constraint firstItem="c1f-wj-vz0" firstAttribute="top" secondItem="2lz-JO-WeM" secondAttribute="top" constant="30" id="zv1-eo-yo1"/>
                         </constraints>
                     </view>
                 </subviews>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class LaunchViewController: UIViewController {
     
@@ -29,21 +30,26 @@ class LaunchViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if (self.didShowWalkMe) {
-            self.performSegue(withIdentifier: "showHomePath", sender: nil)
+            self.loadGalleryPhotos()
+            //self.performSegue(withIdentifier: "showHomePath", sender: nil)
         } else {
             self.performSegue(withIdentifier: "showNewUserPath", sender: nil)
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func loadGalleryPhotos() {
+        PHPhotoLibrary.requestAuthorization { (status) in
+            switch status {
+            case .notDetermined, .restricted, .denied, .authorized:
+                DispatchQueue.main.async {
+                  self.performSegue(withIdentifier: "showHomePath", sender: nil)
+                }
+            @unknown default:
+                print("Error!")
+                fatalError()
+            }
+        }
     }
-    */
+    
 
 }

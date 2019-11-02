@@ -32,7 +32,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="uQC-Gf-HR1" firstAttribute="top" secondItem="QU7-pH-6qn" secondAttribute="top" id="1hM-DI-liu"/>
                                     <constraint firstAttribute="trailing" secondItem="uQC-Gf-HR1" secondAttribute="trailing" id="2nK-e4-1Qu"/>
@@ -44,9 +44,8 @@
                                     <constraint firstAttribute="trailing" secondItem="35H-wf-NoX" secondAttribute="trailing" constant="40" id="nDU-Am-hXt"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9l3-Bs-C1e">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9l3-Bs-C1e">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zEr-OD-odc">
                                     <size key="itemSize" width="415" height="896"/>
@@ -155,15 +154,19 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="9l3-Bs-C1e" firstAttribute="top" secondItem="eXR-By-Odh" secondAttribute="top" id="Bho-l8-XJT"/>
                             <constraint firstAttribute="bottom" secondItem="QU7-pH-6qn" secondAttribute="bottom" id="C6A-He-qyV"/>
                             <constraint firstItem="QU7-pH-6qn" firstAttribute="top" secondItem="eXR-By-Odh" secondAttribute="top" id="Eoc-oh-NvM"/>
+                            <constraint firstItem="9l3-Bs-C1e" firstAttribute="leading" secondItem="JkC-Cu-GGb" secondAttribute="leading" id="Lkd-3E-C1x"/>
                             <constraint firstItem="4uL-eS-fJ7" firstAttribute="top" secondItem="WD3-ng-EnN" secondAttribute="bottom" constant="8" id="OA8-Gu-hdm"/>
                             <constraint firstItem="WD3-ng-EnN" firstAttribute="centerX" secondItem="eXR-By-Odh" secondAttribute="centerX" id="RdA-QO-gXT"/>
+                            <constraint firstItem="9l3-Bs-C1e" firstAttribute="trailing" secondItem="JkC-Cu-GGb" secondAttribute="trailing" id="Xc3-yk-Ye2"/>
                             <constraint firstItem="4uL-eS-fJ7" firstAttribute="centerX" secondItem="eXR-By-Odh" secondAttribute="centerX" id="XqL-Qu-gO4"/>
                             <constraint firstItem="QU7-pH-6qn" firstAttribute="leading" secondItem="JkC-Cu-GGb" secondAttribute="leading" id="i8T-nG-786"/>
                             <constraint firstItem="JkC-Cu-GGb" firstAttribute="bottom" secondItem="WD3-ng-EnN" secondAttribute="bottom" constant="40" id="rSO-2w-Yyo"/>
+                            <constraint firstAttribute="bottom" secondItem="9l3-Bs-C1e" secondAttribute="bottom" id="rjb-oh-K8I"/>
                             <constraint firstItem="QU7-pH-6qn" firstAttribute="trailing" secondItem="JkC-Cu-GGb" secondAttribute="trailing" id="tHC-lA-fJu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JkC-Cu-GGb"/>

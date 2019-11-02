@@ -83,6 +83,8 @@
 		BA8B95EA2369BE710043A79A /* MoodsSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B95E82369BE710043A79A /* MoodsSectionCollectionViewCell.swift */; };
 		BA8B95EB2369BE710043A79A /* MoodsSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8B95E92369BE710043A79A /* MoodsSectionCollectionViewCell.xib */; };
 		BA8B95EE2369C0290043A79A /* MoodsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B95ED2369C0290043A79A /* MoodsTabViewController.swift */; };
+		BA8F0611236E2671007597F5 /* PhotoEmotionCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8F0610236E2671007597F5 /* PhotoEmotionCaptureViewController.swift */; };
+		BA8F0613236E2B2E007597F5 /* ImageWithEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8F0612236E2B2E007597F5 /* ImageWithEmotion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +189,8 @@
 		BA8B95E82369BE710043A79A /* MoodsSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodsSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA8B95E92369BE710043A79A /* MoodsSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoodsSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		BA8B95ED2369C0290043A79A /* MoodsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodsTabViewController.swift; sourceTree = "<group>"; };
+		BA8F0610236E2671007597F5 /* PhotoEmotionCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEmotionCaptureViewController.swift; sourceTree = "<group>"; };
+		BA8F0612236E2B2E007597F5 /* ImageWithEmotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWithEmotion.swift; sourceTree = "<group>"; };
 		CF2DD5AC52C7B5963CD02109 /* Pods_Massimiliano.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Massimiliano.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6422E066E38D9F930A231A1 /* Pods-Massimiliano.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Massimiliano.release.xcconfig"; path = "Pods/Target Support Files/Pods-Massimiliano/Pods-Massimiliano.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -339,6 +343,7 @@
 		BA8B95672365DFC60043A79A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BA8F0612236E2B2E007597F5 /* ImageWithEmotion.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -608,6 +613,7 @@
 			isa = PBXGroup;
 			children = (
 				BA8B95E52369B8940043A79A /* PhotosTabViewController.swift */,
+				BA8F0610236E2671007597F5 /* PhotoEmotionCaptureViewController.swift */,
 			);
 			path = "Photos Tab";
 			sourceTree = "<group>";
@@ -850,6 +856,7 @@
 				BA8B95C52365E04C0043A79A /* SimpleLoadingView.swift in Sources */,
 				BA8B95D72366EE890043A79A /* HomeViewController.swift in Sources */,
 				BA8B95BC2365E04C0043A79A /* MyAwesomeTextView.swift in Sources */,
+				BA8F0611236E2671007597F5 /* PhotoEmotionCaptureViewController.swift in Sources */,
 				BA8B95AF2365E04C0043A79A /* DoubleExtension.swift in Sources */,
 				BA5B51052365870600BC128E /* AppDelegate.swift in Sources */,
 				BA8B95C32365E04C0043A79A /* AlertController.swift in Sources */,
@@ -879,6 +886,7 @@
 				BA8B95BB2365E04C0043A79A /* MyAwsomeButton.swift in Sources */,
 				BA8B95B22365E04C0043A79A /* UILabelExtension.swift in Sources */,
 				BA8B95B82365E04C0043A79A /* AppData.swift in Sources */,
+				BA8F0613236E2B2E007597F5 /* ImageWithEmotion.swift in Sources */,
 				BA8B95B92365E04C0043A79A /* ArrayExtension.swift in Sources */,
 				BA8B95C22365E04C0043A79A /* CameraHandler.swift in Sources */,
 				BA8B95BE2365E04C0043A79A /* MyGradientView.swift in Sources */,

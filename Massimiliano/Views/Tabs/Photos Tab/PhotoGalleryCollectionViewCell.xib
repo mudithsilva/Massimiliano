@@ -23,13 +23,23 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ur6-RO-K3b">
                                 <rect key="frame" x="0.0" y="0.0" width="304" height="539"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pI-IR-tfW">
+                                <rect key="frame" x="0.0" y="0.0" width="304" height="539"/>
+                                <connections>
+                                    <action selector="clickedImage:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Uje-Ug-WIg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="0pI-IR-tfW" firstAttribute="top" secondItem="mHd-Ie-COC" secondAttribute="top" id="1pa-1v-juC"/>
+                            <constraint firstAttribute="bottom" secondItem="0pI-IR-tfW" secondAttribute="bottom" id="CFB-vf-K5f"/>
+                            <constraint firstItem="0pI-IR-tfW" firstAttribute="leading" secondItem="mHd-Ie-COC" secondAttribute="leading" id="PrZ-eS-NXT"/>
                             <constraint firstAttribute="bottom" secondItem="Ur6-RO-K3b" secondAttribute="bottom" id="RpY-gl-QQE"/>
                             <constraint firstItem="Ur6-RO-K3b" firstAttribute="leading" secondItem="mHd-Ie-COC" secondAttribute="leading" id="cT6-LO-bIf"/>
                             <constraint firstAttribute="trailing" secondItem="Ur6-RO-K3b" secondAttribute="trailing" id="hUX-I8-wLR"/>
                             <constraint firstItem="Ur6-RO-K3b" firstAttribute="top" secondItem="mHd-Ie-COC" secondAttribute="top" id="mjA-dU-gG4"/>
+                            <constraint firstAttribute="trailing" secondItem="0pI-IR-tfW" secondAttribute="trailing" id="urm-tL-OFR"/>
                         </constraints>
                     </view>
                 </subviews>

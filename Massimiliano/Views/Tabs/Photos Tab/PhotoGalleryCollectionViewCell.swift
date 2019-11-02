@@ -11,6 +11,9 @@ import UIKit
 class PhotoGalleryCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var galleryImage: UIImageView!
+    
+    var parentVC: PhotosTabViewController!
+    var identifier: String!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +22,10 @@ class PhotoGalleryCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         self.galleryImage.image = UIImage(named: "") // Add Placeholder Image
+    }
+    
+    @IBAction func clickedImage(_ sender: Any) {
+        self.parentVC.showImageEmotionView(image: self.galleryImage.image!, identifier: self.identifier)
     }
 
 }
