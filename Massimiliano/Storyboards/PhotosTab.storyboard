@@ -382,7 +382,7 @@
                     <navigationItem key="navigationItem" id="aqk-rT-IWD"/>
                     <connections>
                         <outlet property="galleryImageCollectionView" destination="0oP-tc-c2z" id="ZDP-e4-A96"/>
-                        <segue destination="bZI-bD-gwl" kind="show" identifier="showPhotoView" id="XmZ-V8-IqT"/>
+                        <segue destination="bZI-bD-gwl" kind="presentation" identifier="showPhotoView" modalPresentationStyle="fullScreen" id="XmZ-V8-IqT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jcS-GL-Hu9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -401,7 +401,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DmJ-DT-6F0">
-                                        <rect key="frame" x="0.0" y="80" width="414" height="736"/>
+                                        <rect key="frame" x="0.0" y="80" width="414" height="756"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cS-eR-VWb" userLabel="Back Button View">
                                         <rect key="frame" x="23" y="39" width="30" height="30"/>
@@ -461,13 +461,28 @@
                                             <constraint firstAttribute="trailing" secondItem="960-Jk-P6e" secondAttribute="trailing" id="qsa-kT-sHL"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWc-Ht-ELd" userLabel="Camera Preview" customClass="MyAwesomeView" customModule="Massimiliano" customModuleProvider="target">
+                                        <rect key="frame" x="167" y="726" width="80" height="80"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="5cN-ku-7ya"/>
+                                            <constraint firstAttribute="width" constant="80" id="hDH-b8-hYc"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="DmJ-DT-6F0" firstAttribute="top" secondItem="Pax-nc-hyl" secondAttribute="top" constant="80" id="6WF-xQ-cRL"/>
+                                    <constraint firstAttribute="bottom" secondItem="DWc-Ht-ELd" secondAttribute="bottom" constant="90" id="FQU-4w-QE7"/>
                                     <constraint firstItem="DmJ-DT-6F0" firstAttribute="leading" secondItem="Pax-nc-hyl" secondAttribute="leading" id="PTO-qB-tm0"/>
+                                    <constraint firstItem="DWc-Ht-ELd" firstAttribute="centerX" secondItem="Pax-nc-hyl" secondAttribute="centerX" id="SgZ-fv-Cu1"/>
                                     <constraint firstAttribute="trailing" secondItem="DmJ-DT-6F0" secondAttribute="trailing" id="Zvt-Nv-NZY"/>
-                                    <constraint firstAttribute="bottom" secondItem="DmJ-DT-6F0" secondAttribute="bottom" constant="80" id="aTD-dS-D15"/>
+                                    <constraint firstAttribute="bottom" secondItem="DmJ-DT-6F0" secondAttribute="bottom" constant="60" id="aTD-dS-D15"/>
                                     <constraint firstAttribute="trailing" secondItem="MNh-97-Yot" secondAttribute="trailing" constant="23" id="gVh-WD-vIP"/>
                                     <constraint firstItem="4cS-eR-VWb" firstAttribute="leading" secondItem="Pax-nc-hyl" secondAttribute="leading" constant="23" id="jas-yw-pgK"/>
                                     <constraint firstItem="MNh-97-Yot" firstAttribute="top" secondItem="Pax-nc-hyl" secondAttribute="top" constant="39" id="t09-2H-jkA"/>
@@ -487,6 +502,7 @@
                     <navigationItem key="navigationItem" id="xMg-3A-im6"/>
                     <connections>
                         <outlet property="emotionImage" destination="DmJ-DT-6F0" id="ffc-SM-zpT"/>
+                        <outlet property="previewView" destination="DWc-Ht-ELd" id="D9r-gR-TuR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5R-GJ-4JL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
