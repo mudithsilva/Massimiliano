@@ -39,7 +39,8 @@ class PhotoEmotionCaptureViewController: UIViewController {
         self.captureSession = AVCaptureSession()
         self.captureSession.sessionPreset = .medium
         
-        guard let frontCamera = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .front)
+        
+        guard let frontCamera = self.getDevice(position: .front)
             else {
                 print("Unable to access back camera!")
                 return
@@ -65,7 +66,7 @@ class PhotoEmotionCaptureViewController: UIViewController {
         
         self.videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         
-        self.videoPreviewLayer.videoGravity = .resizeAspect
+        self.videoPreviewLayer.videoGravity = .resizeAspectFill
         self.videoPreviewLayer.connection?.videoOrientation = .portrait
         self.previewView.layer.addSublayer(videoPreviewLayer)
         
@@ -75,6 +76,17 @@ class PhotoEmotionCaptureViewController: UIViewController {
                 self.videoPreviewLayer.frame = self.previewView.bounds
             }
         }
+    }
+    
+    func getDevice(position: AVCaptureDevice.Position) -> AVCaptureDevice? {
+        let devices: NSArray = AVCaptureDevice.devices() as NSArray;
+        for de in devices {
+            let deviceConverted = de as! AVCaptureDevice
+            if(deviceConverted.position == position){
+               return deviceConverted
+            }
+        }
+       return nil
     }
     
     @IBAction func goBack(_ sender: Any) {
