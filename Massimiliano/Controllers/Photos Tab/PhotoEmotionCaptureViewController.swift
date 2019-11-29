@@ -60,6 +60,8 @@ class PhotoEmotionCaptureViewController: UIViewController {
         catch let error  {
             print("Error Unable to initialize back camera: \(error.localizedDescription)")
         }
+        
+        self.getPhoto()
     }
     
     func setupLivePreview() {
@@ -97,6 +99,48 @@ class PhotoEmotionCaptureViewController: UIViewController {
         
     }
     
+    
+    func detectFaces(photo: UIImage, completion: @escaping (_ emotion: Emotion) -> Void) {
+        FaceAPI.detectFaces(facesPhoto: photo) { (result) in
+            switch result {
+            case .Success(let json):
+                
+                let detectedFaces = json as! JSONArray
+                print(json)
+                for item in detectedFaces {
+                    let face = item as! JSONDictionary
+                    let faceId = face["faceId"] as! String
+                    let emotions = face["faceAttributes"]!["emotion"] as! [String: AnyObject]
+                    
+                    print(emotions)
+                    
+//                    let detectedFace = Face(faceId: faceId,
+//                                            height: rectangle["top"] as! Int,
+//                                            width: rectangle["width"] as! Int,
+//                                            top: rectangle["top"] as! Int,
+//                                            left: rectangle["left"] as! Int)
+                }
+                completion(Emotion.anger)
+                break
+            case .Failure(let error):
+                print("DetectFaces error - ", error)
+                DispatchQueue.main.async {
+
+                }
+                
+                break
+            }
+        }
+    }
+    
+    func getPhoto() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
+                let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
+            self.stillImageOutput.capturePhoto(with: settings, delegate: self)
+        })
+    }
+    
+    
 
     /*
     // MARK: - Navigation
@@ -113,16 +157,31 @@ class PhotoEmotionCaptureViewController: UIViewController {
 
 extension PhotoEmotionCaptureViewController: AVCapturePhotoCaptureDelegate {
     
-    func someFunction() {
-        let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
-        self.stillImageOutput.capturePhoto(with: settings, delegate: self)
-    }
-    
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         
         guard let imageData = photo.fileDataRepresentation()
             else { return }
         
-        let image = UIImage(data: imageData)
+        let image = normalizeImageRotation(UIImage(data: imageData)!)
+
+        
+        self.detectFaces(photo: image) { (emotion) in
+            print(emotion)
+        }
+    }
+    
+    func photoOutput(_ output: AVCapturePhotoOutput, willCapturePhotoFor resolvedSettings: AVCaptureResolvedPhotoSettings) {
+        // dispose system shutter sound
+        AudioServicesDisposeSystemSoundID(1108)
+    }
+    
+    func normalizeImageRotation(_ image: UIImage) -> UIImage {
+        if (image.imageOrientation == UIImage.Orientation.up) { return image }
+
+        UIGraphicsBeginImageContextWithOptions(image.size, false, image.scale)
+        image.draw(in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
+        let normalizedImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return normalizedImage
     }
 }

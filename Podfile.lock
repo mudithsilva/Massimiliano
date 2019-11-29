@@ -1,24 +1,50 @@
 PODS:
   - Alamofire (4.8.1)
+  - MSAL (0.2.3):
+    - MSAL/app-lib (= 0.2.3)
+  - MSAL/app-lib (0.2.3)
+  - MSGraphSDK (0.10.1):
+    - MSGraphSDK/Common (= 0.10.1)
+    - MSGraphSDK/Extensions (= 0.10.1)
+    - MSGraphSDK/Implementations (= 0.10.1)
+    - MSGraphSDK/MSGraphCoreSDK (= 0.10.1)
+  - MSGraphSDK/Common (0.10.1)
+  - MSGraphSDK/Extensions (0.10.1):
+    - MSGraphSDK/Implementations
+    - MSGraphSDK/MSGraphCoreSDK
+  - MSGraphSDK/Implementations (0.10.1):
+    - MSGraphSDK/Common
+  - MSGraphSDK/MSGraphCoreSDK (0.10.1):
+    - MSGraphSDK/Common
+  - ProjectOxfordFace (1.4.1)
   - RSKImageCropper (2.2.1)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - Alamofire
+  - MSAL
+  - MSGraphSDK
+  - ProjectOxfordFace
   - RSKImageCropper
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - MSAL
+    - MSGraphSDK
+    - ProjectOxfordFace
     - RSKImageCropper
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  MSAL: 2592b744b9215d9b7463f02fb9afd4e432c75c62
+  MSGraphSDK: 3c43eb632ca969593f1bdd5612b573e436bd3283
+  ProjectOxfordFace: fa7d7adbc9a11203be61a6a80511101b5dbf6ce4
   RSKImageCropper: 98296ad26b41753f796b6898d015509598f13d97
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: ffbb3e1946bc4126b15b45501eb6817ab73c8ecc
+PODFILE CHECKSUM: f5fb625662b371ec55bf563a69b7199adf8034be
 
 COCOAPODS: 1.5.3

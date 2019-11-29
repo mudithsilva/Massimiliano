@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8334E9A5B4750A4FA7E64502 /* Pods_Massimiliano.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2DD5AC52C7B5963CD02109 /* Pods_Massimiliano.framework */; };
+		BA143E8B239075B90024BB65 /* ApplicationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA143E8A239075B90024BB65 /* ApplicationConstants.swift */; };
+		BA143E92239076F30024BB65 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA143E90239076F30024BB65 /* Graph.swift */; };
+		BA143E94239077070024BB65 /* FaceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA143E93239077070024BB65 /* FaceAPI.swift */; };
+		BA143E96239081D40024BB65 /* PhotoEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA143E95239081D40024BB65 /* PhotoEmotion.swift */; };
 		BA5B51052365870600BC128E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B51042365870600BC128E /* AppDelegate.swift */; };
 		BA5B510A2365870600BC128E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA5B51082365870600BC128E /* Main.storyboard */; };
 		BA5B510C2365870800BC128E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA5B510B2365870800BC128E /* Assets.xcassets */; };
@@ -106,6 +110,10 @@
 
 /* Begin PBXFileReference section */
 		3A678527D7D9199B46D2D681 /* Pods-Massimiliano.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Massimiliano.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Massimiliano/Pods-Massimiliano.debug.xcconfig"; sourceTree = "<group>"; };
+		BA143E8A239075B90024BB65 /* ApplicationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConstants.swift; sourceTree = "<group>"; };
+		BA143E90239076F30024BB65 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		BA143E93239077070024BB65 /* FaceAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceAPI.swift; sourceTree = "<group>"; };
+		BA143E95239081D40024BB65 /* PhotoEmotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEmotion.swift; sourceTree = "<group>"; };
 		BA5B51012365870600BC128E /* Massimiliano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Massimiliano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5B51042365870600BC128E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA5B51092365870600BC128E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -238,6 +246,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BA143E892390759E0024BB65 /* Face API Application */ = {
+			isa = PBXGroup;
+			children = (
+				BA143E8C239076AD0024BB65 /* Services */,
+				BA143E8A239075B90024BB65 /* ApplicationConstants.swift */,
+			);
+			path = "Face API Application";
+			sourceTree = "<group>";
+		};
+		BA143E8C239076AD0024BB65 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BA143E8E239076C00024BB65 /* Graph */,
+				BA143E8D239076B80024BB65 /* Face API */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BA143E8D239076B80024BB65 /* Face API */ = {
+			isa = PBXGroup;
+			children = (
+				BA143E93239077070024BB65 /* FaceAPI.swift */,
+			);
+			path = "Face API";
+			sourceTree = "<group>";
+		};
+		BA143E8E239076C00024BB65 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				BA143E90239076F30024BB65 /* Graph.swift */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
 		BA5B50F82365870600BC128E = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +305,7 @@
 		BA5B51032365870600BC128E /* Massimiliano */ = {
 			isa = PBXGroup;
 			children = (
+				BA143E892390759E0024BB65 /* Face API Application */,
 				BA8B95672365DFC60043A79A /* Models */,
 				BA8B95662365DFBF0043A79A /* Views */,
 				BA8B95652365DFB50043A79A /* Controllers */,
@@ -344,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				BA8F0612236E2B2E007597F5 /* ImageWithEmotion.swift */,
+				BA143E95239081D40024BB65 /* PhotoEmotion.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -806,6 +850,9 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Massimiliano/Pods-Massimiliano-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/MSAL/MSAL.framework",
+				"${BUILT_PRODUCTS_DIR}/MSGraphSDK/MSGraphSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/ProjectOxfordFace/ProjectOxfordFace.framework",
 				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -814,6 +861,9 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MSAL.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MSGraphSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProjectOxfordFace.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -856,9 +906,11 @@
 				BA8B95C52365E04C0043A79A /* SimpleLoadingView.swift in Sources */,
 				BA8B95D72366EE890043A79A /* HomeViewController.swift in Sources */,
 				BA8B95BC2365E04C0043A79A /* MyAwesomeTextView.swift in Sources */,
+				BA143E8B239075B90024BB65 /* ApplicationConstants.swift in Sources */,
 				BA8F0611236E2671007597F5 /* PhotoEmotionCaptureViewController.swift in Sources */,
 				BA8B95AF2365E04C0043A79A /* DoubleExtension.swift in Sources */,
 				BA5B51052365870600BC128E /* AppDelegate.swift in Sources */,
+				BA143E94239077070024BB65 /* FaceAPI.swift in Sources */,
 				BA8B95C32365E04C0043A79A /* AlertController.swift in Sources */,
 				BA8B95BF2365E04C0043A79A /* ViewExtension.swift in Sources */,
 				BA8B95B72365E04C0043A79A /* TagFlowLayout.swift in Sources */,
@@ -869,6 +921,7 @@
 				BA8B95B02365E04C0043A79A /* UIImageExtension.swift in Sources */,
 				BA8B95AA2365E04C0043A79A /* SwiftySideMenuDataSource.swift in Sources */,
 				BA8B95C42365E04C0043A79A /* StringExtension.swift in Sources */,
+				BA143E92239076F30024BB65 /* Graph.swift in Sources */,
 				BA8B95BD2365E04C0043A79A /* MyAwesomeView.swift in Sources */,
 				BA8B95A62365E04C0043A79A /* SwiftySideMenuChildViewControllers.swift in Sources */,
 				BA8B95B62365E04C0043A79A /* AppStoryboard.swift in Sources */,
@@ -886,6 +939,7 @@
 				BA8B95BB2365E04C0043A79A /* MyAwsomeButton.swift in Sources */,
 				BA8B95B22365E04C0043A79A /* UILabelExtension.swift in Sources */,
 				BA8B95B82365E04C0043A79A /* AppData.swift in Sources */,
+				BA143E96239081D40024BB65 /* PhotoEmotion.swift in Sources */,
 				BA8F0613236E2B2E007597F5 /* ImageWithEmotion.swift in Sources */,
 				BA8B95B92365E04C0043A79A /* ArrayExtension.swift in Sources */,
 				BA8B95C22365E04C0043A79A /* CameraHandler.swift in Sources */,

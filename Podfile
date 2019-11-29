@@ -6,6 +6,9 @@ target ‘Massimiliano’ do
     pod 'Alamofire'
     pod 'SwiftyJSON'
     pod 'RSKImageCropper'
+    pod 'ProjectOxfordFace'
+    pod 'MSAL'
+    pod 'MSGraphSDK'
 end
 
 
