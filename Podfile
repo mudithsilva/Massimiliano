@@ -9,6 +9,7 @@ target ‘Massimiliano’ do
     pod 'ProjectOxfordFace'
     pod 'MSAL'
     pod 'MSGraphSDK'
+    pod 'RealmSwift', '~> 3.20.0'
 end
 
 

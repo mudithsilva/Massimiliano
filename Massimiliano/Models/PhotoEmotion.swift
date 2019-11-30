@@ -11,11 +11,11 @@ import UIKit
 
 enum Emotion: String {
     
-    case anger
-    case fear
-    case happiness
-    case sadness
-    case surprise
-    case neutral
+    case anger = "anger"
+    case fear = "fear"
+    case happiness = "happiness"
+    case sadness = "sadness"
+    case surprise = "surprise"
+    case neutral = "neutral"
     
 }

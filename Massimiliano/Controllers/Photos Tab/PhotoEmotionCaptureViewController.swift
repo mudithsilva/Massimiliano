@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import Photos
+import RealmSwift
 
 class PhotoEmotionCaptureViewController: UIViewController {
     
@@ -25,8 +26,18 @@ class PhotoEmotionCaptureViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.emotionImage.image = UIImage(data: self.photoInfo.imageData)
+        //self.emotionImage.image = UIImage(data: self.photoInfo.imageData)
+        self.getQualityImage()
         // Do any additional setup after loading the view.
+    }
+    
+    func getQualityImage() {
+        
+        let fetchOptions = PHFetchOptions()
+        let singleImage = PHAsset.fetchAssets(withLocalIdentifiers: [self.photoInfo.identifier], options: fetchOptions)
+        let asset = singleImage.object(at: 0)
+        
+        self.emotionImage.fetchImageQualityFormat(asset: asset, contentMode: .aspectFill)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -107,32 +118,39 @@ class PhotoEmotionCaptureViewController: UIViewController {
             case .Success(let json):
                 
                 let detectedFaces = json as! JSONArray
-                print(json)
+                //print(json)
+                
+                var angerVal: Double = 0
+                var fearVal: Double  = 0
+                var happinessVal: Double  = 0
+                var sadnessVal: Double  = 0
+                var surpriseVal: Double  = 0
+                
                 for item in detectedFaces {
                     let face = item as! JSONDictionary
                     //let faceId = face["faceId"] as! String
                     let emotions = face["faceAttributes"]!["emotion"] as! [String: AnyObject]
                     
-                    print(emotions)
-                    let angerVal = emotions["anger"] as! Double
-                    let fearVal = emotions["fear"] as! Double
-                    let happinessVal = emotions["happiness"] as! Double
-                    let sadnessVal = emotions["sadness"] as! Double
-                    let surpriseVal = emotions["surprise"] as! Double
-                    
-                    if ((angerVal > fearVal) && (angerVal > happinessVal) && (angerVal > sadnessVal) && (angerVal > surpriseVal)) {
-                        completion(Emotion.anger)
-                    } else if ((fearVal > angerVal) && (fearVal > happinessVal) && (fearVal > sadnessVal) && (fearVal > surpriseVal)) {
-                        completion(Emotion.fear)
-                    }  else if ((happinessVal > angerVal) && (happinessVal > fearVal) && (happinessVal > sadnessVal) && (happinessVal > surpriseVal)) {
-                        completion(Emotion.happiness)
-                    }  else if ((sadnessVal > angerVal) && (sadnessVal > fearVal) && (sadnessVal > happinessVal) && (sadnessVal > surpriseVal)) {
-                        completion(Emotion.sadness)
-                    }  else if ((surpriseVal > angerVal) && (surpriseVal > fearVal) && (surpriseVal > happinessVal) && (surpriseVal > sadnessVal)) {
-                        completion(Emotion.surprise)
-                    } else {
-                        completion(Emotion.neutral)
-                    }
+                    //print(emotions)
+                    angerVal = angerVal + (emotions["anger"] as! Double)
+                    fearVal = fearVal + (emotions["fear"] as! Double)
+                    happinessVal = happinessVal + (emotions["happiness"] as! Double)
+                    sadnessVal = sadnessVal + (emotions["sadness"] as! Double)
+                    surpriseVal = surpriseVal + (emotions["surprise"] as! Double)
+                }
+                
+                if ((angerVal > fearVal) && (angerVal > happinessVal) && (angerVal > sadnessVal) && (angerVal > surpriseVal)) {
+                    completion(Emotion.anger)
+                } else if ((fearVal > angerVal) && (fearVal > happinessVal) && (fearVal > sadnessVal) && (fearVal > surpriseVal)) {
+                    completion(Emotion.fear)
+                }  else if ((happinessVal > angerVal) && (happinessVal > fearVal) && (happinessVal > sadnessVal) && (happinessVal > surpriseVal)) {
+                    completion(Emotion.happiness)
+                }  else if ((sadnessVal > angerVal) && (sadnessVal > fearVal) && (sadnessVal > happinessVal) && (sadnessVal > surpriseVal)) {
+                    completion(Emotion.sadness)
+                }  else if ((surpriseVal > angerVal) && (surpriseVal > fearVal) && (surpriseVal > happinessVal) && (surpriseVal > sadnessVal)) {
+                    completion(Emotion.surprise)
+                } else {
+                    completion(Emotion.neutral)
                 }
                 
             case .Failure(let error):
@@ -147,7 +165,7 @@ class PhotoEmotionCaptureViewController: UIViewController {
     }
     
     func getPhoto() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
                 let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
             self.stillImageOutput.capturePhoto(with: settings, delegate: self)
         })
@@ -180,6 +198,21 @@ extension PhotoEmotionCaptureViewController: AVCapturePhotoCaptureDelegate {
         
         self.detectFaces(photo: image) { (emotion) in
             print(emotion)
+            
+            let emotionImage = GalleryEmotionImage()
+            emotionImage.imageName = self.photoInfo.identifier
+            emotionImage.imageEmotion = emotion.rawValue
+            
+            // Get the default Realm
+            let realm = try! Realm()
+            // You only need to do this once (per thread)
+
+            // Add to the Realm inside a transaction
+            try! realm.write {
+//                realm.add(emotionImage, update: true)
+                realm.add(emotionImage, update: .all)
+            }
+            
         }
     }
     
@@ -198,3 +231,12 @@ extension PhotoEmotionCaptureViewController: AVCapturePhotoCaptureDelegate {
         return normalizedImage
     }
 }
+
+
+
+//Delete Relam
+
+//let realm = try! Realm()
+//try! realm.write {
+//  realm.deleteAll()
+//}

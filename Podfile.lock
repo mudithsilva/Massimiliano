@@ -17,6 +17,11 @@ PODS:
   - MSGraphSDK/MSGraphCoreSDK (0.10.1):
     - MSGraphSDK/Common
   - ProjectOxfordFace (1.4.1)
+  - Realm (3.20.0):
+    - Realm/Headers (= 3.20.0)
+  - Realm/Headers (3.20.0)
+  - RealmSwift (3.20.0):
+    - Realm (= 3.20.0)
   - RSKImageCropper (2.2.1)
   - SwiftyJSON (4.2.0)
 
@@ -25,6 +30,7 @@ DEPENDENCIES:
   - MSAL
   - MSGraphSDK
   - ProjectOxfordFace
+  - RealmSwift (~> 3.20.0)
   - RSKImageCropper
   - SwiftyJSON
 
@@ -34,6 +40,8 @@ SPEC REPOS:
     - MSAL
     - MSGraphSDK
     - ProjectOxfordFace
+    - Realm
+    - RealmSwift
     - RSKImageCropper
     - SwiftyJSON
 
@@ -42,9 +50,11 @@ SPEC CHECKSUMS:
   MSAL: 2592b744b9215d9b7463f02fb9afd4e432c75c62
   MSGraphSDK: 3c43eb632ca969593f1bdd5612b573e436bd3283
   ProjectOxfordFace: fa7d7adbc9a11203be61a6a80511101b5dbf6ce4
+  Realm: 8b2ca5bc6479a91f379b6b42b5922e396cd5ba5a
+  RealmSwift: 1949ef26a279e1845bd51d591b9103adfcd121df
   RSKImageCropper: 98296ad26b41753f796b6898d015509598f13d97
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: f5fb625662b371ec55bf563a69b7199adf8034be
+PODFILE CHECKSUM: af6b09065272c57ca75aaa7b18e6a9fd23c8fa27
 
 COCOAPODS: 1.5.3

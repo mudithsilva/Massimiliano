@@ -37,6 +37,7 @@ class PhotosTabViewController: UIViewController {
             case .authorized:
                 print("Good to proceed!")
                 let fetchOptions = PHFetchOptions()
+                fetchOptions.sortDescriptors = [NSSortDescriptor(key:"creationDate", ascending: false)]
                 self.allPhotos = PHAsset.fetchAssets(with: .image, options: fetchOptions)
                 DispatchQueue.main.async {
                   self.galleryImageCollectionView.reloadData()
@@ -87,7 +88,7 @@ extension PhotosTabViewController: UICollectionViewDataSource {
         //cell.galleryImage.image = self.tempImage
         
         let asset = self.allPhotos?.object(at: indexPath.row)
-        cell.galleryImage.fetchImage(asset: asset!, contentMode: .aspectFill)
+        cell.galleryImage.fetchImageFastFormat(asset: asset!, contentMode: .aspectFill)
         cell.parentVC = self
         cell.identifier = self.allPhotos?.object(at: indexPath.row).localIdentifier
 //        print(self.allPhotos?.object(at: indexPath.row).localIdentifier)
@@ -103,9 +104,12 @@ extension PhotosTabViewController: UICollectionViewDataSource {
 }
 
 extension UIImageView{
- func fetchImage(asset: PHAsset, contentMode: PHImageContentMode) {
+ func fetchImageQualityFormat(asset: PHAsset, contentMode: PHImageContentMode) {
     let options = PHImageRequestOptions()
-    options.version = .original
+    
+    options.version = .current
+    options.deliveryMode = PHImageRequestOptionsDeliveryMode.highQualityFormat
+    
     PHImageManager.default().requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: contentMode, options: options) { image, _ in
         guard let image = image else { return }
         switch contentMode {
@@ -120,28 +124,26 @@ extension UIImageView{
         self.image = image
     }
    }
-}
-
-// MARK :- Image Asset Extention
-
-extension PHAsset {
-
-    var originalFilename: String? {
-
-        var fname:String?
-
-        if #available(iOS 9.0, *) {
-            let resources = PHAssetResource.assetResources(for: self)
-            if let resource = resources.first {
-                fname = resource.originalFilename
+    
+     func fetchImageFastFormat(asset: PHAsset, contentMode: PHImageContentMode) {
+        let options = PHImageRequestOptions()
+        
+    //    options.resizeMode = PHImageRequestOptionsResizeMode.exact
+        options.version = .current
+        options.deliveryMode = PHImageRequestOptionsDeliveryMode.fastFormat
+        
+        PHImageManager.default().requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: contentMode, options: options) { image, _ in
+            guard let image = image else { return }
+            switch contentMode {
+            case .aspectFill:
+                self.contentMode = .scaleAspectFill
+            case .aspectFit:
+                self.contentMode = .scaleAspectFit
+            @unknown default:
+                print("Error!")
+                fatalError()
             }
+            self.image = image
         }
-
-        if fname == nil {
-            // this is an undocumented workaround that works as of iOS 9.1
-            fname = self.value(forKey: "filename") as? String
-        }
-
-        return fname
-    }
+       }
 }
