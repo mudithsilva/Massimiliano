@@ -90,7 +90,11 @@ extension PhotosTabViewController: UICollectionViewDataSource {
         cell.galleryImage.fetchImage(asset: asset!, contentMode: .aspectFill)
         cell.parentVC = self
         cell.identifier = self.allPhotos?.object(at: indexPath.row).localIdentifier
-        //print(self.allPhotos?.object(at: indexPath.row).localIdentifier!)
+//        print(self.allPhotos?.object(at: indexPath.row).localIdentifier)
+//
+//        let asset = PHAsset.fetchAssets(withLocalIdentifiers: ["255B6926-AE86-4DEB-98B8-E31629BDA7EC/L0/001"], options: PHFetchOptions()).object(at: 0)
+//
+//        self.emotionImage.fetchImage(asset: asset, contentMode: .aspectFill)
         
         return cell
     }
@@ -116,4 +120,28 @@ extension UIImageView{
         self.image = image
     }
    }
+}
+
+// MARK :- Image Asset Extention
+
+extension PHAsset {
+
+    var originalFilename: String? {
+
+        var fname:String?
+
+        if #available(iOS 9.0, *) {
+            let resources = PHAssetResource.assetResources(for: self)
+            if let resource = resources.first {
+                fname = resource.originalFilename
+            }
+        }
+
+        if fname == nil {
+            // this is an undocumented workaround that works as of iOS 9.1
+            fname = self.value(forKey: "filename") as? String
+        }
+
+        return fname
+    }
 }

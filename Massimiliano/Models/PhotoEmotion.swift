@@ -16,5 +16,6 @@ enum Emotion: String {
     case happiness
     case sadness
     case surprise
+    case neutral
     
 }

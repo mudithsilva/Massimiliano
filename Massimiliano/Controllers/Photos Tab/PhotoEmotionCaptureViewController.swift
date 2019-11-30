@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Photos
 
 class PhotoEmotionCaptureViewController: UIViewController {
     
@@ -109,19 +110,31 @@ class PhotoEmotionCaptureViewController: UIViewController {
                 print(json)
                 for item in detectedFaces {
                     let face = item as! JSONDictionary
-                    let faceId = face["faceId"] as! String
+                    //let faceId = face["faceId"] as! String
                     let emotions = face["faceAttributes"]!["emotion"] as! [String: AnyObject]
                     
                     print(emotions)
+                    let angerVal = emotions["anger"] as! Double
+                    let fearVal = emotions["fear"] as! Double
+                    let happinessVal = emotions["happiness"] as! Double
+                    let sadnessVal = emotions["sadness"] as! Double
+                    let surpriseVal = emotions["surprise"] as! Double
                     
-//                    let detectedFace = Face(faceId: faceId,
-//                                            height: rectangle["top"] as! Int,
-//                                            width: rectangle["width"] as! Int,
-//                                            top: rectangle["top"] as! Int,
-//                                            left: rectangle["left"] as! Int)
+                    if ((angerVal > fearVal) && (angerVal > happinessVal) && (angerVal > sadnessVal) && (angerVal > surpriseVal)) {
+                        completion(Emotion.anger)
+                    } else if ((fearVal > angerVal) && (fearVal > happinessVal) && (fearVal > sadnessVal) && (fearVal > surpriseVal)) {
+                        completion(Emotion.fear)
+                    }  else if ((happinessVal > angerVal) && (happinessVal > fearVal) && (happinessVal > sadnessVal) && (happinessVal > surpriseVal)) {
+                        completion(Emotion.happiness)
+                    }  else if ((sadnessVal > angerVal) && (sadnessVal > fearVal) && (sadnessVal > happinessVal) && (sadnessVal > surpriseVal)) {
+                        completion(Emotion.sadness)
+                    }  else if ((surpriseVal > angerVal) && (surpriseVal > fearVal) && (surpriseVal > happinessVal) && (surpriseVal > sadnessVal)) {
+                        completion(Emotion.surprise)
+                    } else {
+                        completion(Emotion.neutral)
+                    }
                 }
-                completion(Emotion.anger)
-                break
+                
             case .Failure(let error):
                 print("DetectFaces error - ", error)
                 DispatchQueue.main.async {

@@ -195,7 +195,7 @@ class FaceAPI: NSObject
     static func detectFaces(facesPhoto: UIImage, completion: @escaping (_ result: FaceAPIResult<JSON, Error>) -> Void)
     {
         
-        let url = "\(ApplicationConstants.faceApiEndpoint)/detect?returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise"
+        let url = "\(ApplicationConstants.faceApiEndpoint)/detect?returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=emotion"
         var request = URLRequest(url: URL(string: url)!)
         
         request.httpMethod = "POST"
