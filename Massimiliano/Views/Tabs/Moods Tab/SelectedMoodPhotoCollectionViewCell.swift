@@ -25,7 +25,7 @@ class SelectedMoodPhotoCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func clickedImage(_ sender: Any) {
-//        self.parentVC.showImageEmotionView(image: self.galleryImage.image!, identifier: self.identifier)
+        self.parentVC.showImageEmotionView(image: self.galleryImage.image!, identifier: self.identifier)
     }
 
 }

@@ -15,6 +15,9 @@
         <array key="SFProDisplay-Semibold.ttf">
             <string>SFProDisplay-Semibold</string>
         </array>
+        <array key="SFProDisplay-Thin.ttf">
+            <string>SFProDisplay-Thin</string>
+        </array>
     </customFonts>
     <scenes>
         <!--PhotosTabViewController-->
@@ -462,7 +465,7 @@
                                         </constraints>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWc-Ht-ELd" userLabel="Camera Preview" customClass="MyAwesomeView" customModule="Massimiliano" customModuleProvider="target">
-                                        <rect key="frame" x="167" y="726" width="80" height="80"/>
+                                        <rect key="frame" x="167" y="716" width="80" height="80"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="5cN-ku-7ya"/>
@@ -474,13 +477,47 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ovT-a0-hKF" customClass="MyAwesomeView" customModule="Massimiliano" customModuleProvider="target">
+                                        <rect key="frame" x="157" y="800" width="100" height="30"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YV6-9S-MbV">
+                                                <rect key="frame" x="19" y="5" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="AZ2-LI-Yxp"/>
+                                                    <constraint firstAttribute="height" constant="20" id="TX2-eN-71L"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0q-hv-siJ">
+                                                <rect key="frame" x="47" y="7.5" width="26" height="15"/>
+                                                <fontDescription key="fontDescription" name="SFProDisplay-Thin" family="SF Pro Display" pointSize="12"/>
+                                                <color key="textColor" red="0.066666666669999999" green="0.36078431370000003" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="p0q-hv-siJ" firstAttribute="leading" secondItem="YV6-9S-MbV" secondAttribute="trailing" constant="8" id="DK6-Dr-wNT"/>
+                                            <constraint firstItem="YV6-9S-MbV" firstAttribute="centerY" secondItem="ovT-a0-hKF" secondAttribute="centerY" id="FnT-9i-bAg"/>
+                                            <constraint firstAttribute="width" constant="100" id="N3r-bW-hoH"/>
+                                            <constraint firstAttribute="height" constant="30" id="jwH-is-rfv"/>
+                                            <constraint firstItem="p0q-hv-siJ" firstAttribute="centerY" secondItem="ovT-a0-hKF" secondAttribute="centerY" id="qpJ-qG-j3h"/>
+                                            <constraint firstItem="p0q-hv-siJ" firstAttribute="centerX" secondItem="ovT-a0-hKF" secondAttribute="centerX" constant="10" id="wYU-Rj-J1i"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="DmJ-DT-6F0" firstAttribute="top" secondItem="Pax-nc-hyl" secondAttribute="top" constant="80" id="6WF-xQ-cRL"/>
-                                    <constraint firstAttribute="bottom" secondItem="DWc-Ht-ELd" secondAttribute="bottom" constant="90" id="FQU-4w-QE7"/>
+                                    <constraint firstItem="ovT-a0-hKF" firstAttribute="top" secondItem="DWc-Ht-ELd" secondAttribute="bottom" constant="4" id="8ld-Pq-gv9"/>
+                                    <constraint firstAttribute="bottom" secondItem="DWc-Ht-ELd" secondAttribute="bottom" constant="100" id="FQU-4w-QE7"/>
                                     <constraint firstItem="DmJ-DT-6F0" firstAttribute="leading" secondItem="Pax-nc-hyl" secondAttribute="leading" id="PTO-qB-tm0"/>
                                     <constraint firstItem="DWc-Ht-ELd" firstAttribute="centerX" secondItem="Pax-nc-hyl" secondAttribute="centerX" id="SgZ-fv-Cu1"/>
+                                    <constraint firstItem="ovT-a0-hKF" firstAttribute="centerX" secondItem="Pax-nc-hyl" secondAttribute="centerX" id="VQO-CQ-cFn"/>
                                     <constraint firstAttribute="trailing" secondItem="DmJ-DT-6F0" secondAttribute="trailing" id="Zvt-Nv-NZY"/>
                                     <constraint firstAttribute="bottom" secondItem="DmJ-DT-6F0" secondAttribute="bottom" constant="60" id="aTD-dS-D15"/>
                                     <constraint firstAttribute="trailing" secondItem="MNh-97-Yot" secondAttribute="trailing" constant="23" id="gVh-WD-vIP"/>
@@ -501,7 +538,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="xMg-3A-im6"/>
                     <connections>
+                        <outlet property="emotionIcon" destination="YV6-9S-MbV" id="gPx-M2-aZk"/>
                         <outlet property="emotionImage" destination="DmJ-DT-6F0" id="ffc-SM-zpT"/>
+                        <outlet property="emotionName" destination="p0q-hv-siJ" id="0Hg-lc-R0h"/>
+                        <outlet property="photoEmotionView" destination="ovT-a0-hKF" id="rx9-0Z-ler"/>
                         <outlet property="previewView" destination="DWc-Ht-ELd" id="D9r-gR-TuR"/>
                     </connections>
                 </viewController>

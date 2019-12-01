@@ -8,6 +8,7 @@
 
 import UIKit
 import Photos
+import RealmSwift
 
 class LaunchViewController: UIViewController {
     
@@ -24,7 +25,7 @@ class LaunchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //self.deleteAllData()
         // Do any additional setup after loading the view.
     }
     
@@ -48,6 +49,13 @@ class LaunchViewController: UIViewController {
                 print("Error!")
                 fatalError()
             }
+        }
+    }
+    
+    func deleteAllData() {
+        let realm = try! Realm()
+        try! realm.write {
+          realm.deleteAll()
         }
     }
     

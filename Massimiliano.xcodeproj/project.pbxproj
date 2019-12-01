@@ -16,6 +16,7 @@
 		BA143E9A239317FF0024BB65 /* SelectedMoodPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA143E99239317FF0024BB65 /* SelectedMoodPhotosViewController.swift */; };
 		BA143E9D239319190024BB65 /* SelectedMoodPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA143E9B239319190024BB65 /* SelectedMoodPhotoCollectionViewCell.swift */; };
 		BA143E9E239319190024BB65 /* SelectedMoodPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA143E9C239319190024BB65 /* SelectedMoodPhotoCollectionViewCell.xib */; };
+		BA143EA02393DF360024BB65 /* MoodPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA143E9F2393DF360024BB65 /* MoodPhotoViewController.swift */; };
 		BA5B51052365870600BC128E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B51042365870600BC128E /* AppDelegate.swift */; };
 		BA5B510A2365870600BC128E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA5B51082365870600BC128E /* Main.storyboard */; };
 		BA5B510C2365870800BC128E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA5B510B2365870800BC128E /* Assets.xcassets */; };
@@ -122,6 +123,7 @@
 		BA143E99239317FF0024BB65 /* SelectedMoodPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedMoodPhotosViewController.swift; sourceTree = "<group>"; };
 		BA143E9B239319190024BB65 /* SelectedMoodPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedMoodPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA143E9C239319190024BB65 /* SelectedMoodPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedMoodPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		BA143E9F2393DF360024BB65 /* MoodPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodPhotoViewController.swift; sourceTree = "<group>"; };
 		BA5B51012365870600BC128E /* Massimiliano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Massimiliano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5B51042365870600BC128E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA5B51092365870600BC128E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -687,6 +689,7 @@
 			children = (
 				BA8B95ED2369C0290043A79A /* MoodsTabViewController.swift */,
 				BA143E99239317FF0024BB65 /* SelectedMoodPhotosViewController.swift */,
+				BA143E9F2393DF360024BB65 /* MoodPhotoViewController.swift */,
 			);
 			path = "Moods Tab";
 			sourceTree = "<group>";
@@ -950,6 +953,7 @@
 				BA8B95AE2365E04C0043A79A /* NotificationTypes.swift in Sources */,
 				BA8B95A52365E04C0043A79A /* SwiftySideMenuImageView.swift in Sources */,
 				BA8B95E62369B8940043A79A /* PhotosTabViewController.swift in Sources */,
+				BA143EA02393DF360024BB65 /* MoodPhotoViewController.swift in Sources */,
 				BA8B95B32365E04C0043A79A /* EasySwitchDelegate.swift in Sources */,
 				BA8B95A72365E04C0043A79A /* SwiftySideMenuViewController.swift in Sources */,
 				BA8B95A32365E04C0043A79A /* SwiftySideMenuHelper.swift in Sources */,

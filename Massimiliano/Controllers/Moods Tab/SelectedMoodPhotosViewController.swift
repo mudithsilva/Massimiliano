@@ -61,13 +61,13 @@ class SelectedMoodPhotosViewController: UIViewController {
     
     func showImageEmotionView(image: UIImage, identifier: String) {
         let imageInfo = ImageWithEmotion(identifier: identifier, imageData: image.pngData()!)
-        self.performSegue(withIdentifier: "showPhotoView", sender: imageInfo)
+        self.performSegue(withIdentifier: "showPhoto", sender: imageInfo)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "showPhotoView") {
+        if (segue.identifier == "showPhoto") {
             let photoInfo = sender as! ImageWithEmotion
-            let destinationVC = segue.destination as! PhotoEmotionCaptureViewController
+            let destinationVC = segue.destination as! MoodPhotoViewController
             destinationVC.photoInfo = photoInfo
         }
     }

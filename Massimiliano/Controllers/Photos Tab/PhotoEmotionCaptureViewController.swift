@@ -16,6 +16,10 @@ class PhotoEmotionCaptureViewController: UIViewController {
     @IBOutlet weak var emotionImage: UIImageView!
     @IBOutlet weak var previewView: MyAwesomeView!
     
+    @IBOutlet weak var photoEmotionView: MyAwesomeView!
+    @IBOutlet weak var emotionIcon: UIImageView!
+    @IBOutlet weak var emotionName: UILabel!
+    
     var photoInfo: ImageWithEmotion!
     
     
@@ -213,6 +217,38 @@ extension PhotoEmotionCaptureViewController: AVCapturePhotoCaptureDelegate {
                 realm.add(emotionImage, update: .all)
             }
             
+            DispatchQueue.main.async {
+              self.showEmotionLabel(emotion: emotion)
+            }
+        }
+    }
+    
+    
+    func showEmotionLabel(emotion: Emotion) {
+        
+        switch emotion {
+        case .anger:
+            self.emotionIcon.image = #imageLiteral(resourceName: "angeryFaceIcon")
+            self.emotionName.text = "Anger"
+        case .fear:
+            self.emotionIcon.image = #imageLiteral(resourceName: "fearFaceIcon")
+            self.emotionName.text = "Fear"
+        case .happiness:
+            self.emotionIcon.image = #imageLiteral(resourceName: "happinessFaceIcon")
+            self.emotionName.text = "Happy"
+        case .neutral:
+            self.emotionIcon.image = #imageLiteral(resourceName: "neutralFaceIcon")
+            self.emotionName.text = "Neutral"
+        case .sadness:
+            self.emotionIcon.image = #imageLiteral(resourceName: "sadFaceIcon")
+            self.emotionName.text = "Sad"
+        case .surprise:
+            self.emotionIcon.image = #imageLiteral(resourceName: "surpriseFaceIcon")
+            self.emotionName.text = "Surprise"
+        }
+        
+        UIView.animate(withDuration: 1) {
+            self.photoEmotionView.alpha = 1
         }
     }
     

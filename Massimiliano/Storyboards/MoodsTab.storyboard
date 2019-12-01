@@ -272,10 +272,10 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--MoodPhotoViewController-->
         <scene sceneID="n2z-AB-k2b">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="iA4-Io-6xj" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MoodPhotoViewController" storyboardIdentifier="MoodPhotoViewController" title="MoodPhotoViewController" modalPresentationStyle="fullScreen" id="iA4-Io-6xj" customClass="MoodPhotoViewController" customModule="Massimiliano" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cT8-0k-COc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
