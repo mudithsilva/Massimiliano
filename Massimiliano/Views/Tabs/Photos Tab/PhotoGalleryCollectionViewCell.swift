@@ -14,6 +14,7 @@ class PhotoGalleryCollectionViewCell: UICollectionViewCell {
     
     var parentVC: PhotosTabViewController!
     var identifier: String!
+    var photoIndex: Int! = 0
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,6 +26,7 @@ class PhotoGalleryCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func clickedImage(_ sender: Any) {
+        self.parentVC.selectedIndex = self.photoIndex
         self.parentVC.showImageEmotionView(image: self.galleryImage.image!, identifier: self.identifier)
     }
 

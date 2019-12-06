@@ -21,6 +21,8 @@ class PhotoEmotionCaptureViewController: UIViewController {
     @IBOutlet weak var emotionName: UILabel!
     
     var photoInfo: ImageWithEmotion!
+    var selectedIndex: Int! = 0
+    var allPhotos : PHFetchResult<PHAsset>? = nil
     
     
     var captureSession: AVCaptureSession!
@@ -30,18 +32,23 @@ class PhotoEmotionCaptureViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addSwipUpDownGuesture()
         //self.emotionImage.image = UIImage(data: self.photoInfo.imageData)
-        self.getQualityImage()
+        self.getQualityImage(identifier: self.photoInfo.identifier)
         // Do any additional setup after loading the view.
     }
     
-    func getQualityImage() {
+    
+    func getQualityImage(identifier: String) {
         
         let fetchOptions = PHFetchOptions()
-        let singleImage = PHAsset.fetchAssets(withLocalIdentifiers: [self.photoInfo.identifier], options: fetchOptions)
+        let singleImage = PHAsset.fetchAssets(withLocalIdentifiers: [identifier], options: fetchOptions)
         let asset = singleImage.object(at: 0)
         
+
+        //self.emotionImage.fetchImageQualityFormat(asset: asset, contentMode: .aspectFill)
         self.emotionImage.fetchImageQualityFormat(asset: asset, contentMode: .aspectFill)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -112,6 +119,39 @@ class PhotoEmotionCaptureViewController: UIViewController {
     }
     
     @IBAction func shareImageEmotion(_ sender: Any) {
+        
+    }
+    
+    func addSwipUpDownGuesture() {
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeLeft.direction = .left
+        self.view.addGestureRecognizer(swipeLeft)
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeRight.direction = .right
+        self.view.addGestureRecognizer(swipeRight)
+    }
+    
+    @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+        if gesture.direction == UISwipeGestureRecognizer.Direction.left {
+            print("Swipe Left")
+            self.changePicture(direction: .left)
+        }
+        else if gesture.direction == UISwipeGestureRecognizer.Direction.right {
+            print("Swipe Right")
+            self.changePicture(direction: .right)
+        }
+    }
+    
+    func changePicture(direction: UISwipeGestureRecognizer.Direction) {
+        
+        if (direction == .left) && (self.selectedIndex < self.allPhotos!.count - 1) {
+            self.selectedIndex = self.selectedIndex + 1
+        } else if (direction == .right) && (self.selectedIndex > 0)  {
+            self.selectedIndex = self.selectedIndex - 1
+        }
+        
+        self.getQualityImage(identifier: (self.allPhotos?.object(at: self.selectedIndex).localIdentifier)!)
         
     }
     

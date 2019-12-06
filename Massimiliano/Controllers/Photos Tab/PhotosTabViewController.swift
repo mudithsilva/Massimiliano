@@ -15,6 +15,8 @@ class PhotosTabViewController: UIViewController {
     
     private let tempImage: UIImage = #imageLiteral(resourceName: "sampleGalleryImage")
     private var allPhotos : PHFetchResult<PHAsset>? = nil
+    
+    var selectedIndex: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +65,8 @@ class PhotosTabViewController: UIViewController {
             let photoInfo = sender as! ImageWithEmotion
             let destinationVC = segue.destination as! PhotoEmotionCaptureViewController
             destinationVC.photoInfo = photoInfo
+            destinationVC.selectedIndex = self.selectedIndex
+            destinationVC.allPhotos = self.allPhotos
         }
     }
     
@@ -91,6 +95,7 @@ extension PhotosTabViewController: UICollectionViewDataSource {
         cell.galleryImage.fetchImageFastFormat(asset: asset!, contentMode: .aspectFill)
         cell.parentVC = self
         cell.identifier = self.allPhotos?.object(at: indexPath.row).localIdentifier
+        cell.photoIndex = indexPath.row
 //        print(self.allPhotos?.object(at: indexPath.row).localIdentifier)
 //
 //        let asset = PHAsset.fetchAssets(withLocalIdentifiers: ["255B6926-AE86-4DEB-98B8-E31629BDA7EC/L0/001"], options: PHFetchOptions()).object(at: 0)
