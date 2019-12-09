@@ -41,6 +41,10 @@ class PhotoEmotionCaptureViewController: UIViewController {
     
     func getQualityImage(identifier: String) {
         
+        UIView.animate(withDuration: 0.5) {
+            self.photoEmotionView.alpha = 0
+        }
+        
         let fetchOptions = PHFetchOptions()
         let singleImage = PHAsset.fetchAssets(withLocalIdentifiers: [identifier], options: fetchOptions)
         let asset = singleImage.object(at: 0)
@@ -48,6 +52,7 @@ class PhotoEmotionCaptureViewController: UIViewController {
 
         //self.emotionImage.fetchImageQualityFormat(asset: asset, contentMode: .aspectFill)
         self.emotionImage.fetchImageQualityFormat(asset: asset, contentMode: .aspectFill)
+        self.getPhoto()
         
     }
     
@@ -84,7 +89,7 @@ class PhotoEmotionCaptureViewController: UIViewController {
             print("Error Unable to initialize back camera: \(error.localizedDescription)")
         }
         
-        self.getPhoto()
+        //self.getPhoto()
     }
     
     func setupLivePreview() {
@@ -244,7 +249,7 @@ extension PhotoEmotionCaptureViewController: AVCapturePhotoCaptureDelegate {
             print(emotion)
             
             let emotionImage = GalleryEmotionImage()
-            emotionImage.imageName = self.photoInfo.identifier
+            emotionImage.imageName = (self.allPhotos?.object(at: self.selectedIndex).localIdentifier)!
             emotionImage.imageEmotion = emotion.rawValue
             
             // Get the default Realm
