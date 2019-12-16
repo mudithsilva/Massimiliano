@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SFProDisplay-Medium.ttf">
+            <string>SFProDisplay-Medium</string>
+        </array>
         <array key="SFProDisplay-Regular.ttf">
             <string>SFProDisplay-Regular</string>
         </array>
@@ -23,7 +26,7 @@
         <!--MoodsTabViewController-->
         <scene sceneID="q4n-4t-w7k">
             <objects>
-                <viewController restorationIdentifier="MoodsTabViewController" storyboardIdentifier="MoodsTabViewController" title="MoodsTabViewController" id="SDZ-ne-JHM" customClass="MoodsTabViewController" customModule="Massimiliano" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MoodsTabViewController" storyboardIdentifier="MoodsTabViewController" title="MoodsTabViewController" id="SDZ-ne-JHM" customClass="MoodsTabViewController" customModule="FeelPics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XRn-Ql-0EA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,7 +34,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjP-os-aUg" userLabel="Main View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQ6-KN-frL" userLabel="Search View" customClass="MyAwesomeView" customModule="Massimiliano" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQ6-KN-frL" userLabel="Search View" customClass="MyAwesomeView" customModule="FeelPics" customModuleProvider="target">
                                         <rect key="frame" x="30" y="70" width="354" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="FmW-Ts-TwG">
@@ -48,7 +51,7 @@
                                                     <constraint firstAttribute="width" constant="15" id="Mbw-OZ-qiC"/>
                                                 </constraints>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search &quot; Happy &quot;" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w6z-7d-mLu" customClass="MyAwesomeTextField" customModule="Massimiliano" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search &quot; Happy &quot;" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w6z-7d-mLu" customClass="MyAwesomeTextField" customModule="FeelPics" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
                                                 <color key="textColor" red="0.066666666669999999" green="0.36078431370000003" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
@@ -100,14 +103,14 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR MOODS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h63-Hv-xGd">
-                                        <rect key="frame" x="30" y="150" width="78.5" height="14"/>
-                                        <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="12"/>
-                                        <color key="textColor" red="0.066666666669999999" green="0.36078431370000003" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Moods" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="au4-J7-7oU">
+                                        <rect key="frame" x="30" y="148" width="72" height="17"/>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="14"/>
+                                        <color key="textColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="D08-kf-VqH">
-                                        <rect key="frame" x="0.0" y="184" width="414" height="300"/>
+                                        <rect key="frame" x="0.0" y="183" width="414" height="300"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="300" id="vdF-gi-HJ4"/>
@@ -136,12 +139,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="au4-J7-7oU" firstAttribute="top" secondItem="VQ6-KN-frL" secondAttribute="bottom" constant="28" id="0dz-dv-g57"/>
                                     <constraint firstItem="VQ6-KN-frL" firstAttribute="leading" secondItem="fjP-os-aUg" secondAttribute="leading" constant="30" id="CA6-hM-uMp"/>
-                                    <constraint firstItem="h63-Hv-xGd" firstAttribute="leading" secondItem="fjP-os-aUg" secondAttribute="leading" constant="30" id="J8O-ke-6xr"/>
-                                    <constraint firstItem="D08-kf-VqH" firstAttribute="top" secondItem="h63-Hv-xGd" secondAttribute="bottom" constant="20" id="UZo-IH-bBM"/>
                                     <constraint firstItem="VQ6-KN-frL" firstAttribute="centerX" secondItem="fjP-os-aUg" secondAttribute="centerX" id="Wvv-Du-TB7"/>
-                                    <constraint firstItem="h63-Hv-xGd" firstAttribute="top" secondItem="VQ6-KN-frL" secondAttribute="bottom" constant="30" id="ix4-Ze-xAY"/>
+                                    <constraint firstItem="au4-J7-7oU" firstAttribute="leading" secondItem="fjP-os-aUg" secondAttribute="leading" constant="30" id="bHN-s6-Ahc"/>
                                     <constraint firstItem="VQ6-KN-frL" firstAttribute="top" secondItem="fjP-os-aUg" secondAttribute="top" constant="70" id="lBT-4Q-xCh"/>
+                                    <constraint firstItem="D08-kf-VqH" firstAttribute="top" secondItem="au4-J7-7oU" secondAttribute="bottom" constant="18" id="r8b-HO-F4d"/>
                                     <constraint firstAttribute="trailing" secondItem="VQ6-KN-frL" secondAttribute="trailing" constant="30" id="ssi-2z-PwW"/>
                                     <constraint firstItem="D08-kf-VqH" firstAttribute="leading" secondItem="fjP-os-aUg" secondAttribute="leading" id="tMc-aP-0ek"/>
                                     <constraint firstAttribute="trailing" secondItem="D08-kf-VqH" secondAttribute="trailing" id="vCE-uF-Qbn"/>
@@ -170,7 +173,7 @@
         <!--SelectedMoodPhotosViewController-->
         <scene sceneID="zec-na-TLU">
             <objects>
-                <viewController restorationIdentifier="SelectedMoodPhotosViewController" storyboardIdentifier="SelectedMoodPhotosViewController" title="SelectedMoodPhotosViewController" modalPresentationStyle="fullScreen" id="J7a-P8-aBv" customClass="SelectedMoodPhotosViewController" customModule="Massimiliano" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="SelectedMoodPhotosViewController" storyboardIdentifier="SelectedMoodPhotosViewController" title="SelectedMoodPhotosViewController" modalPresentationStyle="fullScreen" id="J7a-P8-aBv" customClass="SelectedMoodPhotosViewController" customModule="FeelPics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cyv-VN-ciY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -275,7 +278,7 @@
         <!--MoodPhotoViewController-->
         <scene sceneID="n2z-AB-k2b">
             <objects>
-                <viewController restorationIdentifier="MoodPhotoViewController" storyboardIdentifier="MoodPhotoViewController" title="MoodPhotoViewController" modalPresentationStyle="fullScreen" id="iA4-Io-6xj" customClass="MoodPhotoViewController" customModule="Massimiliano" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MoodPhotoViewController" storyboardIdentifier="MoodPhotoViewController" title="MoodPhotoViewController" modalPresentationStyle="fullScreen" id="iA4-Io-6xj" customClass="MoodPhotoViewController" customModule="FeelPics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cT8-0k-COc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

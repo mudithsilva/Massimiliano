@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bXe-Uc-WzA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bXe-Uc-WzA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SFProDisplay-Medium.ttf">
+            <string>SFProDisplay-Medium</string>
+        </array>
         <array key="SFProDisplay-Regular.ttf">
             <string>SFProDisplay-Regular</string>
         </array>
@@ -27,28 +30,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b99-Ey-0br" userLabel="Main View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="36R-3W-g0u" userLabel="Seperator Line">
-                                        <rect key="frame" x="0.0" y="90" width="414" height="1"/>
-                                        <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="0JO-uc-40g"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KqB-Sf-2mn" userLabel="Seperator Line">
-                                        <rect key="frame" x="30" y="361" width="354" height="1"/>
-                                        <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="rqb-0z-uSj"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bD9-6H-Ibb">
-                                        <rect key="frame" x="173.5" y="61" width="67" height="21"/>
-                                        <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="18"/>
-                                        <color key="textColor" red="0.44705882352941173" green="0.50196078431372548" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COf-LL-DLE">
+                                        <rect key="frame" x="30" y="60" width="133" height="43"/>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="36"/>
+                                        <color key="textColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8s-LN-Crt" userLabel="Rate Us" customClass="MyAwesomeView" customModule="Massimiliano" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="121" width="354" height="60"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personalized Configurations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9W4-lQ-FtL">
+                                        <rect key="frame" x="30" y="111" width="169.5" height="17"/>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="14"/>
+                                        <color key="textColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8s-LN-Crt" userLabel="Rate Us" customClass="MyAwesomeView" customModule="FeelPics" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="178" width="354" height="60"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="AOT-QG-NvG">
                                                 <rect key="frame" x="331" y="22.5" width="7" height="15"/>
@@ -78,8 +73,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLu-ht-CRl" userLabel="Help" customClass="MyAwesomeView" customModule="Massimiliano" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="201" width="354" height="60"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLu-ht-CRl" userLabel="Help" customClass="MyAwesomeView" customModule="FeelPics" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="258" width="354" height="60"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="MSm-he-Ida">
                                                 <rect key="frame" x="331" y="22.5" width="7" height="15"/>
@@ -109,8 +104,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wis-Vr-fzb" userLabel="Privacy Policy" customClass="MyAwesomeView" customModule="Massimiliano" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="281" width="354" height="60"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wis-Vr-fzb" userLabel="Privacy Policy" customClass="MyAwesomeView" customModule="FeelPics" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="338" width="354" height="60"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="XWi-CN-aK1">
                                                 <rect key="frame" x="331" y="22.5" width="7" height="15"/>
@@ -143,25 +138,19 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="KqB-Sf-2mn" firstAttribute="leading" secondItem="b99-Ey-0br" secondAttribute="leading" constant="30" id="47s-WU-T7i"/>
                                     <constraint firstItem="XLu-ht-CRl" firstAttribute="top" secondItem="l8s-LN-Crt" secondAttribute="bottom" constant="20" id="7WT-4D-s9F"/>
-                                    <constraint firstItem="l8s-LN-Crt" firstAttribute="top" secondItem="36R-3W-g0u" secondAttribute="bottom" constant="30" id="E7b-V6-K9B"/>
                                     <constraint firstItem="wis-Vr-fzb" firstAttribute="top" secondItem="XLu-ht-CRl" secondAttribute="bottom" constant="20" id="Jbg-sC-Mor"/>
                                     <constraint firstAttribute="trailing" secondItem="XLu-ht-CRl" secondAttribute="trailing" constant="30" id="MzL-YP-h3m"/>
-                                    <constraint firstAttribute="trailing" secondItem="36R-3W-g0u" secondAttribute="trailing" id="NsI-Ea-Y2s"/>
+                                    <constraint firstItem="COf-LL-DLE" firstAttribute="leading" secondItem="b99-Ey-0br" secondAttribute="leading" constant="30" id="PGS-Rq-EgL"/>
                                     <constraint firstItem="l8s-LN-Crt" firstAttribute="leading" secondItem="b99-Ey-0br" secondAttribute="leading" constant="30" id="Qqt-An-84Q"/>
-                                    <constraint firstItem="36R-3W-g0u" firstAttribute="leading" secondItem="b99-Ey-0br" secondAttribute="leading" id="Vhw-Uy-AHv"/>
-                                    <constraint firstItem="36R-3W-g0u" firstAttribute="leading" secondItem="b99-Ey-0br" secondAttribute="leading" id="XA2-YE-ahB"/>
+                                    <constraint firstItem="COf-LL-DLE" firstAttribute="top" secondItem="b99-Ey-0br" secondAttribute="top" constant="60" id="TyI-4d-mNd"/>
+                                    <constraint firstItem="9W4-lQ-FtL" firstAttribute="leading" secondItem="b99-Ey-0br" secondAttribute="leading" constant="30" id="aVW-UT-WhP"/>
                                     <constraint firstAttribute="trailing" secondItem="l8s-LN-Crt" secondAttribute="trailing" constant="30" id="hP5-gf-IWe"/>
-                                    <constraint firstAttribute="trailing" secondItem="KqB-Sf-2mn" secondAttribute="trailing" constant="30" id="iss-zl-uLP"/>
-                                    <constraint firstItem="36R-3W-g0u" firstAttribute="top" secondItem="b99-Ey-0br" secondAttribute="top" constant="90" id="mcZ-ij-vTz"/>
                                     <constraint firstItem="XLu-ht-CRl" firstAttribute="leading" secondItem="b99-Ey-0br" secondAttribute="leading" constant="30" id="olC-3I-wyC"/>
-                                    <constraint firstItem="bD9-6H-Ibb" firstAttribute="centerX" secondItem="b99-Ey-0br" secondAttribute="centerX" id="rWX-hC-YHS"/>
-                                    <constraint firstItem="36R-3W-g0u" firstAttribute="top" secondItem="bD9-6H-Ibb" secondAttribute="bottom" constant="8" id="sFQ-ar-aen"/>
-                                    <constraint firstItem="KqB-Sf-2mn" firstAttribute="top" secondItem="wis-Vr-fzb" secondAttribute="bottom" constant="20" id="uS1-rk-Z8b"/>
+                                    <constraint firstItem="l8s-LN-Crt" firstAttribute="top" secondItem="9W4-lQ-FtL" secondAttribute="bottom" constant="50" id="qSF-D2-vZc"/>
                                     <constraint firstAttribute="trailing" secondItem="wis-Vr-fzb" secondAttribute="trailing" constant="30" id="uqh-Io-7N2"/>
                                     <constraint firstItem="wis-Vr-fzb" firstAttribute="leading" secondItem="b99-Ey-0br" secondAttribute="leading" constant="30" id="vx9-eH-mBC"/>
-                                    <constraint firstAttribute="trailing" secondItem="36R-3W-g0u" secondAttribute="trailing" id="wdz-FW-3Us"/>
+                                    <constraint firstItem="9W4-lQ-FtL" firstAttribute="top" secondItem="COf-LL-DLE" secondAttribute="bottom" constant="8" id="wP9-22-2nL"/>
                                 </constraints>
                             </view>
                         </subviews>

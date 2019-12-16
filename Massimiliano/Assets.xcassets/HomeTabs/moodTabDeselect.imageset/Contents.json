@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "religion-taoism.png",
+      "filename" : "wrapper.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "religion-taoism-1.png",
+      "filename" : "wrapper (1).png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "religion-taoism-2.png",
+      "filename" : "wrapper (2).png",
       "scale" : "3x"
     }
   ],

@@ -22,8 +22,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var moodsTabImg: UIImageView!
     @IBOutlet weak var settingsTabImg: UIImageView!
     
-    private let selectedTabColor: UIColor = #colorLiteral(red: 0, green: 0.5355854034, blue: 0.9033754468, alpha: 1)
-    private let deselectedTabColor: UIColor = #colorLiteral(red: 0.05042139441, green: 0.4379299283, blue: 0.5784627795, alpha: 1)
+    private let selectedTabColor: UIColor = #colorLiteral(red: 0.3536440134, green: 0.3536530137, blue: 0.3536481857, alpha: 1)
+    private let deselectedTabColor: UIColor = #colorLiteral(red: 0.8077236414, green: 0.8077427745, blue: 0.8077324033, alpha: 1)
     
     private let photoTabSelectedImg: UIImage = #imageLiteral(resourceName: "photoTabSelected")
     private let photoTabDeselectImg: UIImage = #imageLiteral(resourceName: "photoTabDeselect")
