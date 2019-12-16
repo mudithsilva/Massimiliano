@@ -25,8 +25,8 @@ class WalkMeViewController: UIViewController {
                                          "iPhoneImage2",
                                          "iPhoneImage3"]
     
-    var selectedColor: UIColor = #colorLiteral(red: 0.0862745098, green: 0.5176470588, blue: 0.9921568627, alpha: 1)
-    var deselectColor: UIColor = #colorLiteral(red: 0.04705882353, green: 0.4470588235, blue: 0.8784313725, alpha: 0.3)
+    var selectedColor: UIColor = #colorLiteral(red: 1, green: 0.8431372549, blue: 0.01960784314, alpha: 1)
+    var deselectColor: UIColor = #colorLiteral(red: 1, green: 0.8470588235, blue: 0.0431372549, alpha: 0.5)
     
     var foucusedIndex: Int = 0 {
         didSet {
@@ -95,19 +95,21 @@ class WalkMeViewController: UIViewController {
     }
     
     func changeCardImage() {
-        self.iPhoneImage.image = UIImage(named: self.imagesArray[self.foucusedIndex])
-        if (self.foucusedIndex == 0) {
-            self.selection1.backgroundColor = self.selectedColor
-            self.selection2.backgroundColor = self.deselectColor
-            self.selection3.backgroundColor = self.deselectColor
-        } else if (self.foucusedIndex == 1) {
-            self.selection1.backgroundColor = self.deselectColor
-            self.selection2.backgroundColor = self.selectedColor
-            self.selection3.backgroundColor = self.deselectColor
-        } else {
-            self.selection1.backgroundColor = self.deselectColor
-            self.selection2.backgroundColor = self.deselectColor
-            self.selection3.backgroundColor = self.selectedColor
+        if (self.foucusedIndex <= 2 && self.foucusedIndex >= 0) {
+            self.iPhoneImage.image = UIImage(named: self.imagesArray[self.foucusedIndex])
+            if (self.foucusedIndex == 0) {
+                self.selection1.backgroundColor = self.selectedColor
+                self.selection2.backgroundColor = self.deselectColor
+                self.selection3.backgroundColor = self.deselectColor
+            } else if (self.foucusedIndex == 1) {
+                self.selection1.backgroundColor = self.deselectColor
+                self.selection2.backgroundColor = self.selectedColor
+                self.selection3.backgroundColor = self.deselectColor
+            } else {
+                self.selection1.backgroundColor = self.deselectColor
+                self.selection2.backgroundColor = self.deselectColor
+                self.selection3.backgroundColor = self.selectedColor
+            }
         }
     }
     

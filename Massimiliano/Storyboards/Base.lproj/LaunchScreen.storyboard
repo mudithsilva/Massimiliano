@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="SFProDisplay-Light.ttf">
-            <string>SFProDisplay-Light</string>
-        </array>
-        <array key="SFProDisplay-Regular.ttf">
-            <string>SFProDisplay-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -30,58 +22,23 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="E7w-C1-6FO">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EjA-iC-zRl">
-                                        <rect key="frame" x="87" y="328" width="240" height="240"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="companyLogo" translatesAutoresizingMaskIntoConstraints="NO" id="aiN-nc-guB">
-                                                <rect key="frame" x="50" y="8" width="140" height="140"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="140" id="tmC-8K-HX5"/>
-                                                    <constraint firstAttribute="height" constant="140" id="uSZ-hv-gkq"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Massimiliano" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPb-n7-Od3">
-                                                <rect key="frame" x="0.0" y="172" width="240" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="pR0-76-iYm"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="24"/>
-                                                <color key="textColor" red="0.44705882352941173" green="0.50196078431372548" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="scorri le tue emozioni" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAY-ed-wXQ">
-                                                <rect key="frame" x="0.0" y="202" width="240" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="wNh-ZQ-6ZO"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="14"/>
-                                                <color key="textColor" red="0.44705882349999998" green="0.50196078430000002" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppWelcomCenter" translatesAutoresizingMaskIntoConstraints="NO" id="YRA-B1-Q8g">
+                                        <rect key="frame" x="0.0" y="248" width="414" height="400"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="UAY-ed-wXQ" secondAttribute="bottom" constant="17" id="04A-wV-iAP"/>
-                                            <constraint firstItem="aiN-nc-guB" firstAttribute="top" secondItem="EjA-iC-zRl" secondAttribute="top" constant="8" id="FcY-5d-7aG"/>
-                                            <constraint firstItem="sPb-n7-Od3" firstAttribute="leading" secondItem="EjA-iC-zRl" secondAttribute="leading" id="RWm-6c-5gu"/>
-                                            <constraint firstItem="aiN-nc-guB" firstAttribute="centerX" secondItem="EjA-iC-zRl" secondAttribute="centerX" id="XDY-Ce-Bid"/>
-                                            <constraint firstAttribute="height" constant="240" id="Y38-0Y-fo1"/>
-                                            <constraint firstItem="UAY-ed-wXQ" firstAttribute="top" secondItem="sPb-n7-Od3" secondAttribute="bottom" constant="9" id="cRD-XT-bcG"/>
-                                            <constraint firstAttribute="trailing" secondItem="sPb-n7-Od3" secondAttribute="trailing" id="eJd-SU-hak"/>
-                                            <constraint firstItem="UAY-ed-wXQ" firstAttribute="leading" secondItem="EjA-iC-zRl" secondAttribute="leading" id="fuV-re-faW"/>
-                                            <constraint firstAttribute="trailing" secondItem="UAY-ed-wXQ" secondAttribute="trailing" id="tVq-Dp-X1W"/>
-                                            <constraint firstAttribute="width" constant="240" id="xzK-h4-zrk"/>
+                                            <constraint firstAttribute="height" constant="400" id="dOi-PS-7i4"/>
                                         </constraints>
-                                    </view>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="E7w-C1-6FO" firstAttribute="leading" secondItem="Rrs-op-1mK" secondAttribute="leading" id="33k-pn-sr2"/>
                                     <constraint firstItem="E7w-C1-6FO" firstAttribute="top" secondItem="Rrs-op-1mK" secondAttribute="top" id="4mr-Sd-Gqm"/>
+                                    <constraint firstItem="YRA-B1-Q8g" firstAttribute="centerY" secondItem="Rrs-op-1mK" secondAttribute="centerY" id="6zD-lA-PUf"/>
                                     <constraint firstAttribute="trailing" secondItem="E7w-C1-6FO" secondAttribute="trailing" id="6zk-S1-bLZ"/>
+                                    <constraint firstItem="YRA-B1-Q8g" firstAttribute="leading" secondItem="Rrs-op-1mK" secondAttribute="leading" id="Ckw-Yl-gW3"/>
                                     <constraint firstAttribute="bottom" secondItem="E7w-C1-6FO" secondAttribute="bottom" id="H27-pf-RVy"/>
-                                    <constraint firstItem="EjA-iC-zRl" firstAttribute="centerX" secondItem="Rrs-op-1mK" secondAttribute="centerX" id="Tat-BJ-4ib"/>
-                                    <constraint firstItem="EjA-iC-zRl" firstAttribute="centerY" secondItem="Rrs-op-1mK" secondAttribute="centerY" id="sWq-Gu-8dr"/>
+                                    <constraint firstAttribute="trailing" secondItem="YRA-B1-Q8g" secondAttribute="trailing" id="V3M-ma-CYM"/>
+                                    <constraint firstItem="YRA-B1-Q8g" firstAttribute="centerX" secondItem="Rrs-op-1mK" secondAttribute="centerX" id="uwD-j4-pVL"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -101,7 +58,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="companyLogo" width="141" height="141"/>
-        <image name="mainBackground" width="187.5" height="406"/>
+        <image name="AppWelcomCenter" width="375" height="375"/>
+        <image name="mainBackground" width="375" height="812"/>
     </resources>
 </document>

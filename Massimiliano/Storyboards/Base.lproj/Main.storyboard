@@ -1,96 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="SFProDisplay-Light.ttf">
-            <string>SFProDisplay-Light</string>
-        </array>
-        <array key="SFProDisplay-Regular.ttf">
-            <string>SFProDisplay-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--LaunchViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController restorationIdentifier="LaunchViewController" storyboardIdentifier="LaunchViewController" title="LaunchViewController" id="BYZ-38-t0r" customClass="LaunchViewController" customModule="Massimiliano" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="LaunchViewController" storyboardIdentifier="LaunchViewController" title="LaunchViewController" id="BYZ-38-t0r" customClass="LaunchViewController" customModule="FeelPics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1qE-cg-ZQv">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QlV-Df-TIt">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="owJ-Nj-iQX">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="bUQ-8f-MwZ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGB-zi-bkR">
-                                        <rect key="frame" x="87" y="328" width="240" height="240"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="companyLogo" translatesAutoresizingMaskIntoConstraints="NO" id="1gj-sf-pIM">
-                                                <rect key="frame" x="50" y="8" width="140" height="140"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="140" id="A4N-Nz-f4E"/>
-                                                    <constraint firstAttribute="width" constant="140" id="idf-AM-KRO"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Massimiliano" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3M-Bc-fxg">
-                                                <rect key="frame" x="0.0" y="172" width="240" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="ySG-jO-xCo"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="24"/>
-                                                <color key="textColor" red="0.44705882349999998" green="0.50196078430000002" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="scorri le tue emozioni" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3s-3E-TCU">
-                                                <rect key="frame" x="0.0" y="202" width="240" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="RA5-RW-3of"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="14"/>
-                                                <color key="textColor" red="0.44705882349999998" green="0.50196078430000002" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppWelcomCenter" translatesAutoresizingMaskIntoConstraints="NO" id="TQ7-pi-3Yg">
+                                        <rect key="frame" x="0.0" y="248" width="414" height="400"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="A3s-3E-TCU" secondAttribute="bottom" constant="17" id="6uf-Pc-Clt"/>
-                                            <constraint firstItem="A3s-3E-TCU" firstAttribute="leading" secondItem="OGB-zi-bkR" secondAttribute="leading" id="D5v-qU-qvi"/>
-                                            <constraint firstAttribute="trailing" secondItem="A3s-3E-TCU" secondAttribute="trailing" id="GmK-lK-SUC"/>
-                                            <constraint firstAttribute="trailing" secondItem="v3M-Bc-fxg" secondAttribute="trailing" id="Qci-Fe-tJo"/>
-                                            <constraint firstAttribute="height" constant="240" id="RCg-RG-fmA"/>
-                                            <constraint firstItem="A3s-3E-TCU" firstAttribute="top" secondItem="v3M-Bc-fxg" secondAttribute="bottom" constant="9" id="U2d-rL-oj2"/>
-                                            <constraint firstItem="1gj-sf-pIM" firstAttribute="top" secondItem="OGB-zi-bkR" secondAttribute="top" constant="8" id="XUG-qD-Ne2"/>
-                                            <constraint firstAttribute="width" constant="240" id="ZbC-HD-9Ci"/>
-                                            <constraint firstItem="1gj-sf-pIM" firstAttribute="centerX" secondItem="OGB-zi-bkR" secondAttribute="centerX" id="gwH-uo-HQ9"/>
-                                            <constraint firstItem="v3M-Bc-fxg" firstAttribute="leading" secondItem="OGB-zi-bkR" secondAttribute="leading" id="qPs-rA-80f"/>
+                                            <constraint firstAttribute="height" constant="400" id="dTw-lZ-9jM"/>
                                         </constraints>
-                                    </view>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="OGB-zi-bkR" firstAttribute="centerY" secondItem="1qE-cg-ZQv" secondAttribute="centerY" id="4gf-c6-yrc"/>
-                                    <constraint firstAttribute="bottom" secondItem="owJ-Nj-iQX" secondAttribute="bottom" id="C3s-1a-iGW"/>
-                                    <constraint firstAttribute="trailing" secondItem="owJ-Nj-iQX" secondAttribute="trailing" id="WJL-Mh-h5W"/>
-                                    <constraint firstItem="owJ-Nj-iQX" firstAttribute="leading" secondItem="1qE-cg-ZQv" secondAttribute="leading" id="X4w-4o-RIH"/>
-                                    <constraint firstItem="OGB-zi-bkR" firstAttribute="centerX" secondItem="1qE-cg-ZQv" secondAttribute="centerX" id="bMC-bH-ehI"/>
-                                    <constraint firstItem="owJ-Nj-iQX" firstAttribute="top" secondItem="1qE-cg-ZQv" secondAttribute="top" id="hLQ-z3-TN3"/>
+                                    <constraint firstAttribute="trailing" secondItem="bUQ-8f-MwZ" secondAttribute="trailing" id="9Tt-0f-Uio"/>
+                                    <constraint firstItem="TQ7-pi-3Yg" firstAttribute="centerX" secondItem="QlV-Df-TIt" secondAttribute="centerX" id="DIZ-9z-xPD"/>
+                                    <constraint firstItem="TQ7-pi-3Yg" firstAttribute="leading" secondItem="QlV-Df-TIt" secondAttribute="leading" id="E0v-Wo-oHj"/>
+                                    <constraint firstAttribute="trailing" secondItem="TQ7-pi-3Yg" secondAttribute="trailing" id="Grw-EQ-Yxv"/>
+                                    <constraint firstAttribute="bottom" secondItem="bUQ-8f-MwZ" secondAttribute="bottom" id="IYx-4c-MM3"/>
+                                    <constraint firstItem="bUQ-8f-MwZ" firstAttribute="top" secondItem="QlV-Df-TIt" secondAttribute="top" id="iF8-cu-cga"/>
+                                    <constraint firstItem="bUQ-8f-MwZ" firstAttribute="leading" secondItem="QlV-Df-TIt" secondAttribute="leading" id="xye-EP-yaH"/>
+                                    <constraint firstItem="TQ7-pi-3Yg" firstAttribute="centerY" secondItem="QlV-Df-TIt" secondAttribute="centerY" id="ypx-6G-sjz"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="1qE-cg-ZQv" secondAttribute="bottom" id="CuZ-a2-sDZ"/>
-                            <constraint firstItem="1qE-cg-ZQv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="N1f-zR-HFo"/>
-                            <constraint firstItem="1qE-cg-ZQv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="O1B-Ub-k1D"/>
-                            <constraint firstItem="1qE-cg-ZQv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hfX-yc-l8Q"/>
+                            <constraint firstItem="QlV-Df-TIt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="O5b-M5-GUO"/>
+                            <constraint firstItem="QlV-Df-TIt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Vxc-fH-jqq"/>
+                            <constraint firstAttribute="bottom" secondItem="QlV-Df-TIt" secondAttribute="bottom" id="qyy-kH-xao"/>
+                            <constraint firstItem="QlV-Df-TIt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vad-0E-BgR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -101,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="116"/>
+            <point key="canvasLocation" x="131.8840579710145" y="115.84821428571428"/>
         </scene>
         <!--NewUserPath-->
         <scene sceneID="qmw-FW-Q2h">
@@ -121,7 +78,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="companyLogo" width="141" height="141"/>
-        <image name="mainBackground" width="187.5" height="406"/>
+        <image name="AppWelcomCenter" width="375" height="375"/>
+        <image name="mainBackground" width="375" height="812"/>
     </resources>
 </document>

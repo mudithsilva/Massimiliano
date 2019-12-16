@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cJG-ux-vml">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cJG-ux-vml">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,56 +16,56 @@
         <!--HomeViewController-->
         <scene sceneID="wC6-3J-rsv">
             <objects>
-                <viewController restorationIdentifier="HomeViewController" storyboardIdentifier="HomeViewController" title="HomeViewController" id="cJG-ux-vml" customClass="HomeViewController" customModule="Massimiliano" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="HomeViewController" storyboardIdentifier="HomeViewController" title="HomeViewController" id="cJG-ux-vml" customClass="HomeViewController" customModule="FeelPics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zp5-Zn-zLc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Km8-46-ZPP" userLabel="Main View">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Km8-46-ZPP" userLabel="Main View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gF8-Cg-D8g" userLabel="Photos Tab">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="816"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="796"/>
                                         <connections>
                                             <segue destination="dIz-ep-qHL" kind="embed" id="Lvf-xB-3fC"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oar-9U-B7X" userLabel="Moods Tab">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="816"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="796"/>
                                         <connections>
                                             <segue destination="x4J-5c-Wfp" kind="embed" id="poZ-m8-WED"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XSe-4e-v3h" userLabel="Settings Tab">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="816"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="796"/>
                                         <connections>
                                             <segue destination="sWF-uB-L30" kind="embed" id="EHb-mR-ryi"/>
                                         </connections>
                                     </containerView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yNq-4j-eMC" userLabel="Bottom Tab View" customClass="MyAwesomeView" customModule="Massimiliano" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="816" width="414" height="80"/>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yNq-4j-eMC" userLabel="Bottom Tab View" customClass="MyAwesomeView" customModule="FeelPics" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="796" width="414" height="100"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rUY-9K-I5k">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rUY-9K-I5k">
+                                                <rect key="frame" x="15" y="0.0" width="384" height="100"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ua4-7G-bLq">
-                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="80"/>
+                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ua4-7G-bLq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="100"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFj-Ll-kF0">
-                                                                <rect key="frame" x="10" y="10" width="118" height="60"/>
+                                                                <rect key="frame" x="10" y="10" width="108" height="80"/>
                                                                 <connections>
                                                                     <action selector="clickedPhotoTab:" destination="cJG-ux-vml" eventType="touchUpInside" id="xxB-Yc-AyW"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoTabSelected" translatesAutoresizingMaskIntoConstraints="NO" id="NaY-hI-9v9">
-                                                                <rect key="frame" x="59" y="15" width="20" height="20"/>
+                                                                <rect key="frame" x="54" y="25" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="Nde-mo-J4s"/>
                                                                     <constraint firstAttribute="width" constant="20" id="O0r-gY-aV0"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Bj-yK-fHh">
-                                                                <rect key="frame" x="48.5" y="39" width="41.5" height="17"/>
+                                                                <rect key="frame" x="43.5" y="49" width="41.5" height="17"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
                                                                 <color key="textColor" red="0.047058823529411764" green="0.44705882352941173" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -83,24 +83,24 @@
                                                             <constraint firstItem="hFj-Ll-kF0" firstAttribute="leading" secondItem="ua4-7G-bLq" secondAttribute="leading" constant="10" id="vKi-kj-LUC"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXm-46-3sc">
-                                                        <rect key="frame" x="138" y="0.0" width="138" height="80"/>
+                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXm-46-3sc">
+                                                        <rect key="frame" x="128" y="0.0" width="128" height="100"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYh-F9-4GB">
-                                                                <rect key="frame" x="10" y="10" width="118" height="60"/>
+                                                                <rect key="frame" x="10" y="10" width="108" height="80"/>
                                                                 <connections>
                                                                     <action selector="clickedMoodsTab:" destination="cJG-ux-vml" eventType="touchUpInside" id="lqe-ez-0NI"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moodTabDeselect" translatesAutoresizingMaskIntoConstraints="NO" id="pON-bp-CMm">
-                                                                <rect key="frame" x="59" y="15" width="20" height="20"/>
+                                                                <rect key="frame" x="54" y="25" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="GX0-uW-4gs"/>
                                                                     <constraint firstAttribute="width" constant="20" id="jlO-29-BjZ"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moods" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaO-U9-dJp">
-                                                                <rect key="frame" x="48.5" y="39" width="41" height="17"/>
+                                                                <rect key="frame" x="43.5" y="49" width="41" height="17"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
                                                                 <color key="textColor" red="0.066666666666666666" green="0.36078431372549019" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -118,24 +118,24 @@
                                                             <constraint firstItem="gaO-U9-dJp" firstAttribute="top" secondItem="pON-bp-CMm" secondAttribute="bottom" constant="4" id="wWr-Gm-83R"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nef-Ca-ZFM">
-                                                        <rect key="frame" x="276" y="0.0" width="138" height="80"/>
+                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nef-Ca-ZFM">
+                                                        <rect key="frame" x="256" y="0.0" width="128" height="100"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHW-KC-itv">
-                                                                <rect key="frame" x="10" y="10" width="118" height="60"/>
+                                                                <rect key="frame" x="10" y="10" width="108" height="80"/>
                                                                 <connections>
                                                                     <action selector="clickedSettingsTab:" destination="cJG-ux-vml" eventType="touchUpInside" id="G2T-gK-7qD"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingsTabDeselect" translatesAutoresizingMaskIntoConstraints="NO" id="x7I-bt-k2g">
-                                                                <rect key="frame" x="59" y="15" width="20" height="20"/>
+                                                                <rect key="frame" x="54" y="25" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="Pm9-ms-gBc"/>
                                                                     <constraint firstAttribute="width" constant="20" id="jUh-Ag-7R5"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4GN-fc-wIa">
-                                                                <rect key="frame" x="45" y="39" width="48.5" height="17"/>
+                                                                <rect key="frame" x="40" y="49" width="48.5" height="17"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
                                                                 <color key="textColor" red="0.066666666666666666" green="0.36078431372549019" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -158,11 +158,11 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="rUY-9K-I5k" secondAttribute="trailing" id="QeZ-BD-LKT"/>
+                                            <constraint firstAttribute="trailing" secondItem="rUY-9K-I5k" secondAttribute="trailing" constant="15" id="QeZ-BD-LKT"/>
                                             <constraint firstItem="rUY-9K-I5k" firstAttribute="top" secondItem="yNq-4j-eMC" secondAttribute="top" id="fla-Pr-Jct"/>
-                                            <constraint firstItem="rUY-9K-I5k" firstAttribute="leading" secondItem="yNq-4j-eMC" secondAttribute="leading" id="hJ5-zr-szj"/>
+                                            <constraint firstItem="rUY-9K-I5k" firstAttribute="leading" secondItem="yNq-4j-eMC" secondAttribute="leading" constant="15" id="hJ5-zr-szj"/>
                                             <constraint firstAttribute="bottom" secondItem="rUY-9K-I5k" secondAttribute="bottom" id="hek-XR-jAZ"/>
-                                            <constraint firstAttribute="height" constant="80" id="rV0-gc-5g5"/>
+                                            <constraint firstAttribute="height" constant="100" id="rV0-gc-5g5"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="addShaddow" value="YES"/>
@@ -171,6 +171,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                                 <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
