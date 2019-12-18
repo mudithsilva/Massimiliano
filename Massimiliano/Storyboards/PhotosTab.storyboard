@@ -165,7 +165,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstItem="MjY-jn-WSE" firstAttribute="top" secondItem="Gco-ad-PNl" secondAttribute="bottom" constant="8" id="Aih-Ux-jQ9"/>
                                                                     <constraint firstItem="Gco-ad-PNl" firstAttribute="centerY" secondItem="nni-9Q-7Hi" secondAttribute="centerY" id="EaB-wi-uuj"/>
@@ -214,7 +214,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstItem="drb-tL-5da" firstAttribute="top" secondItem="1Ag-qO-LJ2" secondAttribute="bottom" constant="8" id="309-Ii-L0g"/>
                                                                     <constraint firstItem="1Ag-qO-LJ2" firstAttribute="centerY" secondItem="F57-Uk-Xfa" secondAttribute="centerY" id="4Ks-G2-JXN"/>
@@ -263,7 +263,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstItem="i6l-DJ-m0d" firstAttribute="centerY" secondItem="dMj-Hx-Mtt" secondAttribute="centerY" id="2As-Li-6iM"/>
                                                                     <constraint firstItem="NNW-yM-Q7d" firstAttribute="centerX" secondItem="dMj-Hx-Mtt" secondAttribute="centerX" id="Pky-Ni-n1e"/>
@@ -312,7 +312,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstItem="HBi-m1-p2q" firstAttribute="centerX" secondItem="xTW-dn-rHR" secondAttribute="centerX" id="Aof-we-1am"/>
                                                                     <constraint firstItem="r0j-EY-37P" firstAttribute="centerX" secondItem="xTW-dn-rHR" secondAttribute="centerX" id="AyE-a9-uuA"/>
@@ -321,9 +321,10 @@
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="wVg-XM-e36" firstAttribute="top" secondItem="c9l-us-eyy" secondAttribute="top" id="2al-ZK-ocE"/>
                                                     <constraint firstItem="wVg-XM-e36" firstAttribute="leading" secondItem="c9l-us-eyy" secondAttribute="leading" id="49p-SJ-XAL"/>

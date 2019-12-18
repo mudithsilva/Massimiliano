@@ -24,28 +24,31 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Km8-46-ZPP" userLabel="Main View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gF8-Cg-D8g" userLabel="Photos Tab">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="796"/>
-                                        <connections>
-                                            <segue destination="dIz-ep-qHL" kind="embed" id="Lvf-xB-3fC"/>
-                                        </connections>
-                                    </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oar-9U-B7X" userLabel="Moods Tab">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="796"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="826"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <segue destination="x4J-5c-Wfp" kind="embed" id="poZ-m8-WED"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XSe-4e-v3h" userLabel="Settings Tab">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="796"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="826"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <segue destination="sWF-uB-L30" kind="embed" id="EHb-mR-ryi"/>
                                         </connections>
                                     </containerView>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yNq-4j-eMC" userLabel="Bottom Tab View" customClass="MyAwesomeView" customModule="FeelPics" customModuleProvider="target">
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gF8-Cg-D8g" userLabel="Photos Tab">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="826"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <segue destination="dIz-ep-qHL" kind="embed" id="Lvf-xB-3fC"/>
+                                        </connections>
+                                    </containerView>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yNq-4j-eMC" userLabel="Bottom Tab View">
                                         <rect key="frame" x="0.0" y="796" width="414" height="100"/>
                                         <subviews>
-                                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rUY-9K-I5k">
+                                            <stackView clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rUY-9K-I5k">
                                                 <rect key="frame" x="15" y="0.0" width="384" height="100"/>
                                                 <subviews>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ua4-7G-bLq">
@@ -71,7 +74,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="hFj-Ll-kF0" secondAttribute="bottom" constant="10" id="48p-HU-OVi"/>
                                                             <constraint firstItem="NaY-hI-9v9" firstAttribute="centerX" secondItem="ua4-7G-bLq" secondAttribute="centerX" id="5Is-jN-2Bi"/>
@@ -106,7 +109,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="gaO-U9-dJp" firstAttribute="centerX" secondItem="vXm-46-3sc" secondAttribute="centerX" id="5jC-ix-q0a"/>
                                                             <constraint firstAttribute="trailing" secondItem="YYh-F9-4GB" secondAttribute="trailing" constant="10" id="B4D-FO-dkI"/>
@@ -141,7 +144,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="eHW-KC-itv" secondAttribute="bottom" constant="10" id="4fO-xx-VOK"/>
                                                             <constraint firstAttribute="trailing" secondItem="eHW-KC-itv" secondAttribute="trailing" constant="10" id="IUv-as-rJz"/>
@@ -154,9 +157,11 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="rUY-9K-I5k" secondAttribute="trailing" constant="15" id="QeZ-BD-LKT"/>
                                             <constraint firstItem="rUY-9K-I5k" firstAttribute="top" secondItem="yNq-4j-eMC" secondAttribute="top" id="fla-Pr-Jct"/>
@@ -164,21 +169,9 @@
                                             <constraint firstAttribute="bottom" secondItem="rUY-9K-I5k" secondAttribute="bottom" id="hek-XR-jAZ"/>
                                             <constraint firstAttribute="height" constant="100" id="rV0-gc-5g5"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="addShaddow" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                <real key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="oar-9U-B7X" firstAttribute="leading" secondItem="Km8-46-ZPP" secondAttribute="leading" id="2O3-AO-Jil"/>
                                     <constraint firstAttribute="trailing" secondItem="yNq-4j-eMC" secondAttribute="trailing" id="4mA-xz-gPC"/>
@@ -187,13 +180,13 @@
                                     <constraint firstItem="gF8-Cg-D8g" firstAttribute="leading" secondItem="Km8-46-ZPP" secondAttribute="leading" id="BM7-K4-LOy"/>
                                     <constraint firstAttribute="trailing" secondItem="gF8-Cg-D8g" secondAttribute="trailing" id="E5h-HY-K76"/>
                                     <constraint firstItem="yNq-4j-eMC" firstAttribute="leading" secondItem="Km8-46-ZPP" secondAttribute="leading" id="FGO-a7-Wz9"/>
-                                    <constraint firstItem="yNq-4j-eMC" firstAttribute="top" secondItem="oar-9U-B7X" secondAttribute="bottom" id="FXd-OG-tQH"/>
+                                    <constraint firstItem="yNq-4j-eMC" firstAttribute="top" secondItem="oar-9U-B7X" secondAttribute="bottom" constant="-30" id="FXd-OG-tQH"/>
                                     <constraint firstItem="oar-9U-B7X" firstAttribute="top" secondItem="Km8-46-ZPP" secondAttribute="top" id="HsR-UZ-vUH"/>
                                     <constraint firstAttribute="trailing" secondItem="XSe-4e-v3h" secondAttribute="trailing" id="L3Q-qB-TwG"/>
                                     <constraint firstItem="XSe-4e-v3h" firstAttribute="leading" secondItem="Km8-46-ZPP" secondAttribute="leading" id="Xvl-7D-AjS"/>
                                     <constraint firstItem="gF8-Cg-D8g" firstAttribute="top" secondItem="Km8-46-ZPP" secondAttribute="top" id="grM-dA-Dnf"/>
-                                    <constraint firstItem="yNq-4j-eMC" firstAttribute="top" secondItem="XSe-4e-v3h" secondAttribute="bottom" id="kFy-LR-Abu"/>
-                                    <constraint firstItem="yNq-4j-eMC" firstAttribute="top" secondItem="gF8-Cg-D8g" secondAttribute="bottom" id="mHQ-jh-npL"/>
+                                    <constraint firstItem="yNq-4j-eMC" firstAttribute="top" secondItem="XSe-4e-v3h" secondAttribute="bottom" constant="-30" id="kFy-LR-Abu"/>
+                                    <constraint firstItem="yNq-4j-eMC" firstAttribute="top" secondItem="gF8-Cg-D8g" secondAttribute="bottom" constant="-30" id="mHQ-jh-npL"/>
                                     <constraint firstAttribute="bottom" secondItem="yNq-4j-eMC" secondAttribute="bottom" id="zKr-c3-AKq"/>
                                 </constraints>
                             </view>
@@ -208,6 +201,7 @@
                         <viewLayoutGuide key="safeArea" id="xeb-ce-dyp"/>
                     </view>
                     <connections>
+                        <outlet property="bottomBar" destination="yNq-4j-eMC" id="VmQ-p5-FVL"/>
                         <outlet property="moodsTab" destination="oar-9U-B7X" id="V4U-KP-sxK"/>
                         <outlet property="moodsTabImg" destination="pON-bp-CMm" id="yhg-pX-h4m"/>
                         <outlet property="moodsTabLabel" destination="gaO-U9-dJp" id="Om8-zr-NvO"/>

@@ -22,6 +22,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var moodsTabImg: UIImageView!
     @IBOutlet weak var settingsTabImg: UIImageView!
     
+    @IBOutlet weak var bottomBar: UIView!
+    
     private let selectedTabColor: UIColor = #colorLiteral(red: 0.3536440134, green: 0.3536530137, blue: 0.3536481857, alpha: 1)
     private let deselectedTabColor: UIColor = #colorLiteral(red: 0.8077236414, green: 0.8077427745, blue: 0.8077324033, alpha: 1)
     
@@ -37,7 +39,21 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configTabView()
+        
+        self.bottomBar.roundCorners([.layerMaxXMinYCorner, .layerMinXMinYCorner],
+                                    radius: 30.0,
+                                    borderColor: UIColor.clear,
+                                    borderWidth: 0)
+        self.addShadowToBottomBar()
         // Do any additional setup after loading the view.
+    }
+    
+    func addShadowToBottomBar() {
+        self.bottomBar.layer.masksToBounds = false
+        self.bottomBar.layer.shadowColor = UIColor.gray.cgColor
+        self.bottomBar.layer.shadowOpacity = 1.0
+        self.bottomBar.layer.shadowOffset = CGSize(width: 10.0, height: 20.0)
+        self.bottomBar.layer.shadowRadius = 30.0
     }
     
     func configTabView() {

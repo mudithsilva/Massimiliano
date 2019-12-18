@@ -27,7 +27,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="uQC-Gf-HR1">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhoneImage1" translatesAutoresizingMaskIntoConstraints="NO" id="35H-wf-NoX">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhoneImage1" translatesAutoresizingMaskIntoConstraints="NO" id="35H-wf-NoX">
                                         <rect key="frame" x="40" y="150" width="334" height="616"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
@@ -197,7 +197,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="iPhoneImage1" width="253.5" height="480.5"/>
+        <image name="iPhoneImage1" width="253.5" height="480"/>
         <image name="mainBackground" width="375" height="812"/>
     </resources>
 </document>
