@@ -14,7 +14,7 @@ class MoodsTabViewController: UIViewController {
     
     @IBOutlet weak var moodsCollectionView: UICollectionView!
     
-    private let moodImages: [UIImage] = [#imageLiteral(resourceName: "sampleMood1"), #imageLiteral(resourceName: "sampleMood2"), #imageLiteral(resourceName: "sampleMood1"), #imageLiteral(resourceName: "sampleMood2"), #imageLiteral(resourceName: "sampleMood1"), #imageLiteral(resourceName: "sampleMood2")]
+    private var moodImages: [UIImage] = [#imageLiteral(resourceName: "sampleMood1"), #imageLiteral(resourceName: "sampleMood2"), #imageLiteral(resourceName: "sampleMood1"), #imageLiteral(resourceName: "sampleMood2"), #imageLiteral(resourceName: "sampleMood1"), #imageLiteral(resourceName: "sampleMood2")]
     private let moodNames: [String] = ["Happy Times","Anger","Sad Times","Surprices", "Fear", "Neutral"]
     private let moodType: [String] = ["happiness","anger","sadness","surprise", "fear", "neutral"]
     private var moodTypeCount: [String] = ["Loading ...", "Loading ...", "Loading ...", "Loading ...", "Loading ...", "Loading ..."]
@@ -45,6 +45,7 @@ class MoodsTabViewController: UIViewController {
     func getEmotionCount() {
         
         var tempMoodTypeCount: [String] = []
+        var moodIndex :Int = 0
         
         for mood in moodType {
             var imageNames: [String] = []
@@ -60,6 +61,13 @@ class MoodsTabViewController: UIViewController {
             let allPhotos = PHAsset.fetchAssets(withLocalIdentifiers: imageNames, options: fetchOptions)
             
             tempMoodTypeCount.append("\(allPhotos.count) Contents Found")
+            
+            if allPhotos.count > 0 {
+                self.moodImages[moodIndex] = self.convertImageFromAsset(asset: allPhotos.firstObject!)
+            } else {
+                self.moodImages[moodIndex] = UIImage(named: "sampleMood1")!
+            }
+            moodIndex = moodIndex + 1
         }
         
         self.moodTypeCount = tempMoodTypeCount
@@ -67,6 +75,17 @@ class MoodsTabViewController: UIViewController {
         DispatchQueue.main.async {
           self.moodsCollectionView.reloadData()
         }
+    }
+    
+    func convertImageFromAsset(asset: PHAsset) -> UIImage {
+        let manager = PHImageManager.default()
+        let option = PHImageRequestOptions()
+        var image = UIImage()
+        option.isSynchronous = true
+        manager.requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+            image = result!
+        })
+        return image
     }
     
 

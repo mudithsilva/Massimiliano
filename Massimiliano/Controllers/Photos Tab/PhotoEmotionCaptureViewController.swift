@@ -17,8 +17,9 @@ class PhotoEmotionCaptureViewController: UIViewController {
     @IBOutlet weak var previewView: MyAwesomeView!
     
     @IBOutlet weak var photoEmotionView: MyAwesomeView!
-    @IBOutlet weak var emotionIcon: UIImageView!
     @IBOutlet weak var emotionName: UILabel!
+    
+    private let emojiArray: [String] = ["😊","😡","😢","😯","😨","😐"]
     
     var photoInfo: ImageWithEmotion!
     var selectedIndex: Int! = 0
@@ -289,23 +290,17 @@ extension PhotoEmotionCaptureViewController: AVCapturePhotoCaptureDelegate {
         
         switch emotion {
         case .anger:
-            self.emotionIcon.image = #imageLiteral(resourceName: "angeryFaceIcon")
-            self.emotionName.text = "Anger"
+            self.emotionName.text = self.emojiArray[1]
         case .fear:
-            self.emotionIcon.image = #imageLiteral(resourceName: "fearFaceIcon")
-            self.emotionName.text = "Fear"
+            self.emotionName.text = self.emojiArray[4]
         case .happiness:
-            self.emotionIcon.image = #imageLiteral(resourceName: "happinessFaceIcon")
-            self.emotionName.text = "Happy"
+            self.emotionName.text = self.emojiArray[0]
         case .neutral:
-            self.emotionIcon.image = #imageLiteral(resourceName: "neutralFaceIcon")
-            self.emotionName.text = "Neutral"
+            self.emotionName.text = self.emojiArray[5]
         case .sadness:
-            self.emotionIcon.image = #imageLiteral(resourceName: "sadFaceIcon")
-            self.emotionName.text = "Sad"
+            self.emotionName.text = self.emojiArray[2]
         case .surprise:
-            self.emotionIcon.image = #imageLiteral(resourceName: "surpriseFaceIcon")
-            self.emotionName.text = "Surprise"
+            self.emotionName.text = self.emojiArray[3]
         }
         
         UIView.animate(withDuration: 1) {
