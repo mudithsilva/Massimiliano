@@ -29,12 +29,15 @@ class PhotoEmotionCaptureViewController: UIViewController {
     var stillImageOutput: AVCapturePhotoOutput!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     
+    var videoPanGuest: UIPanGestureRecognizer = UIPanGestureRecognizer()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addSwipUpDownGuesture()
         //self.emotionImage.image = UIImage(data: self.photoInfo.imageData)
         self.getQualityImage(identifier: self.photoInfo.identifier)
+        self.configPanGuest()
         // Do any additional setup after loading the view.
     }
     
@@ -90,6 +93,19 @@ class PhotoEmotionCaptureViewController: UIViewController {
         }
         
         //self.getPhoto()
+    }
+    
+    func configPanGuest() {
+        self.videoPanGuest = UIPanGestureRecognizer(target: self, action: #selector(draggedView))
+        self.previewView.isUserInteractionEnabled = true
+        self.previewView.addGestureRecognizer(self.videoPanGuest)
+    }
+    
+    @objc func draggedView(_ sender:UIPanGestureRecognizer){
+        self.view.bringSubviewToFront(self.previewView)
+        let translation = sender.translation(in: self.view)
+        self.previewView.center = CGPoint(x: self.previewView.center.x + translation.x, y: self.previewView.center.y + translation.y)
+        sender.setTranslation(CGPoint.zero, in: self.view)
     }
     
     func setupLivePreview() {

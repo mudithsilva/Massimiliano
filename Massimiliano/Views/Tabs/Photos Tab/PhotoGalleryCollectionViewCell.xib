@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PhotoGalleryCollectionViewCell" customModule="Massimiliano" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PhotoGalleryCollectionViewCell" customModule="FeelPics" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="304" height="539"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -23,6 +23,16 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ur6-RO-K3b">
                                 <rect key="frame" x="0.0" y="0.0" width="304" height="539"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daq-KP-AUA" userLabel="emoji Label">
+                                <rect key="frame" x="274" y="514" width="30" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="0Lo-qd-vUU"/>
+                                    <constraint firstAttribute="width" constant="30" id="jOQ-gg-pyG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pI-IR-tfW">
                                 <rect key="frame" x="0.0" y="0.0" width="304" height="539"/>
                                 <connections>
@@ -37,9 +47,11 @@
                             <constraint firstItem="0pI-IR-tfW" firstAttribute="leading" secondItem="mHd-Ie-COC" secondAttribute="leading" id="PrZ-eS-NXT"/>
                             <constraint firstAttribute="bottom" secondItem="Ur6-RO-K3b" secondAttribute="bottom" id="RpY-gl-QQE"/>
                             <constraint firstItem="Ur6-RO-K3b" firstAttribute="leading" secondItem="mHd-Ie-COC" secondAttribute="leading" id="cT6-LO-bIf"/>
+                            <constraint firstAttribute="trailing" secondItem="daq-KP-AUA" secondAttribute="trailing" id="fv6-fM-3G2"/>
                             <constraint firstAttribute="trailing" secondItem="Ur6-RO-K3b" secondAttribute="trailing" id="hUX-I8-wLR"/>
                             <constraint firstItem="Ur6-RO-K3b" firstAttribute="top" secondItem="mHd-Ie-COC" secondAttribute="top" id="mjA-dU-gG4"/>
                             <constraint firstAttribute="trailing" secondItem="0pI-IR-tfW" secondAttribute="trailing" id="urm-tL-OFR"/>
+                            <constraint firstAttribute="bottom" secondItem="daq-KP-AUA" secondAttribute="bottom" id="vIK-Bv-HnC"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -53,6 +65,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="304" height="539"/>
             <connections>
+                <outlet property="emojiLabel" destination="daq-KP-AUA" id="5Ew-VJ-TX2"/>
                 <outlet property="galleryImage" destination="Ur6-RO-K3b" id="wec-Jq-Kbq"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="98.102678571428569"/>

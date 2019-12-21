@@ -11,6 +11,7 @@ import UIKit
 class PhotoGalleryCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var galleryImage: UIImageView!
+    @IBOutlet weak var emojiLabel: UILabel!
     
     var parentVC: PhotosTabViewController!
     var identifier: String!

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CEe-um-lGF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CEe-um-lGF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -110,20 +110,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="D08-kf-VqH">
-                                        <rect key="frame" x="0.0" y="183" width="414" height="300"/>
+                                        <rect key="frame" x="0.0" y="183" width="414" height="713"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="vdF-gi-HJ4"/>
-                                        </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CHq-45-w3V">
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CHq-45-w3V">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="50"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dB7-E9-N5g">
-                                                <rect key="frame" x="30" y="0.0" width="50" height="50"/>
+                                                <rect key="frame" x="10" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QQA-e5-MIm">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -140,14 +137,15 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="au4-J7-7oU" firstAttribute="top" secondItem="VQ6-KN-frL" secondAttribute="bottom" constant="28" id="0dz-dv-g57"/>
+                                    <constraint firstAttribute="trailing" secondItem="D08-kf-VqH" secondAttribute="trailing" id="8xq-0C-atc"/>
                                     <constraint firstItem="VQ6-KN-frL" firstAttribute="leading" secondItem="fjP-os-aUg" secondAttribute="leading" constant="30" id="CA6-hM-uMp"/>
+                                    <constraint firstItem="D08-kf-VqH" firstAttribute="top" secondItem="au4-J7-7oU" secondAttribute="bottom" constant="18" id="GzI-SU-vmP"/>
                                     <constraint firstItem="VQ6-KN-frL" firstAttribute="centerX" secondItem="fjP-os-aUg" secondAttribute="centerX" id="Wvv-Du-TB7"/>
                                     <constraint firstItem="au4-J7-7oU" firstAttribute="leading" secondItem="fjP-os-aUg" secondAttribute="leading" constant="30" id="bHN-s6-Ahc"/>
                                     <constraint firstItem="VQ6-KN-frL" firstAttribute="top" secondItem="fjP-os-aUg" secondAttribute="top" constant="70" id="lBT-4Q-xCh"/>
-                                    <constraint firstItem="D08-kf-VqH" firstAttribute="top" secondItem="au4-J7-7oU" secondAttribute="bottom" constant="18" id="r8b-HO-F4d"/>
+                                    <constraint firstItem="D08-kf-VqH" firstAttribute="leading" secondItem="fjP-os-aUg" secondAttribute="leading" id="sbt-6g-2V2"/>
                                     <constraint firstAttribute="trailing" secondItem="VQ6-KN-frL" secondAttribute="trailing" constant="30" id="ssi-2z-PwW"/>
-                                    <constraint firstItem="D08-kf-VqH" firstAttribute="leading" secondItem="fjP-os-aUg" secondAttribute="leading" id="tMc-aP-0ek"/>
-                                    <constraint firstAttribute="trailing" secondItem="D08-kf-VqH" secondAttribute="trailing" id="vCE-uF-Qbn"/>
+                                    <constraint firstAttribute="bottom" secondItem="D08-kf-VqH" secondAttribute="bottom" id="tGo-Q2-m2A"/>
                                 </constraints>
                             </view>
                         </subviews>

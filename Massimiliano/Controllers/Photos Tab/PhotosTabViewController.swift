@@ -8,6 +8,7 @@
 
 import UIKit
 import Photos
+import RealmSwift
 
 class PhotosTabViewController: UIViewController {
     
@@ -15,6 +16,9 @@ class PhotosTabViewController: UIViewController {
     
     private let tempImage: UIImage = #imageLiteral(resourceName: "sampleGalleryImage")
     private var allPhotos : PHFetchResult<PHAsset>? = nil
+    
+    private let emojiArray: [String] = ["😊","😡","😢","😯","😨","😐"]
+    private let moodType: [String] = ["happiness","anger","sadness","surprise", "fear", "neutral"]
     
     var selectedIndex: Int = 0
 
@@ -27,6 +31,10 @@ class PhotosTabViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         //self.galleryImageCollectionView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.galleryImageCollectionView.reloadData()
     }
     
     func registerNibs() {
@@ -70,6 +78,18 @@ class PhotosTabViewController: UIViewController {
         }
     }
     
+    func getPhotoEmotion(imageName: String) -> String {
+        let realm = try! Realm()
+        let imageData = realm.objects(GalleryEmotionImage.self).filter("imageName = '\(imageName)'")
+        if imageData.count > 0 {
+            let emotionData = imageData.first!
+            let emoIndex = self.moodType.firstIndex(of: emotionData.imageEmotion)!
+            return self.emojiArray[emoIndex]
+        } else {
+            return ""
+        }
+    }
+    
 
 }
 
@@ -96,6 +116,7 @@ extension PhotosTabViewController: UICollectionViewDataSource {
         cell.parentVC = self
         cell.identifier = self.allPhotos?.object(at: indexPath.row).localIdentifier
         cell.photoIndex = indexPath.row
+        cell.emojiLabel.text = self.getPhotoEmotion(imageName: (self.allPhotos?.object(at: indexPath.row).localIdentifier)!)
 //        print(self.allPhotos?.object(at: indexPath.row).localIdentifier)
 //
 //        let asset = PHAsset.fetchAssets(withLocalIdentifiers: ["255B6926-AE86-4DEB-98B8-E31629BDA7EC/L0/001"], options: PHFetchOptions()).object(at: 0)
