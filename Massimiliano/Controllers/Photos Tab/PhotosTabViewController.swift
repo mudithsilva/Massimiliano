@@ -13,12 +13,18 @@ import RealmSwift
 class PhotosTabViewController: UIViewController {
     
     @IBOutlet weak var galleryImageCollectionView: UICollectionView!
+    @IBOutlet weak var moodsReelCollectionView: UICollectionView!
+    @IBOutlet weak var searchField: MyAwesomeTextField!
     
+    var quesryWaitingTimer = Timer()
     private let tempImage: UIImage = #imageLiteral(resourceName: "sampleGalleryImage")
     private var allPhotos : PHFetchResult<PHAsset>? = nil
+    private var searchPhotos : PHFetchResult<PHAsset>? = nil
     
     private let emojiArray: [String] = ["😊","😡","😢","😯","😨","😐"]
     private let moodType: [String] = ["happiness","anger","sadness","surprise", "fear", "neutral"]
+    private let moodReelImgs: [UIImage] = [#imageLiteral(resourceName: "happyIcon"),#imageLiteral(resourceName: "excitmentIcon"),#imageLiteral(resourceName: "happyIcon"),#imageLiteral(resourceName: "happyIcon"),#imageLiteral(resourceName: "sadtimeIcon"), #imageLiteral(resourceName: "surpriseIcon")]
+    private let moodReelTag: [String] = ["#happy","#anger","#sadness","#surprise", "#fear", "#neutral"]
     
     var selectedIndex: Int = 0
 
@@ -26,6 +32,8 @@ class PhotosTabViewController: UIViewController {
         super.viewDidLoad()
         self.registerNibs()
         self.loadGalleryPhotos()
+        self.addToolBar()
+        self.searchField.addTarget(self, action: #selector(searchTextChanged), for: .editingChanged) // Detect changes on DatePicker
         // Do any additional setup after loading the view.
     }
     
@@ -39,7 +47,47 @@ class PhotosTabViewController: UIViewController {
     
     func registerNibs() {
         self.galleryImageCollectionView.register(UINib(nibName: "PhotoGalleryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PhotoGalleryCollectionViewCell")
+        self.moodsReelCollectionView.register(UINib(nibName: "MoodReelCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MoodReelCollectionViewCell")
     }
+    
+    @objc func searchTextChanged() {
+        if self.searchField.text != "" {
+            self.quesryWaitingTimer.invalidate()
+            self.quesryWaitingTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(searchQuery), userInfo: nil, repeats: false) // Waiting for type timer
+        } else {
+            self.quesryWaitingTimer.invalidate()
+            self.searchPhotos = nil
+            self.galleryImageCollectionView.reloadData()
+        }
+    }
+    
+    func addToolBar() {
+        let toolbarSearch = UIToolbar()
+        toolbarSearch.sizeToFit()
+        
+        let cancelSearchButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: #selector(cancelSearch))
+        let doneSearchButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneSearch))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        toolbarSearch.setItems([cancelSearchButton,spaceButton, doneSearchButton], animated: false)
+        
+        self.searchField.inputAccessoryView = toolbarSearch
+    }
+    
+    @objc func cancelSearch() {
+        self.view.endEditing(true)
+        self.searchField.text = ""
+        self.searchPhotos = nil
+        self.galleryImageCollectionView.reloadData()
+    }
+    
+    @objc func doneSearch() {
+        self.view.endEditing(true)
+    }
+    
+    @objc func searchQuery() {
+        
+    }
+    
     
     func loadGalleryPhotos() {
         PHPhotoLibrary.requestAuthorization { (status) in
@@ -75,6 +123,12 @@ class PhotosTabViewController: UIViewController {
             destinationVC.photoInfo = photoInfo
             destinationVC.selectedIndex = self.selectedIndex
             destinationVC.allPhotos = self.allPhotos
+        } else if (segue.identifier == "showMoodReal") {
+            let ind = sender as! IndexPath
+            let destinationVC = segue.destination as! MoodRealViewController
+            destinationVC.moodTitle = self.moodReelTag[ind.row]
+            destinationVC.mood = self.moodType[ind.row]
+            
         }
     }
     
@@ -96,34 +150,62 @@ class PhotosTabViewController: UIViewController {
 extension PhotosTabViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (self.view.frame.size.width - 15.0) / 4, height: (self.view.frame.size.width - 15.0) / 4)
+        if collectionView.tag == 1 {
+            return CGSize(width: (self.view.frame.size.width - 15.0) / 4, height: (self.view.frame.size.width - 15.0) / 4)
+        } else {
+            return CGSize(width: (self.view.frame.size.width - 50.0) / 4, height: self.moodsReelCollectionView.frame.size.height)
+        }
     }
     
 }
 
+extension PhotosTabViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView.tag == 2 {
+            collectionView.deselectItem(at: indexPath, animated: true)
+            self.performSegue(withIdentifier: "showMoodReal", sender: indexPath)
+        }
+    }
+}
+
+
+
 extension PhotosTabViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.allPhotos?.count ?? 0
+        if collectionView.tag == 1 {
+            return self.allPhotos?.count ?? 0
+        } else {
+            return self.moodType.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoGalleryCollectionViewCell", for: indexPath) as! PhotoGalleryCollectionViewCell
-        //cell.galleryImage.image = self.tempImage
         
-        let asset = self.allPhotos?.object(at: indexPath.row)
-        cell.galleryImage.fetchImageFastFormat(asset: asset!, contentMode: .aspectFill)
-        cell.parentVC = self
-        cell.identifier = self.allPhotos?.object(at: indexPath.row).localIdentifier
-        cell.photoIndex = indexPath.row
-        cell.emojiLabel.text = self.getPhotoEmotion(imageName: (self.allPhotos?.object(at: indexPath.row).localIdentifier)!)
-//        print(self.allPhotos?.object(at: indexPath.row).localIdentifier)
-//
-//        let asset = PHAsset.fetchAssets(withLocalIdentifiers: ["255B6926-AE86-4DEB-98B8-E31629BDA7EC/L0/001"], options: PHFetchOptions()).object(at: 0)
-//
-//        self.emotionImage.fetchImage(asset: asset, contentMode: .aspectFill)
-        
-        return cell
+        if collectionView.tag == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoGalleryCollectionViewCell", for: indexPath) as! PhotoGalleryCollectionViewCell
+            //cell.galleryImage.image = self.tempImage
+            
+            let asset = self.allPhotos?.object(at: indexPath.row)
+            cell.galleryImage.fetchImageFastFormat(asset: asset!, contentMode: .aspectFill)
+            cell.parentVC = self
+            cell.identifier = self.allPhotos?.object(at: indexPath.row).localIdentifier
+            cell.photoIndex = indexPath.row
+            cell.emojiLabel.text = self.getPhotoEmotion(imageName: (self.allPhotos?.object(at: indexPath.row).localIdentifier)!)
+            //        print(self.allPhotos?.object(at: indexPath.row).localIdentifier)
+            //
+            //        let asset = PHAsset.fetchAssets(withLocalIdentifiers: ["255B6926-AE86-4DEB-98B8-E31629BDA7EC/L0/001"], options: PHFetchOptions()).object(at: 0)
+            //
+            //        self.emotionImage.fetchImage(asset: asset, contentMode: .aspectFill)
+            
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoodReelCollectionViewCell", for: indexPath) as! MoodReelCollectionViewCell
+            cell.moodImage.image = self.moodReelImgs[indexPath.row]
+            cell.moodname.text = self.moodReelTag[indexPath.row]
+            return cell
+        }
     }
     
     

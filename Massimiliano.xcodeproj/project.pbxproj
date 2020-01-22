@@ -17,6 +17,9 @@
 		BA143E9D239319190024BB65 /* SelectedMoodPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA143E9B239319190024BB65 /* SelectedMoodPhotoCollectionViewCell.swift */; };
 		BA143E9E239319190024BB65 /* SelectedMoodPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA143E9C239319190024BB65 /* SelectedMoodPhotoCollectionViewCell.xib */; };
 		BA143EA02393DF360024BB65 /* MoodPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA143E9F2393DF360024BB65 /* MoodPhotoViewController.swift */; };
+		BA5253A323D8F7F900588A35 /* MoodReelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5253A123D8F7F900588A35 /* MoodReelCollectionViewCell.swift */; };
+		BA5253A423D8F7F900588A35 /* MoodReelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA5253A223D8F7F900588A35 /* MoodReelCollectionViewCell.xib */; };
+		BA52E14F23D7A0F4009FCAE4 /* MoodRealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E14E23D7A0F4009FCAE4 /* MoodRealViewController.swift */; };
 		BA5B51052365870600BC128E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B51042365870600BC128E /* AppDelegate.swift */; };
 		BA5B510A2365870600BC128E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA5B51082365870600BC128E /* Main.storyboard */; };
 		BA5B510C2365870800BC128E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA5B510B2365870800BC128E /* Assets.xcassets */; };
@@ -124,6 +127,9 @@
 		BA143E9B239319190024BB65 /* SelectedMoodPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedMoodPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA143E9C239319190024BB65 /* SelectedMoodPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedMoodPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		BA143E9F2393DF360024BB65 /* MoodPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodPhotoViewController.swift; sourceTree = "<group>"; };
+		BA5253A123D8F7F900588A35 /* MoodReelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodReelCollectionViewCell.swift; sourceTree = "<group>"; };
+		BA5253A223D8F7F900588A35 /* MoodReelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoodReelCollectionViewCell.xib; sourceTree = "<group>"; };
+		BA52E14E23D7A0F4009FCAE4 /* MoodRealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodRealViewController.swift; sourceTree = "<group>"; };
 		BA5B51012365870600BC128E /* FeelPics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeelPics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5B51042365870600BC128E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA5B51092365870600BC128E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -669,6 +675,7 @@
 			children = (
 				BA8B95E52369B8940043A79A /* PhotosTabViewController.swift */,
 				BA8F0610236E2671007597F5 /* PhotoEmotionCaptureViewController.swift */,
+				BA52E14E23D7A0F4009FCAE4 /* MoodRealViewController.swift */,
 			);
 			path = "Photos Tab";
 			sourceTree = "<group>";
@@ -680,6 +687,8 @@
 				BA8B95E92369BE710043A79A /* MoodsSectionCollectionViewCell.xib */,
 				BA143E9B239319190024BB65 /* SelectedMoodPhotoCollectionViewCell.swift */,
 				BA143E9C239319190024BB65 /* SelectedMoodPhotoCollectionViewCell.xib */,
+				BA5253A123D8F7F900588A35 /* MoodReelCollectionViewCell.swift */,
+				BA5253A223D8F7F900588A35 /* MoodReelCollectionViewCell.xib */,
 			);
 			path = "Moods Tab";
 			sourceTree = "<group>";
@@ -807,6 +816,7 @@
 				BA8B95AB2365E04C0043A79A /* dismissViewOverlay.png in Resources */,
 				BA8B95632365DBF50043A79A /* SFProDisplay-UltralightItalic.ttf in Resources */,
 				BA8B953F2365DBF50043A79A /* SFProDisplay-Light.ttf in Resources */,
+				BA5253A423D8F7F900588A35 /* MoodReelCollectionViewCell.xib in Resources */,
 				BA8B95642365DBF50043A79A /* SFProDisplay-Thin.ttf in Resources */,
 				BA8B95A92365E04C0043A79A /* SwiftySideMenuImageView.xib in Resources */,
 				BA5B510F2365870800BC128E /* LaunchScreen.storyboard in Resources */,
@@ -941,8 +951,10 @@
 				BA143E9823930A200024BB65 /* GalleryEmotionImage.swift in Sources */,
 				BA8B95A82365E04C0043A79A /* SwiftySideMenuInfo.swift in Sources */,
 				BA8B95B02365E04C0043A79A /* UIImageExtension.swift in Sources */,
+				BA5253A323D8F7F900588A35 /* MoodReelCollectionViewCell.swift in Sources */,
 				BA8B95AA2365E04C0043A79A /* SwiftySideMenuDataSource.swift in Sources */,
 				BA8B95C42365E04C0043A79A /* StringExtension.swift in Sources */,
+				BA52E14F23D7A0F4009FCAE4 /* MoodRealViewController.swift in Sources */,
 				BA143E92239076F30024BB65 /* Graph.swift in Sources */,
 				BA8B95BD2365E04C0043A79A /* MyAwesomeView.swift in Sources */,
 				BA143E9A239317FF0024BB65 /* SelectedMoodPhotosViewController.swift in Sources */,
@@ -1146,7 +1158,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 6Y5L6877W6;
 				INFOPLIST_FILE = Massimiliano/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1170,7 +1182,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 6Y5L6877W6;
 				INFOPLIST_FILE = Massimiliano/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
