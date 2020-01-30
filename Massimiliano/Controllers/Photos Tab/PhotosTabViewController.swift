@@ -88,7 +88,7 @@ class PhotosTabViewController: UIViewController {
         var imageNames: [String] = []
         
         let realm = try! Realm()
-        let imageSet = realm.objects(GalleryEmotionImage.self).filter("imageEmotion BEGINSWITH '\(self.searchField.text!.lowercased())' OR imageLocation BEGINSWITH '\(self.searchField.text!.lowercased())' OR imageDate BEGINSWITH '\(self.searchField.text!.lowercased())'")
+        let imageSet = realm.objects(GalleryEmotionImage.self).filter("imageEmotion CONTAINS '\(self.searchField.text!.lowercased())' OR imageLocation CONTAINS '\(self.searchField.text!.lowercased())' OR imageDate CONTAINS '\(self.searchField.text!.lowercased())'")
         
         if imageSet.count > 0 {
             for item in imageSet {

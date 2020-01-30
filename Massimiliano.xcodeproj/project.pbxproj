@@ -17,6 +17,8 @@
 		BA143E9D239319190024BB65 /* SelectedMoodPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA143E9B239319190024BB65 /* SelectedMoodPhotoCollectionViewCell.swift */; };
 		BA143E9E239319190024BB65 /* SelectedMoodPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA143E9C239319190024BB65 /* SelectedMoodPhotoCollectionViewCell.xib */; };
 		BA143EA02393DF360024BB65 /* MoodPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA143E9F2393DF360024BB65 /* MoodPhotoViewController.swift */; };
+		BA25806F23E353F20037CA10 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA25806E23E353F20037CA10 /* SettingsViewController.swift */; };
+		BA25807123E3554B0037CA10 /* IAPShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA25807023E3554B0037CA10 /* IAPShowViewController.swift */; };
 		BA5253A323D8F7F900588A35 /* MoodReelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5253A123D8F7F900588A35 /* MoodReelCollectionViewCell.swift */; };
 		BA5253A423D8F7F900588A35 /* MoodReelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA5253A223D8F7F900588A35 /* MoodReelCollectionViewCell.xib */; };
 		BA52E14F23D7A0F4009FCAE4 /* MoodRealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E14E23D7A0F4009FCAE4 /* MoodRealViewController.swift */; };
@@ -127,6 +129,8 @@
 		BA143E9B239319190024BB65 /* SelectedMoodPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedMoodPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA143E9C239319190024BB65 /* SelectedMoodPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedMoodPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		BA143E9F2393DF360024BB65 /* MoodPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodPhotoViewController.swift; sourceTree = "<group>"; };
+		BA25806E23E353F20037CA10 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BA25807023E3554B0037CA10 /* IAPShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPShowViewController.swift; sourceTree = "<group>"; };
 		BA5253A123D8F7F900588A35 /* MoodReelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodReelCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA5253A223D8F7F900588A35 /* MoodReelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoodReelCollectionViewCell.xib; sourceTree = "<group>"; };
 		BA52E14E23D7A0F4009FCAE4 /* MoodRealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodRealViewController.swift; sourceTree = "<group>"; };
@@ -296,6 +300,15 @@
 			path = Graph;
 			sourceTree = "<group>";
 		};
+		BA25806D23E353BC0037CA10 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BA25806E23E353F20037CA10 /* SettingsViewController.swift */,
+				BA25807023E3554B0037CA10 /* IAPShowViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		BA5B50F82365870600BC128E = {
 			isa = PBXGroup;
 			children = (
@@ -386,6 +399,7 @@
 				BA8B95E42369B8670043A79A /* Photos Tab */,
 				BA8B95D52366EE540043A79A /* Home View Controllers */,
 				BA8B95D22365EAC10043A79A /* NewUserPath */,
+				BA25806D23E353BC0037CA10 /* Settings */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -951,6 +965,7 @@
 				BA143E9823930A200024BB65 /* GalleryEmotionImage.swift in Sources */,
 				BA8B95A82365E04C0043A79A /* SwiftySideMenuInfo.swift in Sources */,
 				BA8B95B02365E04C0043A79A /* UIImageExtension.swift in Sources */,
+				BA25807123E3554B0037CA10 /* IAPShowViewController.swift in Sources */,
 				BA5253A323D8F7F900588A35 /* MoodReelCollectionViewCell.swift in Sources */,
 				BA8B95AA2365E04C0043A79A /* SwiftySideMenuDataSource.swift in Sources */,
 				BA8B95C42365E04C0043A79A /* StringExtension.swift in Sources */,
@@ -960,6 +975,7 @@
 				BA143E9A239317FF0024BB65 /* SelectedMoodPhotosViewController.swift in Sources */,
 				BA8B95A62365E04C0043A79A /* SwiftySideMenuChildViewControllers.swift in Sources */,
 				BA8B95B62365E04C0043A79A /* AppStoryboard.swift in Sources */,
+				BA25806F23E353F20037CA10 /* SettingsViewController.swift in Sources */,
 				BA8B95D42365EADC0043A79A /* WalkMeViewController.swift in Sources */,
 				BA8B95EE2369C0290043A79A /* MoodsTabViewController.swift in Sources */,
 				BA8B95AE2365E04C0043A79A /* NotificationTypes.swift in Sources */,
