@@ -53,7 +53,7 @@ class PhotosTabViewController: UIViewController {
     @objc func searchTextChanged() {
         if self.searchField.text != "" {
             self.quesryWaitingTimer.invalidate()
-            self.quesryWaitingTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(searchQuery), userInfo: nil, repeats: false) // Waiting for type timer
+            self.quesryWaitingTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(searchQuery), userInfo: nil, repeats: false) // Waiting for type timer
         } else {
             self.quesryWaitingTimer.invalidate()
             self.searchPhotos = nil
@@ -85,7 +85,23 @@ class PhotosTabViewController: UIViewController {
     }
     
     @objc func searchQuery() {
+        var imageNames: [String] = []
         
+        let realm = try! Realm()
+        let imageSet = realm.objects(GalleryEmotionImage.self).filter("imageEmotion BEGINSWITH '\(self.searchField.text!.lowercased())' OR imageLocation BEGINSWITH '\(self.searchField.text!.lowercased())' OR imageDate BEGINSWITH '\(self.searchField.text!.lowercased())'")
+        
+        if imageSet.count > 0 {
+            for item in imageSet {
+                imageNames.append(item.imageName)
+            }
+            
+            let fetchOptions = PHFetchOptions()
+            self.searchPhotos = PHAsset.fetchAssets(withLocalIdentifiers: imageNames, options: fetchOptions)
+        } else {
+            print("Show Error Message")
+            self.searchPhotos = nil
+        }
+        self.galleryImageCollectionView.reloadData()
     }
     
     
@@ -175,7 +191,11 @@ extension PhotosTabViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 1 {
-            return self.allPhotos?.count ?? 0
+            if self.searchField.text!.isEmpty {
+                return self.allPhotos?.count ?? 0
+            } else {
+                return self.searchPhotos?.count ?? 0
+            }
         } else {
             return self.moodType.count
         }
@@ -186,19 +206,21 @@ extension PhotosTabViewController: UICollectionViewDataSource {
         if collectionView.tag == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoGalleryCollectionViewCell", for: indexPath) as! PhotoGalleryCollectionViewCell
             //cell.galleryImage.image = self.tempImage
+            var asset: PHAsset = PHAsset()
             
-            let asset = self.allPhotos?.object(at: indexPath.row)
-            cell.galleryImage.fetchImageFastFormat(asset: asset!, contentMode: .aspectFill)
+            if self.searchField.text!.isEmpty {
+                asset = (self.allPhotos?.object(at: indexPath.row))!
+                cell.emojiLabel.text = self.getPhotoEmotion(imageName: (self.allPhotos?.object(at: indexPath.row).localIdentifier)!)
+            } else {
+                asset = (self.searchPhotos?.object(at: indexPath.row))!
+                cell.emojiLabel.text = self.getPhotoEmotion(imageName: (self.searchPhotos?.object(at: indexPath.row).localIdentifier)!)
+            }
+            
+            cell.galleryImage.fetchImageFastFormat(asset: asset, contentMode: .aspectFill)
             cell.parentVC = self
             cell.identifier = self.allPhotos?.object(at: indexPath.row).localIdentifier
             cell.photoIndex = indexPath.row
-            cell.emojiLabel.text = self.getPhotoEmotion(imageName: (self.allPhotos?.object(at: indexPath.row).localIdentifier)!)
-            //        print(self.allPhotos?.object(at: indexPath.row).localIdentifier)
-            //
-            //        let asset = PHAsset.fetchAssets(withLocalIdentifiers: ["255B6926-AE86-4DEB-98B8-E31629BDA7EC/L0/001"], options: PHFetchOptions()).object(at: 0)
-            //
-            //        self.emotionImage.fetchImage(asset: asset, contentMode: .aspectFill)
-            
+            //cell.emojiLabel.text = self.getPhotoEmotion(imageName: (self.allPhotos?.object(at: indexPath.row).localIdentifier)!)
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoodReelCollectionViewCell", for: indexPath) as! MoodReelCollectionViewCell

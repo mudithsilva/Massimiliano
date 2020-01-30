@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import Photos
 import RealmSwift
+import CoreLocation
 
 class PhotoEmotionCaptureViewController: UIViewController {
     
@@ -24,6 +25,8 @@ class PhotoEmotionCaptureViewController: UIViewController {
     var photoInfo: ImageWithEmotion!
     var selectedIndex: Int! = 0
     var allPhotos : PHFetchResult<PHAsset>? = nil
+    var photoAddress: String = ""
+    var photoDate: String = ""
     
     
     var captureSession: AVCaptureSession!
@@ -56,6 +59,18 @@ class PhotoEmotionCaptureViewController: UIViewController {
 
         //self.emotionImage.fetchImageQualityFormat(asset: asset, contentMode: .aspectFill)
         self.emotionImage.fetchImageQualityFormat(asset: asset, contentMode: .aspectFill)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        if asset.creationDate != nil {
+            self.photoDate = formatter.string(from: asset.creationDate!)
+        }
+        
+        if asset.location != nil {
+            self.getPicLocation(lat: asset.location!.coordinate.latitude,
+                                long: asset.location!.coordinate.longitude)
+        }
+        
+        
         self.getPhoto()
         
     }
@@ -237,6 +252,31 @@ class PhotoEmotionCaptureViewController: UIViewController {
         })
     }
     
+    func getPicLocation(lat: Double, long: Double) {
+        CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: lat, longitude: long)) { (placemark, error) in
+            print(placemark!)
+            if (error != nil) {
+                print("reverse geodcode fail")
+            }
+            let pm = placemark! as [CLPlacemark]
+            if pm.count > 0 {
+                let pm = placemark![0]
+                if pm.subLocality != nil {
+                    self.photoAddress = self.photoAddress + pm.subLocality! + ", "
+                }
+                if pm.thoroughfare != nil {
+                    self.photoAddress = self.photoAddress + pm.thoroughfare! + ", "
+                }
+                if pm.locality != nil {
+                    self.photoAddress = self.photoAddress + pm.locality! + ", "
+                }
+                if pm.country != nil {
+                    self.photoAddress = self.photoAddress + pm.country! + ", "
+                }
+                self.photoAddress = self.photoAddress.lowercased()
+            }
+        }
+    }
     
 
     /*
@@ -268,6 +308,8 @@ extension PhotoEmotionCaptureViewController: AVCapturePhotoCaptureDelegate {
             let emotionImage = GalleryEmotionImage()
             emotionImage.imageName = (self.allPhotos?.object(at: self.selectedIndex).localIdentifier)!
             emotionImage.imageEmotion = emotion.rawValue
+            emotionImage.imageLocation = self.photoAddress
+            emotionImage.imageDate = self.photoDate
             
             // Get the default Realm
             let realm = try! Realm()
@@ -321,6 +363,43 @@ extension PhotoEmotionCaptureViewController: AVCapturePhotoCaptureDelegate {
         let normalizedImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return normalizedImage
+    }
+}
+
+extension PhotoEmotionCaptureViewController: UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return self.emotionImage
+    }
+    
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+            if scrollView.zoomScale > 1 {
+            if let image = self.emotionImage.image {
+
+                let ratioW = self.emotionImage.frame.width / image.size.width
+                let ratioH = self.emotionImage.frame.height / image.size.height
+
+                let ratio = ratioW < ratioH ? ratioW : ratioH
+
+                let newWidth = image.size.width * ratio
+                let newHeight = image.size.height * ratio
+
+                let left = 0.5 * (newWidth * scrollView.zoomScale > self.emotionImage.frame.width ? (newWidth - self.emotionImage.frame.width) : (scrollView.frame.width - scrollView.contentSize.width))
+                let top = 0.5 * (newHeight * scrollView.zoomScale > self.emotionImage.frame.height ? (newHeight - self.emotionImage.frame.height) : (scrollView.frame.height - scrollView.contentSize.height))
+
+                scrollView.contentInset = UIEdgeInsets(top: top, left: left, bottom: top, right: left)
+            }
+        } else {
+            scrollView.contentInset = UIEdgeInsets.zero
+        }
+    }
+    
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        if scale == 1 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+                    let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
+                self.stillImageOutput.capturePhoto(with: settings, delegate: self)
+            })
+        }
     }
 }
 
