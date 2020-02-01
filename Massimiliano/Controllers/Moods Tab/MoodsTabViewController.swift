@@ -94,7 +94,7 @@ class MoodsTabViewController: UIViewController {
 extension MoodsTabViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (self.view.frame.size.width - 30.0) / 2, height: 300.0)
+        return CGSize(width: (self.view.frame.size.width - 60.0) / 2, height: 300.0)
     }
     
 }

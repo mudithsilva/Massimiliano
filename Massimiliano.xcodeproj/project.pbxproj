@@ -19,6 +19,7 @@
 		BA143EA02393DF360024BB65 /* MoodPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA143E9F2393DF360024BB65 /* MoodPhotoViewController.swift */; };
 		BA25806F23E353F20037CA10 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA25806E23E353F20037CA10 /* SettingsViewController.swift */; };
 		BA25807123E3554B0037CA10 /* IAPShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA25807023E3554B0037CA10 /* IAPShowViewController.swift */; };
+		BA25807323E36D340037CA10 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA25807223E36D340037CA10 /* StoreKit.framework */; };
 		BA5253A323D8F7F900588A35 /* MoodReelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5253A123D8F7F900588A35 /* MoodReelCollectionViewCell.swift */; };
 		BA5253A423D8F7F900588A35 /* MoodReelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA5253A223D8F7F900588A35 /* MoodReelCollectionViewCell.xib */; };
 		BA52E14F23D7A0F4009FCAE4 /* MoodRealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E14E23D7A0F4009FCAE4 /* MoodRealViewController.swift */; };
@@ -131,6 +132,7 @@
 		BA143E9F2393DF360024BB65 /* MoodPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodPhotoViewController.swift; sourceTree = "<group>"; };
 		BA25806E23E353F20037CA10 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BA25807023E3554B0037CA10 /* IAPShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPShowViewController.swift; sourceTree = "<group>"; };
+		BA25807223E36D340037CA10 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BA5253A123D8F7F900588A35 /* MoodReelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodReelCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA5253A223D8F7F900588A35 /* MoodReelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoodReelCollectionViewCell.xib; sourceTree = "<group>"; };
 		BA52E14E23D7A0F4009FCAE4 /* MoodRealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodRealViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8334E9A5B4750A4FA7E64502 /* Pods_Massimiliano.framework in Frameworks */,
+				BA25807323E36D340037CA10 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +264,7 @@
 		3A85E999425B3ECC59595C90 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA25807223E36D340037CA10 /* StoreKit.framework */,
 				CF2DD5AC52C7B5963CD02109 /* Pods_Massimiliano.framework */,
 			);
 			name = Frameworks;
