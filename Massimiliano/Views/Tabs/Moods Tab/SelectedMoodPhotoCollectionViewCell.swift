@@ -11,6 +11,7 @@ import UIKit
 class SelectedMoodPhotoCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var galleryImage: UIImageView!
+    @IBOutlet weak var emojiLabel: UILabel!
     
     var parentVC: SelectedMoodPhotosViewController!
     var identifier: String!

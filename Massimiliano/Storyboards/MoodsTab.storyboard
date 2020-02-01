@@ -262,6 +262,7 @@
                     <navigationItem key="navigationItem" id="Xsv-X8-x7f"/>
                     <connections>
                         <outlet property="galleryImageCollectionView" destination="FaJ-l3-0UT" id="xEn-pe-eBX"/>
+                        <outlet property="moodName" destination="F0R-Gy-9r9" id="WeE-Me-cfk"/>
                         <segue destination="iA4-Io-6xj" kind="presentation" identifier="showPhoto" id="Hah-3S-T0e"/>
                     </connections>
                 </viewController>

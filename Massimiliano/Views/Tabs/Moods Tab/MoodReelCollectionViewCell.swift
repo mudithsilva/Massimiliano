@@ -12,6 +12,7 @@ class MoodReelCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var moodImage: UIImageView!
     @IBOutlet weak var moodname: UILabel!
+    @IBOutlet weak var moodBG: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

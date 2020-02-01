@@ -226,6 +226,22 @@ extension PhotosTabViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoodReelCollectionViewCell", for: indexPath) as! MoodReelCollectionViewCell
             cell.moodImage.image = self.moodReelImgs[indexPath.row]
             cell.moodname.text = self.moodReelTag[indexPath.row]
+            cell.moodBG.layer.cornerRadius = 56.0 / 2
+            
+            if indexPath.row == 0 {
+                cell.moodBG.image = UIImage(named: "moodBg04")
+            } else if indexPath.row == 1 {
+                cell.moodBG.image = UIImage(named: "moodBg01")
+            } else if indexPath.row == 2 {
+                cell.moodBG.image = UIImage(named: "moodBg02")
+            } else if indexPath.row == 3 {
+                cell.moodBG.image = UIImage(named: "moodBg03")
+            } else if indexPath.row == 4 {
+                cell.moodBG.image = UIImage(named: "moodBg01")
+            } else {
+                cell.moodBG.image = UIImage(named: "moodBg02")
+            }
+            
             return cell
         }
     }

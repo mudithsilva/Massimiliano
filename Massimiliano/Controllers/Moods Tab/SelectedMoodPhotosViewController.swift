@@ -13,6 +13,10 @@ import RealmSwift
 class SelectedMoodPhotosViewController: UIViewController {
     
     @IBOutlet weak var galleryImageCollectionView: UICollectionView!
+    @IBOutlet weak var moodName: UILabel!
+    
+    private let emojiArray: [String] = ["😊","😡","😢","😯","😨","😐"]
+    private let moodType: [String] = ["happiness","anger","sadness","surprise", "fear", "neutral"]
     
     private let tempImage: UIImage = #imageLiteral(resourceName: "sampleGalleryImage")
     private var allPhotos : PHFetchResult<PHAsset>? = nil
@@ -24,6 +28,7 @@ class SelectedMoodPhotosViewController: UIViewController {
         super.viewDidLoad()
         self.registerNibs()
         self.loadGalleryPhotos()
+        self.moodName.text = self.selectedMoodName
         // Do any additional setup after loading the view.
     }
     
@@ -72,6 +77,18 @@ class SelectedMoodPhotosViewController: UIViewController {
         }
     }
     
+    func getPhotoEmotion(imageName: String) -> String {
+        let realm = try! Realm()
+        let imageData = realm.objects(GalleryEmotionImage.self).filter("imageName = '\(imageName)'")
+        if imageData.count > 0 {
+            let emotionData = imageData.first!
+            let emoIndex = self.moodType.firstIndex(of: emotionData.imageEmotion)!
+            return self.emojiArray[emoIndex]
+        } else {
+            return ""
+        }
+    }
+    
 
 }
 
@@ -96,6 +113,7 @@ extension SelectedMoodPhotosViewController: UICollectionViewDataSource {
         cell.galleryImage.fetchImageFastFormat(asset: asset!, contentMode: .aspectFill)
         cell.parentVC = self
         cell.identifier = self.allPhotos?.object(at: indexPath.row).localIdentifier
+        cell.emojiLabel.text = self.getPhotoEmotion(imageName: (self.allPhotos?.object(at: indexPath.row).localIdentifier)!)
         return cell
     }
 }
