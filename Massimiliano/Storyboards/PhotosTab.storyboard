@@ -425,7 +425,7 @@
                                     <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ovT-a0-hKF" customClass="MyAwesomeView" customModule="FeelPics" customModuleProvider="target">
                                         <rect key="frame" x="157" y="800" width="100" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0q-hv-siJ">
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0q-hv-siJ">
                                                 <rect key="frame" x="25" y="1.5" width="50" height="27"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Thin" family="SF Pro Display" pointSize="23"/>
                                                 <color key="textColor" red="0.066666666669999999" green="0.36078431370000003" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>

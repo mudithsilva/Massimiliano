@@ -199,40 +199,53 @@ class PhotoEmotionCaptureViewController: UIViewController {
             case .Success(let json):
                 
                 let detectedFaces = json as! JSONArray
-                //print(json)
+                //print(detectedFaces)
                 
-                var angerVal: Double = 0
-                var fearVal: Double  = 0
-                var happinessVal: Double  = 0
-                var sadnessVal: Double  = 0
-                var surpriseVal: Double  = 0
-                
-                for item in detectedFaces {
-                    let face = item as! JSONDictionary
-                    //let faceId = face["faceId"] as! String
-                    let emotions = face["faceAttributes"]!["emotion"] as! [String: AnyObject]
-                    
-                    //print(emotions)
-                    angerVal = angerVal + (emotions["anger"] as! Double)
-                    fearVal = fearVal + (emotions["fear"] as! Double)
-                    happinessVal = happinessVal + (emotions["happiness"] as! Double)
-                    sadnessVal = sadnessVal + (emotions["sadness"] as! Double)
-                    surpriseVal = surpriseVal + (emotions["surprise"] as! Double)
-                }
-                
-                if ((angerVal > fearVal) && (angerVal > happinessVal) && (angerVal > sadnessVal) && (angerVal > surpriseVal)) {
-                    completion(Emotion.anger)
-                } else if ((fearVal > angerVal) && (fearVal > happinessVal) && (fearVal > sadnessVal) && (fearVal > surpriseVal)) {
-                    completion(Emotion.fear)
-                }  else if ((happinessVal > angerVal) && (happinessVal > fearVal) && (happinessVal > sadnessVal) && (happinessVal > surpriseVal)) {
-                    completion(Emotion.happiness)
-                }  else if ((sadnessVal > angerVal) && (sadnessVal > fearVal) && (sadnessVal > happinessVal) && (sadnessVal > surpriseVal)) {
-                    completion(Emotion.sadness)
-                }  else if ((surpriseVal > angerVal) && (surpriseVal > fearVal) && (surpriseVal > happinessVal) && (surpriseVal > sadnessVal)) {
-                    completion(Emotion.surprise)
+                if detectedFaces.count == 0 {
+                    print("Show Error")
+                    DispatchQueue.main.async {
+                        let alert = AlertController(viewController: self)
+                        let okAction: UIAlertAction = UIAlertAction(title: "OKAY", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+                            self.getPhoto()
+                        })
+                        alert.showOneAlert(title: "Hold your phone properly!", message: "Laborum cupidatat consectetur proident culpa eu labore dolor duis", button: okAction)
+                        
+                    }
                 } else {
-                    completion(Emotion.neutral)
+                    var angerVal: Double = 0
+                    var fearVal: Double  = 0
+                    var happinessVal: Double  = 0
+                    var sadnessVal: Double  = 0
+                    var surpriseVal: Double  = 0
+                    
+                    for item in detectedFaces {
+                        let face = item as! JSONDictionary
+                        //let faceId = face["faceId"] as! String
+                        let emotions = face["faceAttributes"]!["emotion"] as! [String: AnyObject]
+                        
+                        //print(emotions)
+                        angerVal = angerVal + (emotions["anger"] as! Double)
+                        fearVal = fearVal + (emotions["fear"] as! Double)
+                        happinessVal = happinessVal + (emotions["happiness"] as! Double)
+                        sadnessVal = sadnessVal + (emotions["sadness"] as! Double)
+                        surpriseVal = surpriseVal + (emotions["surprise"] as! Double)
+                    }
+                    
+                    if ((angerVal > fearVal) && (angerVal > happinessVal) && (angerVal > sadnessVal) && (angerVal > surpriseVal)) {
+                        completion(Emotion.anger)
+                    } else if ((fearVal > angerVal) && (fearVal > happinessVal) && (fearVal > sadnessVal) && (fearVal > surpriseVal)) {
+                        completion(Emotion.fear)
+                    }  else if ((happinessVal > angerVal) && (happinessVal > fearVal) && (happinessVal > sadnessVal) && (happinessVal > surpriseVal)) {
+                        completion(Emotion.happiness)
+                    }  else if ((sadnessVal > angerVal) && (sadnessVal > fearVal) && (sadnessVal > happinessVal) && (sadnessVal > surpriseVal)) {
+                        completion(Emotion.sadness)
+                    }  else if ((surpriseVal > angerVal) && (surpriseVal > fearVal) && (surpriseVal > happinessVal) && (surpriseVal > sadnessVal)) {
+                        completion(Emotion.surprise)
+                    } else {
+                        completion(Emotion.neutral)
+                    }
                 }
+                
                 
             case .Failure(let error):
                 print("DetectFaces error - ", error)
